@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- <record id="demo_cron_op" model="ir.cron">
+        <field name="name">OT Popups</field>
+        <field name="model_id" ref="model_hr_over_time"/>
+        <field name="state">code</field>
+        <field name="code">model.overtime_popup()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name='interval_number'>1</field>
+        <field name='interval_type'>days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="active">True</field>
+    </record> -->
+
+</odoo>

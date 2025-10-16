@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form view of the category menu -->
+        <record model="ir.ui.view" id="category_view">
+            <field name="name">category_form</field>
+            <field name="model">check.category</field>
+            <field name="arch" type="xml">
+                <form string="Category List">
+                    <sheet>
+                        <group>
+                            <field name="name">name</field>
+                        </group>
+                        <notebook>
+                            <page string="Sub Category">
+                                <field name="checklisttypes">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view for category -->
+        <record id="category_status_tree_view" model="ir.ui.view">
+            <field name="name">Category list</field>
+            <field name="model">check.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action for category -->
+        <record id="category_menu_action" model="ir.actions.act_window">
+            <field name="name">Check List Category</field>
+            <field name="res_model">check.category</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create The First Model</p>
+            </field>
+        </record>
+
+        <!-- 
+        <menuitem id="checkscategory_models_menu"
+                  parent="check_menu"
+                  name="Category"
+                  action="category_menu_action"
+                  sequence="20"/>
+        -->
+
+    </data>
+</odoo>

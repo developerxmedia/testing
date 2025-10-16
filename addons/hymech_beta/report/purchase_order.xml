@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+
+  <template id="hymech_beta.purchase_oder" name="Purchase Order">
+  <t t-call="web.external_layout">
+  <t t-call="web.html_container">
+  <t t-foreach="docs" t-as="o">
+    
+    <style>
+
+      .footer_section{
+
+      }
+      .border{
+          border-collapse: collapse;
+      }
+
+      .border td,.border tr ,.border th{
+          border: 1px solid black;
+      }
+      td {
+          height: 30px;
+        }
+        .heading_text_cor{
+        color:#000;
+        font-weight:600;
+
+        }
+        table tr{
+        width:40%;
+        }
+
+        table td{
+          width:20%;
+
+        }
+
+        table th{
+          width:30%;
+        }
+        .product_table th:first-child, .product_table td:first-child{
+          width:5%;
+        }
+        .product_table th:nth-child(3), .product_table td:nth-child(3){
+          width:10%;
+        }
+        .product_table th:nth-child(4), .product_table td:nth-child(4){
+          width:12%;
+        }
+        .product_table th:nth-child(5), .product_table td:nth-child(5){
+          width:12%;
+        }
+        .product_table th:last-child, .product_table td:last-child{
+          width:12%;
+        }
+        .header_tag{
+            margin-top : 70px;
+            margin-bottom : 20px;
+        }
+        #height_auto{
+          border:1px solid black;
+          border-bottom:1px solid black;
+          height:240px;
+        }
+
+        .flex-parent {
+          display: flex;
+
+        }
+        .flex-child {
+          display: flex;
+
+        }
+        .color{
+          color: black;
+        }
+  </style>
+      
+      <h4 class="text-center"><b>Purchase Order</b></h4>
+      
+    <div class="page">
+    <table class="table table-sm border"  id="border_none" style ="margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+      <tr >
+        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" class="float-left" alt="Logo" style="max-height: 90px;"/>
+
+        <th  rowspan = '5 ' ><strong>Shipping Address:</strong><br></br>
+          <span t-field="o.company_id"/><br></br>     
+          <span t-field="o.company_id.street"/><br></br>     
+          <span t-field="o.company_id.street2"/>
+          <span t-field="o.company_id.city"/>
+          <span t-field="o.company_id.state_id"/>
+          <span t-field="o.company_id.country_id"/>
+          <span t-field="o.company_id.zip"/><br></br>    
+          <span class="color" style="">Tel : </span><spant t-field="o.company_id.phone"/><br></br>     
+          <span class="color" style="">Email : </span><span t-field="o.company_id.email"/><br></br>
+          <span class="color" style="">Tax Reg No# :</span><span t-field="o.company_id.vat"/><br></br>     
+          <!-- <span>Tax Reg No# : 201703575N</span><br></br>      -->
+                    
+        </th>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Prchase Order<br></br></td>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.name"/><br></br></td>
+      </tr>
+      <tr>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Date</td>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.date_order"/><br></br></td>
+      </tr>
+      
+        <tr>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Salesperson<br></br></td>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.user_id"/><br></br></td>  
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Cash Terms<br></br></td>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.cash_terms"/><br></br></td>  
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Job Code<br></br></td>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.job_code"/><br></br></td>  
+        </tr>
+
+<br></br>
+      <!-- <tr > -->
+    <th style="border-left: 1px solid white;border-bottom: 1px solid white;border-right: 1px solid white;font-size: 15px;height:130px;" ><strong>Vendor:</strong><br> </br>
+        <p><span t-field="o.partner_id"/>
+          <br></br>
+          <span t-field="o.partner_id.street"/><br></br>     
+          <span t-field="o.partner_id.street2"/>
+          <span t-field="o.partner_id.city"/>
+          <span t-field="o.partner_id.state_id"/>
+          <span t-field="o.partner_id.country_id"/>
+          <span t-field="o.partner_id.zip"/><br></br>    
+
+         </p>
+      <br></br>
+
+      Attn: <span t-field="o.user_id"/><br></br>
+      Tel : <span t-field="o.partner_id.phone"/>
+    
+    
+    </th>
+    
+    <!-- </tr> -->
+      </table>
+<!-- new table -->
+      <!-- Supply of SS316 Drive Shaft &amp; Gear -->
+      <div style="border-bottom: 1px solid #fff;">
+    <table class="table table-sm border " style="border: 1px solid black;">
+      <thead>
+          <tr >
+            <th class="text-center Dest" style='width:5%;'  ><b>S.No</b></th>
+            <th class="text-center Dest" style='width:10%;'><b>Product ID</b></th>
+            <th class="text-center Dest"><b>Description</b></th>
+            <th class="text-center Dest " style='width:5%;'><b>Qty</b></th> 
+            <th class="text-center Dest" style='width:5%;'><b>UM</b></th>
+            <th class="text-center Dest"  style='width:10%;'><b>Unit Price In SGD</b></th>
+            <!-- <th class="text-center Dest"  ><b>Discount(%)</b></th> -->
+            <th class="text-center Dest" style='width:10%;'><b>Amount IN SGD</b></th>
+          </tr>
+      </thead>
+      <!-- <tbody > -->
+        <tr t-foreach="o.order_line" t-as="line" >   
+
+            <!-- <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.s_no"/></strong></td> -->
+            <td  class="text-center" style =  "border-bottom: 1px solid black;width:5%;"><strong><span t-field="line.s_nodd"/></strong></td>
+            <td  class="text-center" style =  "border-bottom: 1px solid black;width:10%;"><strong><span t-field="line.product_id.default_code"/></strong></td>
+            <td  class="text-center" style =  "border-bottom: 1px solid black;"><strong><span t-field="line.name"/></strong></td>
+            <td  class="text-center" style =  "border-bottom: 1px solid black;width:5%;"><strong><span t-field="line.product_qty"/></strong></td>
+            <td  class="text-center" style =  "border-bottom: 1px solid black;width:5%;"><strong><span t-field="line.unit"/></strong></td>
+            <td  class="text-center" style =  "border-bottom: 1px solid black;width:10%;"><strong><span t-field="line.price_unit"/></strong></td>
+            <!-- <td  class="text-center" style =  "border-bottom: 1px solid black;"><strong><span t-field="line.discount"/></strong></td> -->
+            <td  class="text-center" style =  "border-bottom: 1px solid black;width:10%;"><strong><span t-field="line.price_subtotal"/></strong></td>
+                  </tr>
+                  <!-- </tbody> -->
+                  <!-- <tr>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>Subtotal</strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>S$11,229.00</strong></td>
+
+                  </tr>
+                  <tr>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong> <span>TERMS &amp; CONDITIONS:</span></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>GST 8%</strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>S$898.32</strong></td>
+
+                  </tr>
+                  <tr>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>Grand Total</strong></td>
+                    <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>S$12,127.32</strong></td>
+
+                  </tr> -->
+                  
+                        </table>
+
+                      </div>
+
+                      <div style="border-bottom: 1px solid #fff;">
+                          
+                      <!-- <hr  style = "width: 100%;
+                      height: 5px;
+                      margin-left: auto;
+                      margin-right: auto;
+                      background-color: #b7d0e2;"/> -->
+
+                      <table class="table table-sm border"  id="border_none" style ="margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+                        <tr >
+                          <th style="border: 1px solid white;padding:5px;font-size: 15px;width:40%;" rowspan = '1' ><br></br>
+                            <br></br>
+
+                           <span t-field="o.notes"/> <br></br>     
+ 
+                                          
+                          </th>
+                          <th style="border: 1px solid white;padding:5px;font-size: 15px;width:40%;" rowspan = '1'>
+                          <div class="clearfix ">
+                            <div id="total" class="row " >
+                                <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
+                                    <table class="table table-sm float-right" style="page-break-inside: avoid; width:60%;">
+                                        <tr class="border-black o_subtotal" style="">
+                                            <td><strong>Subtotal</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_untaxed"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black o_subtotal">
+                                            <td><strong>GST 9%</strong></td>
+                                            <td class="text-right">
+                                                <span class="text-nowrap" t-field="o.amount_tax"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black o_total">
+                                            <td><strong>Total</strong></td>
+                                            <td class="text-right">
+                                                <span class="text-nowrap" t-field="o.amount_total"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                      </th>
+                        </tr>
+                          <!-- <tr>
+                            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">Gst</td>
+                            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">18/03/2023<br></br></td>
+                          </tr>
+                          <tr>
+                            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">Total<br></br></td>
+                            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">08040376<br></br></td> 
+                          
+                       
+                       
+                        </tr> -->
+                        <tr></tr>
+
+                        
+                          </table>
+                        </div>
+                        </div>
+                          <br></br>
+                          <div style="text-align: center;">
+                          <b>This is a computer generated Quotation, No signature is required</b></div>
+
+  
+</t>
+</t>
+</t>
+</template>
+</data>
+</odoo>

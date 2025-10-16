@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_purchase_order_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+                <!-- <header>
+                    <button  name='' string='Creating Task' class="oe_highlight" type='object'/>
+                </header> -->
+                
+
+                <xpath expr="//field[@name='effective_date']" position="after">
+                    <!-- <group> -->
+                        <!-- <field name="sale_order_purchase"/> -->
+                        <field name="task_id"/>
+
+                    <!-- </group> -->
+                </xpath>
+
+                <xpath expr="//field[@name='date_order']" position="after">
+                  
+                    <field name="terms_and_condition_id"/>
+         
+                </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="project_inherit_bom_smart_buttons" model="ir.ui.view">
+            <field name="name">project project inherit</field>
+                <field name="model">project.project</field>
+                <field name="inherit_id" ref="project.edit_project"/>
+                <field name="arch" type="xml">
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="click_project_count" type="object" icon="fa-bars">
+                            <field name="project_count" string="Projects"  widget="statinfo" />
+                        </button>
+                    </div>
+            </field>
+        </record>
+    </data>
+</odoo>

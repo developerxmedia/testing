@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_tender_management_document_tree" model="ir.ui.view">
+            <field name="name">tender.management.document.tree</field>
+            <field name="model">tender.management.document</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string='Name'/>
+                    <field name="upload_status"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tender_management_document_form" model="ir.ui.view">
+            <field name="name">tender.management.document.form</field>
+            <field name="model">tender.management.document</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="upload_all_attachments_to_api" 
+                                string="Evaluate Document" 
+                                type="object" 
+                                class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" string='Name'/>
+                            <field name="description" string="description"/>
+                            <field name="upload_status" readonly="1"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </group>
+                        
+                        <notebook>
+                            <page string="Equipment">
+                                <field name="equipment_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <!-- REMOVED approve button -->
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                            <!-- REMOVED approval_status -->
+                                        </group>
+                                        <notebook>
+                                            <page string="Sub Tasks">
+                                                <field name="subtask_ids">
+                                                    <tree>
+                                                        <field name="name"/>
+                                                        <!-- REMOVED approve button -->
+                                                    </tree>
+                                                    <form>
+                                                        <group>
+                                                            <field name="name"/>
+                                                            <!-- REMOVED approval_status -->
+                                                        </group>
+                                                        <notebook>
+                                                            <page string="Intervals">
+                                                                <field name="interval_ids">
+                                                                    <tree>
+                                                                        <field name="name" />
+                                                                        <field name="duration"/>
+                                                                        <field name="approval_status"/>
+                                                                        <!-- ONLY approve button here -->
+                                                                        <button name="approve_interval" 
+                                                                                string="Approve" 
+                                                                                type="object" 
+                                                                                class="btn-success"
+                                                                                icon="fa-check"
+                                                                                invisible="approval_status == 'approved'"/>
+                                                                    </tree>
+                                                                    <form>
+                                                                        <group>
+                                                                            <field name="name"/>
+                                                                            <field name="duration"/>
+                                                                            <field name="approval_status"/>
+                                                                        </group>
+                                                                        <notebook>
+                                                                            <page string="Tasks">
+                                                                                <field name="task_ids">
+                                                                                    <tree>
+                                                                                        <field name="name" string="Question"/>
+                                                                                    </tree>
+                                                                                    <form>
+                                                                                        <sheet>
+                                                                                            <group>
+                                                                                                <field name="name" string="Question"/>
+                                                                                                <field name="duration" string="Interval"/>
+                                                                                                <field name="approval_status"/>
+                                                                                            </group>
+                                                                                            
+                                                                                            <group>
+                                                                                                <field name="question_type" widget="radio"/>
+                                                                                                <field name="sel_attachment" string="Attachment"/>
+                                                                                            </group>
+
+                                                                                            <!-- Selection Type Fields -->
+                                                                                            <group string="Expected Result" invisible="question_type != 'selection'">
+                                                                                                <group>
+                                                                                                    <field name="sel_expected_result"/>
+                                                                                                    <field name="sel_result"/>
+                                                                                                    <field name="sel_result_color"/>
+                                                                                                    <field name="sel_weightage"/>
+                                                                                                </group>
+                                                                                            </group>
+                                                                                            
+                                                                                            <!-- Value Type Fields -->
+                                                                                            <group string="Value Configuration" invisible="question_type != 'value'">
+                                                                                                <group string="Statement Settings">
+                                                                                                    <field name="val_statement_type"/>
+                                                                                                    <field name="val_condition"/>
+                                                                                                    <field name="val_value"/>
+                                                                                                    <field name="val_units"/>
+                                                                                                    <field name="val_result"/>
+                                                                                                    <field name="val_result_color"/>
+                                                                                                    <field name="val_weightage"/>
+                                                                                                </group>
+                                                                                                <group string="Threshold Settings">
+                                                                                                    <field name="val_dangerous_if"/>
+                                                                                                    <field name="val_compiled"/>
+                                                                                                    <field name="val_obs"/>
+                                                                                                    <field name="val_aoa"/>
+                                                                                                </group>
+                                                                                            </group>
+                                                                                            
+                                                                                            <footer>
+                                                                                                <button name="create_checklist_from_task" 
+                                                                                                        string="Save" 
+                                                                                                        type="object" 
+                                                                                                        class="btn-primary oe_highlight"/>
+                                                                                                <button string="Discard" class="btn-secondary" special="cancel"/>
+                                                                                            </footer>
+                                                                                        </sheet>
+                                                                                    </form>
+                                                                                </field>
+                                                                            </page>
+                                                                        </notebook>
+                                                                    </form>
+                                                                </field>
+                                                            </page>
+                                                        </notebook>
+                                                    </form>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Standalone Task Form View (matching checklist pattern) -->
+        <record id="view_tender_task_form_detailed" model="ir.ui.view">
+            <field name="name">tender.task.form.detailed</field>
+            <field name="model">tender.task</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="create_checklist_from_task" 
+                                string="Save" 
+                                type="object" 
+                                class="btn-primary oe_highlight"/>
+                        <button string="Discard" class="btn-secondary" special="cancel"/>
+                        <field name="approval_status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="interval_id" string="Service Type/Service No"/>
+                                <field name="name" string="Question"/>
+                                <field name="duration" string="Interval"/>
+                            </group>
+                            <group>
+                                <field name="question_type" widget="radio"/>
+                                <field name="sel_attachment" string="Attachment" invisible="question_type == 'value'"/>
+                                <field name="val_attachment" string="Attachment" invisible="question_type == 'selection'"/>
+                            </group>
+                        </group>
+                        
+                        <!-- Selection Type -->
+                        <group string="Expected Result" invisible="question_type != 'selection'">
+                            <group>
+                                <field name="sel_expected_result"/>
+                            </group>
+                            <group>
+                                <field name="sel_result"/>
+                                <field name="sel_result_color"/>
+                                <field name="sel_weightage"/>
+                            </group>
+                        </group>
+                        
+                        <!-- Value Type -->
+                        <group string="Value Configuration" invisible="question_type != 'value'">
+                            <group string="Statement Configuration">
+                                <field name="val_statement_type"/>
+                                <field name="val_condition"/>
+                                <field name="val_value"/>
+                                <field name="val_units"/>
+                            </group>
+                            <group string="Result Configuration">
+                                <field name="val_result"/>
+                                <field name="val_result_color"/>
+                                <field name="val_weightage"/>
+                            </group>
+                            <group string="Threshold Values">
+                                <field name="val_dangerous_if"/>
+                                <field name="val_compiled"/>
+                                <field name="val_obs"/>
+                                <field name="val_aoa"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Keep existing tree views simple -->
+        <record id="view_tender_equipment_tree" model="ir.ui.view">
+            <field name="name">tender.equipment.tree</field>
+            <field name="model">tender.equipment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="tender_id"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tender_task_tree" model="ir.ui.view">
+            <field name="name">tender.task.tree</field>
+            <field name="model">tender.task</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Question"/>
+                    <field name="interval_id" string="Service Type/Service No"/>
+                    <field name="question_type"/>
+                    <field name="approval_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Actions -->
+        <record id="action_tender_management_document" model="ir.actions.act_window">
+            <field name="name">Documents</field>
+            <field name="res_model">tender.management.document</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_tender_task" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">tender.task</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_tender_task_form_detailed"/>
+        </record>
+
+        <!-- Menus -->
+        <menuitem id="menu_tender_root" name="Check List Document" sequence="203"/>
+        
+        <menuitem id="menu_tender_document" 
+                  name="Documents" 
+                  parent="menu_tender_root"
+                  action="action_tender_management_document"/>
+                  
+        <!-- <menuitem id="menu_tender_task" 
+                  name="Tasks" 
+                  parent="menu_tender_root"
+                  action="action_tender_task"/> -->
+
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_tender_management_document_tree" model="ir.ui.view">
+            <field name="name">tender.management.document.tree</field>
+            <field name="model">tender.management.document</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string='Tender Name'/>
+                    <field name="upload_status"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tender_management_document_form" model="ir.ui.view">
+            <field name="name">tender.management.document.form</field>
+            <field name="model">tender.management.document</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="upload_all_attachments_to_api" 
+                                string="Evaluate Document" 
+                                type="object" 
+                                class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" string='Tender Name'/>
+                            <field name="description"/>
+                            <field name="upload_status" readonly="1"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </group>
+                        
+                        <notebook>
+                            <page string="Equipment">
+                                <field name="equipment_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="approval_status"/>
+                                        <button name="approve_equipment" 
+                                                string="Approve" 
+                                                type="object" 
+                                                class="btn-success"
+                                                icon="fa-check"
+                                                invisible="approval_status == 'approved'"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="approval_status"/>
+                                        </group>
+                                        <notebook>
+                                            <page string="Sub Tasks">
+                                                <field name="subtask_ids">
+                                                    <tree>
+                                                        <field name="name"/>
+                                                        <field name="approval_status"/>
+                                                        <button name="approve_subtask" 
+                                                                string="Approve" 
+                                                                type="object" 
+                                                                class="btn-success"
+                                                                icon="fa-check"
+                                                                invisible="approval_status == 'approved'"/>
+                                                    </tree>
+                                                    <form>
+                                                        <group>
+                                                            <field name="name"/>
+                                                            <field name="approval_status"/>
+                                                        </group>
+                                                        <notebook>
+                                                           
+                                                            <page string="Intervals">
+                                                                <field name="interval_ids">
+                                                                    <tree>
+                                                                        <field name="name"/>
+                                                                        <field name="duration"/>
+                                                                        <field name="approval_status"/>
+                                                                        <button name="approve_interval" 
+                                                                                string="Approve" 
+                                                                                type="object" 
+                                                                                class="btn-success"
+                                                                                icon="fa-check"
+                                                                                invisible="approval_status == 'approved'"/>
+                                                                    </tree>
+                                                                    <form>
+                                                                        <group>
+                                                                            <field name="name"/>
+                                                                            <field name="duration"/>
+                                                                            <field name="approval_status"/>
+                                                                        </group>
+                                                                        <notebook>
+                                                                           
+                                                                            <page string="Tasks">
+                                                                                <field name="task_ids">
+                                                                                    <tree>
+                                                                                        <field name="name" string="Question"/>
+                                                                                    </tree>
+                                                                                   
+                                                                                    <form>
+                                                                                        <sheet>
+                                                                                            <group>
+                                                                                                <field name="name" string="Question"/>
+                                                                                                <field name="duration" string="Interval"/>
+                                                                                                <field name="approval_status"/>
+                                                                                            </group>
+                                                                                            
+                                                                                            <group>
+                                                                                                <field name="question_type" widget="radio"/>
+                                                                                                <field name="sel_attachment" string="Attachment"/>
+                                                                                            </group>
+
+                                                                                           
+                                                                                            <group string="Expected Result" invisible="question_type != 'selection'">
+                                                                                                <group>
+                                                                                                    <field name="sel_expected_result"/>
+                                                                                                    <field name="sel_result"/>
+                                                                                                    <field name="sel_result_color"/>
+                                                                                                    <field name="sel_weightage"/>
+                                                                                                </group>
+                                                                                            </group>
+                                                                                            
+                                                                                            
+                                                                                            <group string="Value Configuration" invisible="question_type != 'value'">
+                                                                                                <group string="Statement Settings">
+                                                                                                    <field name="val_statement_type"/>
+                                                                                                    <field name="val_condition"/>
+                                                                                                    <field name="val_value"/>
+                                                                                                    <field name="val_units"/>
+                                                                                                    <field name="val_result"/>
+                                                                                                    <field name="val_result_color"/>
+                                                                                                    <field name="val_weightage"/>
+                                                                                                </group>
+                                                                                                <group string="Threshold Settings">
+                                                                                                    <field name="val_dangerous_if"/>
+                                                                                                    <field name="val_compiled"/>
+                                                                                                    <field name="val_obs"/>
+                                                                                                    <field name="val_aoa"/>
+                                                                                                </group>
+                                                                                            </group>
+                                                                                            
+                                                                                            <footer>
+                                                                                                <button name="create_checklist_from_task" 
+                                                                                                        string="Save" 
+                                                                                                        type="object" 
+                                                                                                        class="btn-primary oe_highlight"/>
+                                                                                                <button string="Discard" class="btn-secondary" special="cancel"/>
+                                                                                            </footer>
+                                                                                        </sheet>
+                                                                                    </form>
+                                                                                </field>
+                                                                            </page>
+                                                                        </notebook>
+                                                                    </form>
+                                                                </field>
+                                                            </page>
+                                                        </notebook>
+                                                    </form>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      
+        <record id="view_tender_task_form_detailed" model="ir.ui.view">
+            <field name="name">tender.task.form.detailed</field>
+            <field name="model">tender.task</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="create_checklist_from_task" 
+                                string="Save" 
+                                type="object" 
+                                class="btn-primary oe_highlight"/>
+                        <button string="Discard" class="btn-secondary" special="cancel"/>
+                        <field name="approval_status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="interval_id" string="Service Type/Service No"/>
+                                <field name="name" string="Question"/>
+                                <field name="duration" string="Interval"/>
+                            </group>
+                            <group>
+                                <field name="question_type" widget="radio"/>
+                                <field name="sel_attachment" string="Attachment" invisible="question_type == 'value'"/>
+                                <field name="val_attachment" string="Attachment" invisible="question_type == 'selection'"/>
+                            </group>
+                        </group>
+                        
+                       
+                        
+                        
+                        <group string="Expected Result" invisible="question_type != 'selection'">
+                            <group>
+                                <field name="sel_expected_result"/>
+                            </group>
+                            <group>
+                                <field name="sel_result"/>
+                                <field name="sel_result_color"/>
+                                <field name="sel_weightage"/>
+                            </group>
+                        </group>
+                        
+                        
+                        <group string="Value Configuration" invisible="question_type != 'value'">
+                            <group string="Statement Configuration">
+                                <field name="val_statement_type"/>
+                                <field name="val_condition"/>
+                                <field name="val_value"/>
+                                <field name="val_units"/>
+                            </group>
+                            <group string="Result Configuration">
+                                <field name="val_result"/>
+                                <field name="val_result_color"/>
+                                <field name="val_weightage"/>
+                            </group>
+                            <group string="Threshold Values">
+                                <field name="val_dangerous_if"/>
+                                <field name="val_compiled"/>
+                                <field name="val_obs"/>
+                                <field name="val_aoa"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+        <record id="view_tender_equipment_tree" model="ir.ui.view">
+            <field name="name">tender.equipment.tree</field>
+            <field name="model">tender.equipment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="tender_id"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tender_task_tree" model="ir.ui.view">
+            <field name="name">tender.task.tree</field>
+            <field name="model">tender.task</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Question"/>
+                    <field name="interval_id" string="Service Type/Service No"/>
+                    <field name="question_type"/>
+                    <field name="approval_status"/>
+                </tree>
+            </field>
+        </record>
+
+        
+        <record id="action_tender_management_document" model="ir.actions.act_window">
+            <field name="name">Tender Documents</field>
+            <field name="res_model">tender.management.document</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_tender_task" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">tender.task</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_tender_task_form_detailed"/>
+        </record>
+
+      
+        <menuitem id="menu_tender_root" name="Tender Management"/>
+        
+        <menuitem id="menu_tender_document" 
+                  name="Tender Documents" 
+                  parent="menu_tender_root"
+                  action="action_tender_management_document"/>
+                  
+        <menuitem id="menu_tender_task" 
+                  name="Tasks" 
+                  parent="menu_tender_root"
+                  action="action_tender_task"/>
+
+    </data>
+</odoo> -->

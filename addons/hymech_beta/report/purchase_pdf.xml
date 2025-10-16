@@ -1,0 +1,390 @@
+<odoo>
+    
+    <record id="purchase_report_paperformat" model="report.paperformat">
+        <field name="name">invoice</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_purchase_report" model="ir.actions.report">
+        <field name="name">Purchase Report</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field> 
+        <field name="report_name">hymech_beta.purchase_report_document</field>
+        <field name="report_file">hymech_beta.purchase_report_document</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="purchase_report_document">
+        
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">                                           
+            <t t-foreach="docs" t-as="o">
+                <style>
+                table {
+    page-break-inside: auto;
+}
+tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+td {
+    page-break-inside: avoid;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+                    table.custom-table {
+                        border-collapse: collapse;
+                        border: 2px solid #000;
+                        width:100%;
+                        height:100%;
+                        padding:2%;
+                    }
+                    table.custom-table th, table.custom-table td {
+                        border: 1px solid #000;
+                        width:25%;
+                        <!-- height:25%; -->
+                        height: auto;
+                        padding:2%;
+                    }
+                    table.custom-tables {
+                        border-collapse: collapse;
+                        border: 2px solid #000;
+                        width:100%;
+                        height:100%;
+                        padding:2%;
+                    }
+                    table.custom-tables th, table.custom-tables td {
+                        border: 1px solid #000;
+                        width:25%;
+                        height:25%;
+                        padding:2%;
+                    }
+                    @font-face {
+                        font-family: 'Gupter';
+                        src: url('/hymech_beta/static/src/fonts/Gupter-Regular.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+
+                    @font-face {
+                        font-family: 'Tinos';
+                        src: url('/hymech_beta/static/src/fonts/Tinos-Regular.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+
+                    a[href^="mailto:"], a[href^="mailto:"]:visited, a[href^="mailto:"]:link {
+                    text-decoration: none !important;
+                    color: inherit !important;
+                    border: 0 !important;
+                }
+
+                .table.table-sm.table-bordered,
+                .table.table-sm.table-bordered th,
+                .table.table-sm.table-bordered td,
+                .table.table-sm.table-bordered thead th {
+                    border: 2px solid #000 !important;
+                    border-color: #000 !important;
+                }
+                     
+                </style>
+
+                    <div class="header" style="display: flex;" t-options="{'keepTogether': True}">
+
+                    <div class="float-left" style="width:48%;">
+                        <table style="width:100%;margin-bottom:30px;border-top:none;font-family: 'Tinos';">
+                            <tr>
+                                <td style="text-align:left;vertical-align: middle;">
+                                <img t-att-src="image_data_uri(res_company.logo)" style="width:80%;height:80%; !important;margin-top:30px;"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="float-left" style="width:46%;">
+                        <table style="font-family: 'Tinos'; width:100%;">
+                            <tr>
+                                <td style="vertical-align: middle; background-color: white;">
+                                    <div style="text-align:left; margin-left:5%; margin-top:10px; margin-right:100px; color:black; white-space: pre-line; font-size:17px; font-weight:900;">
+
+                                        <!-- Company Name -->
+                                        <t t-esc="o.company_id.name"/>  
+                                        <br/>
+
+                                        <!-- Street -->
+                                        <t t-if="o.company_id.street">
+                                            <t t-esc="o.company_id.street"/><br/>
+                                        </t>
+
+                                        <!-- Street 2 -->
+                                        <t t-if="o.company_id.street2">
+                                            <t t-esc="o.company_id.street2"/><br/>
+                                        </t>
+
+                                        <!-- City, State, Zip -->
+                                        <t t-if="o.company_id.city">
+                                            <t t-esc="o.company_id.city"/>
+                                        </t>
+                                        <t t-if="o.company_id.state_id.name">
+                                            , <t t-esc="o.company_id.state_id.name"/>
+                                        </t>
+                                        <t t-if="o.company_id.zip">
+                                            , <t t-esc="o.company_id.zip"/>
+                                        </t>
+                                        <br/>
+
+                                        <!-- Country -->
+                                        <t t-if="o.company_id.country_id.name">
+                                            <t t-esc="o.company_id.country_id.name"/><br/>
+                                        </t>
+
+                                        <!-- GST -->
+                                        <t t-if="o.company_id.vat">
+                                            GST : <t t-esc="o.company_id.vat"/><br/>
+                                        </t>
+
+                                        <!-- Email -->
+                                        <t t-if="o.company_id.email">
+                                            E-Mail : <t t-esc="o.company_id.email"/>
+                                        </t>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- <div style="font-size:30px;color:black;margin-top:10px;text-align:center;font-weight:600;text-decoration: underline;">
+                    <span>Purchase Order</span>
+                </div> -->
+                <div style="font-size:25px; color:black; margin-top:10px; text-align:center; text-decoration: underline; font-weight:250;">
+                    <span>Purchase Order</span>
+                </div>
+
+
+
+
+                <!-- <div style="font-size:25px;color:black;margin-top:-25px;text-align:center;font-weight:600;text-decoration: underline;">Purchase Order</div> -->
+                    
+<table style="border-collapse: collapse; width: 100%; font-family: 'Tinos'; font-size: 18px;">
+    <tr>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Contact</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.name"/>
+            </div>
+        </td>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Purchase Order No.</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; white-space: nowrap; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-field="o.name"/>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Address</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; text-align: left; vertical-align: top;">
+            <div style="display: flex; justify-content: center; flex-direction: column;">
+                <div t-if="o.partner_id.street">
+                    <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.street"/>
+                </div>
+                <div t-if="o.partner_id.street2">
+                    <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.street2"/>
+                </div>
+                <div>
+                    <t t-if="o.partner_id.city">
+                        <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.city"/>
+                    </t> - 
+                    <t t-if="o.partner_id.state_id.name">
+                        <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.state_id.name"/>
+                    </t>
+                </div>
+                <div>
+                    <t t-if="o.partner_id.country_id.name">
+                        <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.country_id.name"/>
+                    </t> - 
+                    <t t-if="o.partner_id.zip">
+                        <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.zip"/>
+                    </t>
+                </div>
+            </div>
+        </td>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Date</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; white-space: nowrap; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-field="o.date_order"/>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Phone No</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-field="o.partner_id.phone"/>
+            </div>
+        </td>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Your Ref.</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; white-space: nowrap; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-field="o.partner_ref"/>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Email</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-esc="o.partner_id.email"/>
+            </div>
+        </td>
+        <th style="font-weight: 900; padding: 8px; width: 15%; border: 2px solid black; text-align: left; vertical-align: middle;">Job Code</th>
+        <td style="padding: 8px; width: 35%; border: 2px solid black; white-space: nowrap; text-align: left; vertical-align: middle;">
+            <div style="display: flex; justify-content: center;">
+                <span style="font-size: 18px; text-align: left;" t-field="o.job_code"/>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+                <table border="0" class="table table-sm table-bordered"
+                    style="border:0;font-family:'Tinos';font-size:18px;margin-top:0px;border-top:none;">
+                <tr>
+                    <td colspan="1"
+                        style="border-left:1px solid black;border-right:2px solid black;
+                            border-top:none;border-bottom:2px solid black;
+                            vertical-align:middle;text-align:left;">
+                    <span style="font-size:22px;color:black;margin-left:5px;font-weight:700;">
+                        We are pleased to provide the following purchase order as per our request
+                    </span>
+                    </td>
+                </tr>
+                </table>
+
+                    
+                    
+                <table class="table table-sm table-bordered" style ="width:100%;margin-top:-17px; border-collapse:collapse; border-top:none; border:2px solid black;">
+                    <thead style="border:none;">
+                        <tr>
+                            <th style="border:2px solid black; padding:8px; font-size:18px;color:black;vertical-align: middle;text-align:center;font-weight: 600;width:5%;">ITEM</th>
+                        
+                            <th style="border:2px solid black; padding:8px; font-size:18px;color:black;vertical-align: middle;text-align:center;font-weight: 600;width:65%;">DESCRIPTION</th>
+                            
+                            <th style="border:2px solid black; padding:8px; font-size:18px;color:black;vertical-align: middle;text-align:center;font-weight: 600;width:5%;">QTY</th> 
+                            <th style="border:2px solid black; padding:8px; font-size:18px;color:black;vertical-align: middle;text-align:center;font-weight: 600;width:5%;">UM</th> 
+                        
+                            <th style="border:2px solid black; padding:8px; font-size:18px;color:black;vertical-align: middle;text-align:center;font-weight: 600;width:10%;white-space: nowrap;">UNIT PRICE In <t t-esc="o.currency_id.name"/></th>
+                            <th style="border:2px solid black; padding:8px; font-size:18px;color:black;vertical-align: middle;text-align:center;font-weight: 600;width:10%;white-space: nowrap;">TOTAL PRICE In <t t-esc="o.currency_id.name"/></th> 
+                        </tr>
+                            
+                    </thead>
+                    <tbody>
+
+                        <tr t-foreach="o.order_line" t-as="line">
+                            <t t-if="line.product_qty">
+                                <td style ="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:center;width:5%;"><span t-field="line.s_nodd"/></td>
+                                <td style ="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:left;width:65%;"><span t-field="line.name"/></td>
+                                <td style ="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;width:10%;"><span t-field="line.product_qty"/></td>
+                                <td style ="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;width:10%;"><span t-field="line.product_uom"/></td>
+                                <td style ="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;width:10%;"><span t-field="o.currency_id.symbol"/><span t-field="line.price_unit"/></td>
+                                <td style ="border:2px solid black; padding:4px;font-size:18px;color:black;vertical-align: middle;text-align:right;width:10%;background-color:white;"><span t-field="o.currency_id.symbol"/><span t-field="line.price_subtotal" style="margin-left:3px;" t-options='{"widget": "float", "precision": 2}'/></td>
+                            </t>
+                        </tr>
+
+                        <tr> 
+                            <th colspan="4" style="border-left:2px solid black; border-top:none;border-bottom:none;border-right:2px solid black;font-size:18px;color:white;vertical-align: middle;text-align:right;font-weight: 900;">.</th>
+                            <th colspan="1" style="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;font-weight: 600;">Sub Total</th>
+                            <td colspan="1" style="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;background-color:white;"><span t-field="o.currency_id.symbol"/><span t-field="o.amount_untaxed" style="margin-left:3px;" t-options='{"widget": "float", "precision": 2}'/></td>
+                        </tr>
+                        <tr> 
+                            <th colspan="4" style="border-left:2px solid black;border-top:none;border-bottom:none;border-right:2px solid black;font-size:18px;color:white;vertical-align: middle;text-align:right;font-weight: 900;">.</th>
+                            <th colspan="1" style="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;font-weight: 600;">Taxes</th>
+                            <td colspan="1" style="border:2px solid black; padding:4px; font-size:18px;color:black;vertical-align: middle;text-align:right;background-color:white;"><span t-field="o.currency_id.symbol"/><span t-field="o.amount_tax" style="margin-left:3px;" t-options='{"widget": "float", "precision": 2}'/></td>
+                        </tr>
+
+                        
+
+                        <tr>
+                            <th colspan="4" style="border-left:2px solid black;border-bottom:1px solid black;border-top:none;border-right:2px solid black;font-size:18px;color:white;vertical-align: middle;text-align:right;font-weight: 900;">.</th>
+                            <th colspan="1" style="border:2px solid black; padding:4px; border-bottom:1px solid black;font-size:18px;color:black;vertical-align: middle;text-align:right;font-weight: 600;">Total</th>
+                            <td colspan="1" style="border:2px solid black; padding:4px; border-bottom:1px solid black;font-size:18px;color:black;vertical-align: middle;text-align:right;background-color:white;"><span t-field="o.currency_id.symbol"/><span t-field="o.amount_total" style="margin-left:3px;" t-options='{"widget": "float", "precision": 2}'/></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" style="border:2px solid black;font-size:18px;color:black;vertical-align: middle;text-align:left;background-color:white;">
+                                <strong  style="margin-left:3px;color:black;">TERMS AND CONDITIONS :</strong>
+                                <div style="margin-left:3px;"><span  style="font-size:16px;" t-field="o.notes"/></div>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="6" style="border:2px solid black;color:black;text-align:left;background-color:white;">
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <div style="text-align:right; margin-top:25px; margin-right:40px;"> 
+                                    <div style="font-size:16px;margin-left:25px;">Authorized Signature</div> 
+                                    <div style="margin-top:10px; "> HYMECH ENGINEERING AND TRADING PTE LTD </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="footer">
+                    <div style="font-size:20px;text-align:center;">
+                        <b>This is a computer generated Purchase Order, No signature is required</b>
+                    </div>
+
+
+                   <div style="width: 100%; font-size: 17px; margin-top: 10px; position: relative; height: 20px;">
+
+                        <!-- Left-aligned: Phone -->
+                        <div style="position: absolute; left: 0; width: 50%;">
+                            <span>Phone :</span>
+                            <span t-field="res_company.phone" style="margin-left: 4px; margin-right: 14px;" />
+                        </div>
+
+                        <!-- Center-aligned: Page -->
+                        <div style="position: absolute; left: 45%; transform: translateX(-50%);">
+                            <span class="page"/> of <span class="topage"/>
+                        </div>
+
+                        <!-- Right-aligned: Website -->
+                        <div style="position: absolute; right: 0; white-space: nowrap;">
+                            <span>Website :</span>
+                            <span t-field="res_company.website" style="margin-left: 4px;" />
+                        </div>
+
+                    </div>
+                </div>  
+                </t> 
+           </t>
+       </t>
+    </template>
+</odoo>

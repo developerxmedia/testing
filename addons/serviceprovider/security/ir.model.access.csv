@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_service_provider,service.provider,model_service_provider,base.group_user,1,1,1,1
+access_service_providertype,service.providertype,model_service_providertype,base.group_user,1,1,1,1
+access_service_agreement,service.agreement,model_service_agreement,base.group_user,1,1,1,1
+access_agreement_type,agreement.type,model_agreement_type,base.group_user,1,1,1,1
+access_property_list_line,property.list.line,model_property_list_line,base.group_user,1,1,1,1
+access_property_two_line,property.two.line,model_property_two_line,base.group_user,1,1,1,1
+access_equiment_type,equiment.type,model_equiment_type,base.group_user,1,1,1,1
+access_equiment_category,equiment.category,model_equiment_category,base.group_user,1,1,1,1
+access_service_providertype_category,service.providertype.category,model_service_providertype_category,base.group_user,1,1,1,1

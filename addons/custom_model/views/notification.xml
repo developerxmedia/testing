@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>   
+        <record id="notificationlist_tree" model="ir.ui.view">
+            <field name="name">Notification</field>
+            <field name="model">notification.list</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Notification" >
+                    <field name="name"/>
+                    <!-- <field name="fsm_order"/> -->
+                    <field name="description" />
+                    <field name="status_id" />
+                    <field name="read_status" />
+                    <field name="module_name" />
+                    <field name="res_users" />
+                    <field name="res_partner_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="list_notification_form" model="ir.ui.view">
+            <field name="name">notification.list</field>
+            <field name="model">notification.list</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="notification">
+                    <sheet>
+                        <group>
+                            <group>
+                                    <field name="name"/>
+                                    <field name="module_name" />
+                                    <!-- <field name="fsm_order"/> -->
+                                    <field name="status_id" />
+                                    <field name="read_status" />
+                                    <field name="res_users" />
+                                    <field name="manager" />
+                                    <field name="user" />
+                                    <field name="worker" />
+                                    <field name="assigned_user" />
+                                    <field name="res_partner_id" invisible="1"/>
+                                    <field name="project_id"/>
+                                    <field name="task_id"/>
+                                    <field name="description" />    
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" string="mail"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" string= "Mail"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_notificationlist">            
+            <field name="name">Notification</field>         
+                <field name="res_model">notification.list</field>           
+                <field name="view_mode">tree,form</field>
+                <field name="domain">[]</field>            
+                <field name="help" type="html">                
+                    <p class="oe_view_nocontent_create">Notification List</p>             
+                </field>        
+        </record>
+
+        <menuitem id = 'menu_notification_masters' name = 'Notification Master'  sequence="206" />
+
+        <menuitem id = 'menu_notification_master' name = 'Notification List'  parent= "menu_notification_masters" action="action_notificationlist"   sequence="40" />
+                  
+    </data>
+</odoo>

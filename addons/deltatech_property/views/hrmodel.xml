@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+
+    <record id="hr_employee_form" model="ir.ui.view">
+      <field name="name">hr.employee.form.inherit.buildingmanager</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        
+        <!-- Add buildingmanager field after category_ids -->
+        <xpath expr="//field[@name='category_ids']" position="after">
+          <group>
+            <field name="buildingmanager"/>
+          </group>
+        </xpath>
+
+        <xpath expr="//sheet" position="inside">
+          <group>
+            <field name="work_address_id"/>
+          </group>
+        </xpath>
+        
+
+        <!-- Add private_address_id before emergency_contact -->
+        <xpath expr="//field[@name='emergency_contact']" position="before">
+          <field name="private_address_id"/>
+        </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>

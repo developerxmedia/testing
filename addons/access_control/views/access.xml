@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="access_form">
+        <field name="name">Access Form View</field>
+        <field name="model">access.app</field>
+        <field name="arch" type="xml">
+            <form string="Access">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="crm_menu" />
+                            <field name="project_menu"/>
+                            <field name="sale_menu" />
+                            <field name="purchase_menu"/>
+                            <field name="inventory_menu"/>
+                            <field name="accounting_menu"/>
+                            <field name="hr_menu" />
+                            <field name="service_menu" />
+                            <field name="manufacturing_menu" />
+                            <field name="payment_report" />
+                        </group>
+                        <group>
+                            <field name="ceo_dashboard"/>
+                            <field name="crm_dashboard"/>
+                            <field name="sale_dashboard"/>
+                            <field name="project_dashboard"/>
+                            <field name="purchase_dashboard"/>
+                            <field name="access_push"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Access">
+                            <field name="access_lines" >
+                                <tree editable="bottom">
+                                    <field name="module"/>
+                                    <field name="access_create"/>
+                                    <field name="access_read"/>
+                                    <field name="access_write"/>
+                                    <field name="access_unlink"/>
+                                    <field name="access_access_date"/>
+                                    <field name="access_approved_user"/>
+                                    <field name="access_approved_manager"/>
+                                    <field name="scan"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" string="mail"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" string= "Mail"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="access_tree">
+        <field name="name">Access Tree View</field>
+        <field name="model">access.app</field>
+        <field name="arch" type="xml">
+            <tree string="Access">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_access_view">
+        <field name="name">Access Menu</field>
+        <field name="res_model">access.app</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+  
+    <menuitem id="menuitem_access" name="Access Menu" action="action_access_view" sequence="197"/>
+   
+
+</odoo>

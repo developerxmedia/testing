@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="serviceagreement_view">
+            <field name="name">serviceagreement_form</field>
+            <field name="model">service.agreement</field>
+            <field name="arch" type="xml">
+                <form string="Service Agreement Type">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="agreementtype" options="{'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="servicestart"/>
+                            </group>
+                            <group>
+                                <field name="serviceexpiry"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="agreementdate"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Service List">
+                                <field name="servicetypesline">
+                                    <tree string="Service" editable="bottom">
+                                        <field name="servicetype" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        <!-- Future Fields: servicecategory, building, floor, rooms -->
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <!-- Uncomment this if needed for equipment lines
+                            <page string="Equipment List">
+                                <field name="appointment_twolines">
+                                    <tree string="Equipment Lists" editable="bottom">
+                                        <field name="equipmenttypes"/>
+                                        <field name="equipmentcategory"/>
+                                        <field name="equipmentid"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            -->
+
+                            <page string="Other Information">
+                                <!-- Placeholder for future fields -->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="serviceagreement_tree_view" model="ir.ui.view">
+            <field name="name">service Provider</field>
+            <field name="model">service.agreement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="agreementtype"/>
+                    <!-- <field name="servicetype"/> -->
+                    <field name="servicestart"/>
+                    <field name="serviceexpiry"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="serviceagreement_menu_action" model="ir.actions.act_window">
+            <field name="name">Service Provider</field>
+            <field name="res_model">service.agreement</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create The First Service Agreement</p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="serviceagreement_models_menu"
+                  parent="serviceprovider_menu"
+                  name="Service Provider List"
+                  action="serviceagreement_menu_action"
+                  sequence="1"/>
+    </data>
+</odoo>

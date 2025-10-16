@@ -1,0 +1,239 @@
+<odoo>
+    <template id="report_custom_document_fc">
+    <t t-call="web.external_layout">
+    <t t-call="web.html_container">
+    <t t-foreach="docs" t-as="o">
+    
+      <record id="paperformat_custom"  model="report.paperformat">
+        <field name="name">A4 Custom</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+       </record>
+      <!-- <table style="width:100%;"> -->
+        <th  rowspan="12" colspan="3"><br></br>
+        <div>
+          <img t-att-src="image_data_uri(o.company_id.logo)"/>
+          </div>
+        <tr>
+          <th><p style="color:black;font-size:20px;"><strong>TAX INVOICE</strong></p></th>
+      </tr>
+      <!-- <tr class="table table-sm o_main_table" >
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">Reference No<![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]>:<![CDATA[&nbsp;]]><span style="width:10px" t-field="o.proforma_no"/></td>
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">Payment Term <![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]>: <![CDATA[&nbsp;]]><span t-field="o.payment_term_id"/></td>
+      </tr>
+
+      <tr  class="table table-sm o_main_table">
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">Invoice Date<![CDATA[&nbsp;]]>  <![CDATA[&nbsp;]]>  <![CDATA[&nbsp;]]>:<![CDATA[&nbsp;]]><span t-field="o.date_invoice"/></td>
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">Delivery Note<![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]>: <![CDATA[&nbsp;]]><span t-field="o.delivery_note"/></td>
+      </tr>
+      <tr  class="table table-sm o_main_table">
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">Customer ID<![CDATA[&nbsp;]]>  <![CDATA[&nbsp;]]>  <![CDATA[&nbsp;]]>:<![CDATA[&nbsp;]]><span t-field="o.customer_no"/> </td>
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">LPO Rerference <![CDATA[&nbsp;]]> : <![CDATA[&nbsp;]]><span t-field="o.lpo"/></td>
+      </tr>
+ 
+      <tr  class="table table-sm o_main_table">
+        <td style="vertical-align: top; width: 546px;font-size: 10px;">Sales Person<![CDATA[&nbsp;]]>  <![CDATA[&nbsp;]]>  <![CDATA[&nbsp;]]>:<![CDATA[&nbsp;]]><span t-field="o.user_id"/></td>
+        <td></td>
+      </tr>
+      <tr  class="table table-sm o_main_table">
+        <td style="vertical-align: top; width: 546px;font-size: 10px;"><strong></strong><td  style="height:10px;padding:5px;font-size: 10px;"></td></td> 
+      
+      </tr> -->
+      </th>
+    <!-- </table> -->
+  <!-- new table -->
+<div class='row'>
+<div class='col-6'>
+  <!-- <table class="table table-sm border product_table" style="border: 1px solid black; "> -->
+    <thead >
+        <tr >
+        <th class="text-center" style="border: 1px solid black;height:10px;width:50%;padding:5px;font-size: 12px;">Bill From</th>
+      </tr>
+    </thead>
+    <tbody>
+        <td  class="text-left char" style="border: 1px solid black;height:10px;;width:5px;padding:5px;font-size: 10px;">
+        <h10 style="color:black;font-size:10px;">Show Room No.20/1</h10><br></br>
+        <h10 style="color:black;font-size:10px;">New Industrial Area</h10><br></br>
+        <h10 style="color:black;font-size:10px;">Umm Dara</h10><br></br>
+        <h10 style="color:black;font-size:10px;">Umm al-Quwain</h10><br></br>
+        <h10 style="color:black;font-size:10px;">United Arab Emirates</h10><br></br>
+        <h10 style="color:black;font-size:10px;">Mobile:067311101</h10><br></br>
+        <h10 style="color:black;font-size:10px;">VAT:100474404900003</h10><br></br>
+        <h10 style="color:black;font-size:10px;">Trade License Number:32122</h10><br></br>
+        </td>
+        
+    </tbody>
+    <!-- </table> -->
+  </div>
+    <div class='col-6'>
+    <table class="table table-sm border product_table " style="border: 1px solid black;height:12px ">
+      <thead >
+          <tr >
+            <th class="text-center" style="border: 1px solid black;height:10px;width:50%;padding:5px;font-size: 12px;">Bill To </th>
+        </tr>
+      </thead>
+      <tbody>
+          
+          <!-- <td class="text-left char" style="border: 1px solid black;width:5px;padding:5px;font-size: 10px;">
+            <span t-field="o.partner_shipping_id"/><br></br>
+            <span t-field="o.partner_shipping_id.street"/><br></br>
+            <span t-field="o.partner_shipping_id.city"/><br></br>
+            <span t-field="o.partner_shipping_id.state_id"/><br></br>
+            <span t-field="o.partner_shipping_id.country_id"/><br></br>
+            <h10>Mobile:</h10><span t-field="o.partner_shipping_id.mobile"/><br></br>
+            <h10>VAT:</h10><span t-field="o.partner_shipping_id.vat"/><br></br><br></br>
+            </td> -->
+      </tbody>
+      </table></div>
+    </div>
+  <br></br>
+  <table style="border: 1px solid black;width:100%">
+    <thead>
+        <tr>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:4%"> S.No </th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:40%"><![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]>Product Description<![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]></th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:9%"><![CDATA[&nbsp;]]> Qty <![CDATA[&nbsp;]]></th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:9%"><![CDATA[&nbsp;]]> UOM<![CDATA[&nbsp;]]></th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:8%"><![CDATA[&nbsp;]]> Unit Price <![CDATA[&nbsp;]]></th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:8%"> Discount </th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:8%"><![CDATA[&nbsp;]]> Taxes <![CDATA[&nbsp;]]></th>
+        <th class="text-center" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;width:14%"><![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]>Amount <![CDATA[&nbsp;]]></th>
+        </tr>
+    </thead>
+    <tbody>
+     <!-- <tr t-foreach='docs.invoice_line_ids' t-as='lines'>
+          
+        <td  class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+        <span t-field="lines.s_no"/>
+        </td>
+        <td class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+            <span t-field="lines.product_id"/>
+          </td>
+        <td class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+         <span t-field="lines.quantity"/>
+       </td>
+       <td  class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+        <span t-field="lines.uom_id"/>
+      </td>
+      <td class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+        <span t-field="lines.price_unit"/>
+      </td>
+      <td class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+        <span t-field="lines.discount"/>
+      </td>
+      <td class="text-center char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+        <span t-field="lines.invoice_line_tax_ids"/>
+      </td>
+      <td class="text-right char" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+        <span t-field="lines.price_subtotal"/>
+      </td>
+       </tr> -->
+    </tbody>
+    
+    </table>
+    <!-- <div class="display:flex;" > -->
+    <th>
+      <!-- <table id="box" style="width:30%; float:right;margin-left: 0px; border: 1px solid black;">
+        <tr class="border-black o_subtotal" style="font-size: 10px; ">
+            <td style="border: 1px solid black;width:53.5%;height:10px;padding:5px;font-size:10px;" ><strong>Total Amount </strong></td>
+            <td class="text-right" style="border: 1px solid black;;height:10px;padding:5px;font-size: 10px;">
+            <span t-field="o.amount_untaxed" />
+            </td>
+        </tr>
+        <tr class="border-black o_subtotal" style="font-size: 10px; ">
+            <td style="border: 1px solid black;"><strong> <![CDATA[&nbsp;]]> Discount </strong></td>
+                <td class="text-right" style="border:1px solid black;height:10px;padding:5px;font-size: 10px;">
+                <span t-field="o.currency_id.symbol"/>
+                <span  t-esc="o.discounts" />
+                </td>
+        </tr>
+        <tr class="border-black o_subtotal" style="font-size: 10px;">
+        <td style="border: 1px solid black;"><strong> <![CDATA[&nbsp;]]> Amount Before Tax </strong></td>
+            <td class="text-right" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+                <span t-field="o.amount_untaxed"/>
+            </td>
+        </tr>
+        <tr class="border-black o_subtotal" style="font-size: 10px; ">
+          <td style="border: 1px solid black;"><strong> <![CDATA[&nbsp;]]> VAT </strong></td>
+          <td class="text-right" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+          <span t-field="o.amount_tax" />
+          </td>
+          <tr class="border-black o_subtotal" style="font-size: 10px; ">
+            <td style="border: 1px solid black;"><strong> <![CDATA[&nbsp;]]> Net Amount <![CDATA[&nbsp;]]></strong></td>
+            <td class="text-right" style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;">
+            <span t-field="o.amount_total" />
+            </td>
+        </tr>
+      </tr>
+    </table> -->
+      </th>
+    <!-- </div> -->
+    <table style="width:70%">
+    <tr>
+      <!-- <td style="border: 1px solid black;height:10px;padding:5px;font-size: 10px;"><strong>Amount in Words:</strong><span t-field="o.num_word"/></td> -->
+    </tr>
+  </table>
+          <h10 style="color:black;font-size:10px;" > *All the goods/services mentioned under description are vatable at 5%</h10>
+          <table  style="width:60%">
+          <tr class="table table-sm o_main_table">
+          <td style="color:black;font-size:10px;" ><strong>Bank Reference:</strong> All Payments should be in favour of Unihope Printing and Packaging LLC</td>
+          </tr> 
+          <tr class="table table-sm o_main_table">
+            <td style="color:black;font-size:10px;" ><strong>For Bank Transfer:</strong></td>
+          </tr> 
+            <tr> 
+          <td style="color:black;font-size:10px;"><![CDATA[&nbsp;]]> Account Name:Unihope Printing and Packaging LLC<br><![CDATA[&nbsp;]]> Bank Name:ADCB Bank</br><br></br><![CDATA[&nbsp;]]> Account No:12025700920001<br></br><![CDATA[&nbsp;]]> IBAN No:AE670030012025700920001<br></br><![CDATA[&nbsp;]]> Swift Code:ADCBAEAA</td><br></br>
+        </tr>
+          </table>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <table style="width:100%;">
+          <tr  class="table table-sm o_main_table">
+            <td style="vertical-align: top; width: 546px;font-size: 10px;"><strong></strong><td  style="height:10px;padding:5px;font-size: 10px;"></td></td> 
+          </tr>
+        </table>
+      <!-- <table border="4" class="table table-bordered" style="border: 1px solid black;font-size:10px;"> -->
+            <div class='row'> 
+            <div class='col-6' style="width:50%;"> 
+                <td style="border: 1px solid black;font-size:10px;" >
+                <h6  style="text-align: center;font-size:10px;"><strong>for UNIHOPE PRINTING AND PACKAGING FACTORY LLC</strong></h6>
+                <br></br><br></br>
+                <br></br><br></br><br></br>
+                <h6 style="text-align: center;font-size:10px;"><strong> Signature </strong></h6>
+                <h6 style="text-align: center;font-size:10px;">we declare that this all the details described on this invoice True and Correct</h6>
+                </td>
+            </div> 
+
+            <div class='col-6' style=" width:50%;">
+                <td style="border: 1px solid black;font-size:10px;" >
+                <h6  style="text-align: center;font-size:10px;"><strong> Received By </strong></h6>
+                <br></br><br></br>
+                <br></br><br></br><br></br>
+                <h6 style="text-align: center;font-size:10px;"><strong> Authorised Person </strong></h6>
+                <h6 style="text-align: center;font-size:10px;">we declare that we have Received the goods in good condition and agreed to all details on this invoice</h6>
+            </td>
+            </div>
+        </div> 
+       
+    <!-- </table> -->
+    </t>
+    </t>
+    </t>
+    </template>
+    </odoo>

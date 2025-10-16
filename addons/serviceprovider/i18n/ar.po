@@ -1,0 +1,485 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* serviceprovider
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-24 05:05+0000\n"
+"PO-Revision-Date: 2021-02-24 05:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__appointment_twolines
+msgid " Equipment"
+msgstr "ادوات"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__servicetypesline
+msgid " Service Type"
+msgstr "نوع الخدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__active_available
+msgid "Active"
+msgstr "نشط"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__name
+#: model_terms:ir.ui.view,arch_db:serviceprovider.agreementtype_view
+msgid "Agreement  Type"
+msgstr "نوع الاتفاقية"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__agreementdate
+msgid "Agreement Date"
+msgstr "تاريخ الاتفاقية"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__agreementperiod
+msgid "Agreement Period"
+msgstr "فترة الاتفاقية"
+
+#. module: serviceprovider
+#: model:ir.actions.act_window,name:serviceprovider.agreementtype_menu_action
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__agreementtype
+#: model:ir.ui.menu,name:serviceprovider.agreementtype_models_menu
+msgid "Agreement Type"
+msgstr "نوع الاتفاقية"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.equimentCategory_view
+msgid "Assest Category"
+msgstr "فئة الأصول"
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_asset_asset
+msgid "Asset"
+msgstr "أصل"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__name
+msgid "Asset  Category"
+msgstr "فئة الأصول"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__name
+msgid "Asset  Type"
+msgstr "نوع الأصول"
+
+#. module: serviceprovider
+#: model:ir.actions.act_window,name:serviceprovider.equimentCategory_menu_action
+msgid "Assets Category"
+msgstr "فئة الأصول"
+
+#. module: serviceprovider
+#: model:ir.actions.act_window,name:serviceprovider.equimenttype_menu_action
+msgid "Assets Type"
+msgstr "نوع الأصول"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__names
+msgid "Company  Name"
+msgstr "اسم الشركة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__contracttypes
+msgid "Contract type"
+msgstr "نوع العقد"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__country_id
+msgid "Country"
+msgstr "دولة"
+
+#. module: serviceprovider
+#: model_terms:ir.actions.act_window,help:serviceprovider.equimentCategory_menu_action
+msgid "Create The First Assest Category"
+msgstr "إنشاء فئة Assest الأولى"
+
+#. module: serviceprovider
+#: model_terms:ir.actions.act_window,help:serviceprovider.equimenttype_menu_action
+msgid "Create The First Equiment Type"
+msgstr "قم بإنشاء نوع المعادلة الأول"
+
+#. module: serviceprovider
+#: model_terms:ir.actions.act_window,help:serviceprovider.serviceprovider_menu_action
+msgid "Create The First Service Provider"
+msgstr "إنشاء مقدم الخدمة الأول"
+
+#. module: serviceprovider
+#: model_terms:ir.actions.act_window,help:serviceprovider.agreementtype_menu_action
+#: model_terms:ir.actions.act_window,help:serviceprovider.serviceprovidertype_menu_action
+msgid "Create The First Service Type"
+msgstr "إنشاء نوع الخدمة الأول"
+
+#. module: serviceprovider
+#: model_terms:ir.actions.act_window,help:serviceprovider.serviceagreement_menu_action
+msgid "Create The First Service agreement"
+msgstr "قم بإنشاء اتفاقية الخدمة الأولى"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__create_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__create_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__display_name
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__equipmentcategory
+msgid "Equipment Category"
+msgstr "فئة المعدات"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__equipmentid
+msgid "Equipment ID"
+msgstr "معرف الجهاز"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__equipmenttypes
+msgid "Equipment Type"
+msgstr "نوع الآداة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.view_providertype_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__id
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__id
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__id
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__id
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__id
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__id
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__id
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__id
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__inspectors
+msgid "Inspectors"
+msgstr "مفتشون"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype____last_update
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__write_uid
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_agreement_type__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_category__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_equiment_type__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__write_date
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__mob_no
+msgid "Mobile Number"
+msgstr "رقم الهاتف المحمول"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_property_two_line__test_line_appointments
+msgid "Name of Equipment"
+msgstr "اسم المعدات"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "Other Infromation"
+msgstr "معلومات أخرى"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__servicescategorys
+msgid "Parent Category"
+msgstr "الفئة الأم"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.view_providertype_search
+msgid "Search providertype"
+msgstr "نوع البحث"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__servicetype
+msgid "Serivce Type"
+msgstr "نوع الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "Service"
+msgstr "خدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__name
+msgid "Service  Type"
+msgstr "نوع الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.view_providertype_search
+msgid "Service Category"
+msgstr "فئة الخدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__serviceexpiry
+msgid "Service Expiry Date"
+msgstr "تاريخ انتهاء الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "Service List"
+msgstr "قائمة الخدمات"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype__complete_name
+msgid "Service Name"
+msgstr "اسم الخدمة"
+
+#. module: serviceprovider
+#: model:ir.actions.act_window,name:serviceprovider.serviceagreement_menu_action
+#: model:ir.actions.act_window,name:serviceprovider.serviceprovider_menu_action
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__name
+#: model:ir.ui.menu,name:serviceprovider.serviceprovider_menu
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "Service Provider"
+msgstr "مقدم الخدمة"
+
+#. module: serviceprovider
+#: model:ir.ui.menu,name:serviceprovider.serviceagreement_models_menu
+msgid "Service Provider List"
+msgstr "قائمة مزودي الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.equimenttype_view
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovidertype_view
+msgid "Service Provider Type"
+msgstr "نوع مقدم الخدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_agreement__servicestart
+msgid "Service Start Date"
+msgstr "تاريخ بدء الخدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__name
+msgid "Service Subcategory"
+msgstr "فئة الخدمة الفرعية"
+
+#. module: serviceprovider
+#: model:ir.actions.act_window,name:serviceprovider.serviceprovidertype_menu_action
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__servicetype
+#: model:ir.model.fields,field_description:serviceprovider.field_property_list_line__test_lineservice
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__Servicetype
+#: model:ir.ui.menu,name:serviceprovider.serviceprovidertype_models_menu
+msgid "Service Type"
+msgstr "نوع الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "Service agreement Type"
+msgstr "نوع اتفاقية الخدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_providertype_category__category
+msgid "Service category"
+msgstr "فئة الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "Servicetype"
+msgstr "نوع الخدمة"
+
+#. module: serviceprovider
+#: model:ir.model.fields,field_description:serviceprovider.field_service_provider__state_id
+msgid "State"
+msgstr "الحالة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "active_available"
+msgstr ""
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "address"
+msgstr "تبوك"
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_agreement_type
+msgid "agreement.type"
+msgstr ""
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "agreementdate"
+msgstr "تاريخ الاتفاق"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "agreementtype"
+msgstr "نوع الاتفاق"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "contracttypes"
+msgstr "العقد"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "country_id"
+msgstr "معرف البلد"
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_equiment_category
+msgid "equiment.category"
+msgstr ""
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_equiment_type
+msgid "equiment.type"
+msgstr ""
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovidertype_view
+msgid "inspectors"
+msgstr "مفتشين"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "mob_no"
+msgstr "الغوغاء لا"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.agreementtype_view
+#: model_terms:ir.ui.view,arch_db:serviceprovider.equimentCategory_view
+#: model_terms:ir.ui.view,arch_db:serviceprovider.equimenttype_view
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovidertype_view
+msgid "name"
+msgstr "اسم"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "names"
+msgstr "الأسماء"
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_property_list_line
+msgid "property.list.line"
+msgstr ""
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_property_two_line
+msgid "property.two.line"
+msgstr ""
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_service_agreement
+msgid "service.agreement"
+msgstr ""
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_service_provider
+msgid "service.provider"
+msgstr ""
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_service_providertype
+msgid "service.providertype"
+msgstr ""
+
+#. module: serviceprovider
+#: model:ir.model,name:serviceprovider.model_service_providertype_category
+msgid "service.providertype.category"
+msgstr ""
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "serviceexpiry"
+msgstr "انتهاء الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovidertype_view
+msgid "servicescategorys"
+msgstr "الخدماتالفئات"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceagreement_view
+msgid "servicestart"
+msgstr "بداية الخدمة"
+
+#. module: serviceprovider
+#: model_terms:ir.ui.view,arch_db:serviceprovider.serviceprovider_view
+msgid "state_id"
+msgstr ""
+

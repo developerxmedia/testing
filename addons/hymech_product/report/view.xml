@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+
+    <record id="paperformat_invoice_pdf"  model="report.paperformat">
+        <field name="name">A4 Custom</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">40</field>
+        <field name="dpi">90</field>
+       </record>
+
+
+    <report 
+        report_type="qweb-pdf" 
+        model="sale.order" 
+        string="Quotation"
+        id="action_report_sale_mas_labellll"
+        file="hymech_beta.buying_quotation" 
+        name="hymech_beta.buying_quotation" 
+        paperformat = 'hymech_beta.paperformat_invoice_pdf'
+        print_report_name = "('Sale - %s' % (object.name))"
+
+    />
+
+    <report 
+    report_type="qweb-pdf" 
+    model="purchase.order" 
+    string="Purchase Order"
+    id="action_report_purchase_order"
+    file="hymech_beta.purchase_oder" 
+    name="hymech_beta.purchase_oder" 
+    paperformat = 'hymech_beta.paperformat_invoice_pdf'
+    print_report_name = "('Purchase - %s' % (object.name))"
+
+/>
+  
+    <report 
+        report_type="qweb-pdf" 
+        model="account.move" 
+        string="Tax Invoice"
+        id="action_report_invoices"
+        file="hymech_beta.invoices_one_pdf_reports" 
+        name="hymech_beta.invoices_one_pdf_reports" 
+        paperformat = 'hymech_beta.paperformat_invoice_pdf'
+        print_report_name = "('Invoice - %s' % (object.name))"
+    />
+
+    <!-- <report 
+        report_type="qweb-pdf" 
+        model="account.move" 
+        string="Tax Invoice"
+        id="action_report_invoice_sum"
+        file="hymech_beta.sum" 
+        name="hymech_beta.sum" 
+        paperformat = 'hymech_beta.paperformat_invoice_pdf'
+    /> -->
+    <report 
+    report_type="qweb-pdf" 
+    model="stock.picking" 
+    string="Delivery Out"
+    id="action_report_invoice"
+    file="hymech_beta.delivery_pdf_reports" 
+    name="hymech_beta.delivery_pdf_reports" 
+    paperformat = 'hymech_beta.paperformat_invoice_pdf'
+    print_report_name = "('Delivery - %s' % (object.name))"
+/>
+</openerp>

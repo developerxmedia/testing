@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_project_kanban_inherit" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+                <header>
+                    <button  name='action_task_one' string='Creating Task' class="oe_highlight" type='object'/>
+                </header>
+
+                <!-- <xpath expr="//button[@name='action_view_all_rating']" position="after">
+                    <button name="action_boq_project" string =' BOQ' type="object" class="oe_stat_button" icon="fa-clipboard"> -->
+                            <!-- <field name="bom_count_product" widget="statinfo"/> -->
+                        <!-- </button>
+                    <button name="action_vendor_bill_get"  type="object" class="oe_stat_button" icon="fa-clipboard">
+                        <field name="vendor_bill_count" widget="statinfo"/>
+                    </button>
+                    <button name="action_customer_bill_get"  type="object" class="oe_stat_button" icon="fa-clipboard">
+                        <field name="customer_bill_count"  widget="statinfo"/>
+                    </button>
+                </xpath> -->
+
+                <field name="label_tasks" position="after">
+                    <group>
+                    <field name="project_type"/>
+                     <field name="service_number_project"/>
+                        <field name="sale_order_num" label='Sale Order'/>
+                          <field name="project_start_date" />
+                          <field name="end_date" />
+                            <field name="project_status"/>
+                             <field name="product_ids" widget='many2many_tags' invisible="1"/>
+                            <field name="boq"/>
+                            <field name="price"/>
+                            <field name="expected_price_tasks"/>
+                            <field name="profit"/>
+                            
+                    <field name="inv_lines"  options="{'no_create': True, 'no_create_edit':True}" optional="hide" widget="many2many_tags"/>
+                    </group>
+                </field>
+
+                               <!-- <xpath expr="//page[@name='description_page']" position="after">
+                    <page string='Actual Price'>
+                    <notebook>
+                        <page string="Man Cost" >
+                        <field name="man_custom_lines">
+                                <tree string="Man Power Cost" editable="bottom" >
+                                    <field name="project_process_man"/> 
+                                    <field name="project_name1"/>   
+                                    <field name="project_quantity"/>
+                                    <field name="project_man_day"/>
+                                    <field name="project_total"/>
+                                    <field name="project_total_man_hours"/>
+                                    <field name="project_rate_hour"/>
+                                    <field name="project_total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total" string="Man Power Cost : " />
+                                <field name ="sum_of_total"/>
+                            </div>
+                    </page>
+                    <page string="Fabrication Cost">
+                            <field name="project_fabrication_lines" >
+                                <tree string="Fabrication Cost" editable="bottom"> 
+                                    <field name="process_fab"/> 
+                                    <field name="process"/>
+                                    <field name="quantity"/>
+                                    <field name="time"/>
+                                    <field name="cost"/>
+                                    <field name="amount"/>
+    
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_fabrication" string="Fabrication Cost : " />
+                                <field name ="sum_of_total_fabrication"/>
+                            </div>
+                        </page>
+                        <page string="Material Cost">
+                            <field name="project_material_lines">
+                                <tree string="Material Cost" editable="bottom">
+                                    <field name="process_mat"/> 
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="weight_No"/>
+                                    <field name="weight"/>
+                                    <field name="cost_no"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_material" string="Material Cost : " />
+                                <field name ="sum_of_total_material"/>
+                            </div>
+                        </page>
+                        <page string="Tools and Consumble  Cost">
+                            <field name="project_tools_lines"  >
+                                <tree string="Tools and Consumble  Cost" editable="bottom">
+                                    <field name="process_tool"/> 
+                                    <field name="description"/>
+                                    <field name="cost"/>
+    
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_tools" string="Tools Cost : " />
+                                <field name ="sum_of_total_tools"/>
+                            </div>
+                        </page>
+                        <page string="Equipemt Cost">
+                            <field name="project_equipment_lines" >
+                                <tree string="Equipemt Cost" editable="bottom">
+                                    <field name="process_equ"/> 
+                                    <field name="types_of_equipment"/>
+                                    <field name="man_day"/>
+                                    <field name="rate_man_day"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_equipment" string="Equipment Cost : " />
+                                <field name ="sum_of_total_equipment"/>
+                            </div>
+                        </page>
+                        <page string="Transport Cost">
+                            <field name="project_transport_lines" >
+                                <tree string="Transport Cost" editable="bottom">
+                                    <field name="process_trans"/> 
+                                    <field name="types_of_transport"/>
+                                    <field name="man_day"/>
+                                    <field name="rate_man_day"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_transport" string="Transport Cost : " />
+                                <field name ="sum_of_total_transport"/>
+                            </div>
+                        </page>
+                        </notebook>
+                    </page>
+                   
+                </xpath> -->
+
+        </field>
+    </record>
+
+    <record id="view_project_seq_tree_n"  model="ir.ui.view">
+        <field name="name">project.project.tree</field>
+           <field name="model">project.project</field>
+             <field name="inherit_id" ref="project.view_project"/>
+             <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="inv_lines"/>
+                      <field name="project_status"/>
+                    <field name="price" optional="hide" />
+                    <field name="expected_price_tasks" optional="hide"/>
+                    <field name="profit" optional="hide"/>
+                </xpath>
+                </field>
+            </record>
+
+    <record model="ir.ui.view" id="project_project_list_view_inherit">
+        <field name="name">project.project.list.view.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='name']" position="before">
+                <!-- Add your custom field to the list view -->
+                <field name="service_number_project"/>
+                <field name="sale_order_num"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="project_search_sequence">
+        <field name="name">search.projects</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="service_number_project" string="Project Number"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

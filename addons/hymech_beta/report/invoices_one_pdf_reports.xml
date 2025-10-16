@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="action_report_invoices" model="ir.actions.report">
+        <field name="name">Tax Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hymech_beta.invoices_one_pdf_reports</field>
+        <field name="report_file">hymech_beta.invoices_one_pdf_reports</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="hymech_beta.paperformat_invoice_pdf"/>
+  </record>
+
+  <template id="hymech_beta.invoices_one_pdf_reports" name="Tax Invoice">
+    <t t-call="web.basic_layout">
+      <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">    
+        <style>
+
+          .footer_section{
+
+          }
+          .border{
+              border-collapse: collapse;
+          }
+
+          .border td,.border tr ,.border th{
+              border: 1px solid black;
+          }
+          td {
+              height: 30px;
+            }
+          .heading_text_cor{
+            color:#000;
+            font-weight:600;
+
+            }
+          table tr{
+            width:40%;
+            }
+
+          table td{
+              width:20%;
+
+            }
+
+          table th{
+              width:30%;
+            }
+          .product_table th:first-child, .product_table td:first-child{
+              width:5%;
+            }
+          .product_table th:nth-child(3), .product_table td:nth-child(3){
+              width:10%;
+            }
+          .product_table th:nth-child(4), .product_table td:nth-child(4){
+              width:12%;
+            }
+          .product_table th:nth-child(5), .product_table td:nth-child(5){
+              width:12%;
+            }
+          .product_table th:last-child, .product_table td:last-child{
+              width:12%;
+            }
+          .header_tag{
+                margin-top : 70px;
+                margin-bottom : 20px;
+            }
+          #height_auto{
+              border:1px solid black;
+              border-bottom:1px solid black;
+              height:240px;
+            }
+
+          .flex-parent {
+              display: flex;
+
+            }
+          .flex-child {
+              display: flex;
+
+            }
+
+            .tab_border{
+              border: 1px solid black;
+            }
+        </style>
+        
+          <br></br>
+          <h4 class="text-center" style="color: blue;"><b>Tax Invoice</b></h4>
+        
+    
+        <div class="page">
+          <table class="table table-sm border"  id="border_none" style ="margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+            <tr>
+              <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" class="float-left" alt="Logo" style="max-height: 70px;"/>
+
+              <th style="border-left: 1px solid white; text-align:start; border-top: 1px solid white;border-bottom: 1px solid white;height:40px;padding:5px;font-size: 15px;width:40%;" rowspan = '7' ><br></br>
+                <span t-field="o.company_id"/><br></br>     
+                <span t-field="o.company_id.street"/><br></br>     
+                <span t-field="o.company_id.street2"/>
+                <span t-field="o.company_id.city"/>
+                <span t-field="o.company_id.state_id"/>
+                <span t-field="o.company_id.country_id"/>
+                <span t-field="o.company_id.zip"/><br></br>    
+                Tel : <spant t-field="o.company_id.phone"/><br></br>     
+                Email : <span t-field="o.company_id.email"/><br></br>
+                Tax Reg No# : <span t-field="o.company_id.vat"/><br></br>     
+                <!-- <span>Tax Reg No# : 201703575N</span><br></br>      -->
+                    
+                          
+              </th>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">Invoice #<br></br></td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.name"/><br></br></td>
+            </tr>
+            <tr>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">Date</td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.invoice_date"/><br></br></td>
+            </tr>
+
+            <tr>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">PO Number<br></br></td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.po_number"/><br></br></td>  
+            </tr>
+
+            <tr>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">Cash Terms<br></br></td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.cash_term_paid"/><br></br></td>  
+            </tr>
+              
+            <tr>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">Salesperson<br></br></td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.user_id"/><br></br></td>  
+            </tr>
+            <tr>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">DO Number<br></br></td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.dc_id"/><br></br></td>  
+            </tr>
+
+            <tr>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;">Job Code<br></br></td>
+              <td style="order: 2px solid black;height:20px;width:10%;vertical-align:middle;"><span t-field="o.job_code"/><br></br></td>  
+            </tr>
+
+            <tr>
+              <th style="border-left: 1px solid white; text-align:start; border-bottom: 1px solid white;border-right: 1px solid white;font-size: 15px;height:130px;" ><strong>Bill And Ship To:</strong><br> </br>
+                <p><span t-field="o.partner_id"/>
+                  <br></br>
+                  <span t-field="o.partner_id.street"/><br></br>     
+                  <span t-field="o.partner_id.street2"/>
+                  <span t-field="o.partner_id.city"/>
+                  <span t-field="o.partner_id.state_id"/>
+                  <span t-field="o.partner_id.country_id"/>
+                  <span t-field="o.partner_id.zip"/><br></br>    
+                </p>
+                
+                <strong>Attn:</strong> <span t-field="o.atten.name"/><br></br>
+                <strong>Tel:</strong> <span t-field="o.atten.phone"/><br></br>
+                <h4>  <strong><span style="color: orange;" t-esc="o.product_name.name"/></strong></h4>
+              </th>    
+            </tr>    
+          </table>
+           
+          <table style="width:100%;border: 1px solid black;border-bottom: 1px solid black !important;border-right: 1px solid black;">
+            <thead>
+              <tr  style="border: 1px solid black;">
+                <th style="vertical-align:middle; text-align:center;width:5%;border-right: 1px solid black;border-bottom: 1px solid black !important;"><b>S.No</b></th>
+                <th style="vertical-align:middle;border-left: 1px solid white;border-right: 1px solid black;text-align:center;width:61%;border-bottom: 1px solid black !important;"><b>Description</b></th>
+                <th style="vertical-align:middle;border-right: 1px solid black;text-align:center;width:5%;border-bottom: 1px solid black !important;"><b>Qty</b></th>
+                <th style="vertical-align:middle;border-right: 1px solid black;text-align:center;width:5%;border-bottom: 1px solid black !important;"><b>UM</b></th>
+                <th style="vertical-align:middle;border-right: 1px solid black;text-align:center;width:12%;white-space: nowrap;border-bottom: 1px solid black !important;line-height:1.0;"><b>Unit Price<br/>In SGD</b></th>
+                <th style="vertical-align:middle;text-align:center;width:12%;white-space: nowrap;border-bottom: 1px solid black !important; line-height:1.0;"><b>Amount In<br/>SGD</b></th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="o.invoice_line_ids" t-as="line">
+                <tr t-options='{"keepTogether": True}' style="border: 1px solid black;border-right: 1px solid black;">
+                  <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:center;width:5%;"><span style="font-size:14px" t-field="line.s_no"/></td>
+                  <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:left;width:61%;padding-left:4px;line-height:1.3;"><span style="font-size:14px; white-space: pre-line;" t-field="line.name"/></td>
+                  <!-- <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:center;width:5%;"><span style="font-size:14px" t-field="line.quantity" t-options='{"widget": "integer"}'/></td> -->
+                  <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:center;width:5%;">
+                      <span style="font-size:14px">
+                          <t t-if="line.product_uom_id and line.product_uom_id.name in ['CM2', 'cm2']">
+                              <span t-field="line.quantity" t-options='{"widget": "float"}'/>
+                          </t>
+                          <t t-else="">
+                              <span t-field="line.quantity" t-options='{"widget": "integer"}'/>
+                          </t>
+                      </span>
+                  </td>
+                  <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:center;width:5%;"><span style="font-size:14px" t-field="line.product_uom_id"/></td>
+                  <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:right;width:12%;white-space: nowrap;padding-right:4px;">$<span style="font-size:13px" t-field="line.price_unit"/></td>
+                  <td style="border-bottom: 1px solid black !important;border-right: 1px solid black;border-top: 1px solid white;text-align:right;width:12%;white-space: nowrap;padding-right:4px;"><span style="font-size:13px" t-field="line.price_subtotal"/></td>
+                </tr>
+              </t> 
+            </tbody>
+            
+          </table>
+
+          <!-- <div class="page">
+            
+            <div class="row" style="width:100%;border: 1px solid black;border-bottom: 1px solid white;border-right: 1px solid white;">
+              <div class="tab_border" style="text-align:center;width:6%;"><b>S.No</b></div>
+              <div class="tab_border" style="text-align:center;width:50%;"><b>Description</b></div>
+              <div class="tab_border" style="text-align:center;width:6%;"><b>Qty</b></div>
+              <div class="tab_border" style="text-align:center;width:6%;"><b>UM</b></div>
+              <div class="tab_border" style="text-align:center;width:16%;white-space: nowrap;"><b>Unit Price In SGD</b></div>
+              <div class="tab_border" style="text-align:center;width:16%;white-space: nowrap;"><b>Amount In SGD</b></div>
+            </div>
+
+            <t t-foreach="o.invoice_line_ids" t-as="line" >
+              <div class="row" style="width:100%;margin-top:-2px">
+                  
+                  <div class="tab_border" style="text-align:center;width:6%;border-right: 1px solid white;"><span t-field="line.s_no"/></div>
+                  <div class="tab_border" style="text-align:left;width:50%;border-right: 1px solid white;padding-left:4px;"><span style="font-size:15px;white-space: pre-line;" t-esc="line.name"/></div>
+                  <div class="tab_border" style="text-align:center;width:6%;border-right: 1px solid white;"><span t-field="line.quantity" t-options='{"widget": "integer"}'/></div>
+                  <div class="tab_border" style="text-align:center;width:6%;border-right: 1px solid white;"><span t-field="line.product_uom_id"/></div>
+                  <div class="tab_border" style="text-align:right;width:16%;border-right: 1px solid white;white-space: nowrap;">$<span t-field="line.price_unit"/></div>
+                  <div class="tab_border" style="text-align:right;width:16%;white-space: nowrap;"><span t-field="line.price_subtotal"/></div>
+                
+              </div>
+              
+            </t>
+            
+          </div>  -->
+        </div>              
+                      <br></br>
+
+                      <div class="footer">
+                 <div class="last-page" style="position:relative; font-size:13px; margin-top:10px; margin-bottom:20px; width:100%; display:flex; justify-content:space-between;">
+
+  <!-- Left Side: Terms -->
+  <div style="width:55%; padding-right:15px; text-align:left;">
+    <h6><b>Terms and Condition:</b></h6><br/>
+    <span t-field="o.narration"/>
+  </div>
+
+  <!-- Right Side: Totals -->
+  <div style="width:40%; max-width:250px; margin-left:auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:13px; border:none;border-color: transparent !important;">
+      <tr>
+        <td style="padding:4px 6px; text-align:left; border:none; border-top:1px solid #000;">
+          <strong>Subtotal</strong>
+        </td>
+        <td style="padding:4px 6px; text-align:right; border:none; border-top:1px solid #000;">
+          <span t-field="o.amount_untaxed"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px; text-align:left; border:none; border-top:1px solid #000;">
+          <strong>GST 9%</strong>
+        </td>
+        <td style="padding:4px 6px; text-align:right; border:none; border-top:1px solid #000;">
+          <span t-field="o.amount_tax"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px; text-align:left; font-weight:bold; border:none; border-top:1px solid #000;">
+          <strong>Total</strong>
+        </td>
+        <td style="padding:4px 6px; text-align:right; font-weight:bold; border:none; border-top:1px solid #000;">
+          <span t-field="o.amount_total"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+                      <h6 class="text-center">
+                      <div style="text-align: center;">
+                      <b>This is a computer generated Invoice, No signature is required</b></div>
+                      <br></br>
+                      <!-- Please Visit: www.hymech.org -->
+                      <div style="margin-top:-7px;">
+                       <strong>Please Visit :</strong> <span t-field="o.company_id.website"/>
+                      </div>
+                      </h6>
+                      <center style="margin-top:-7px;">
+                        <span>Page </span><span class="page" /> of <span class="topage" />
+                      </center>
+                      </div>
+<xpath expr="//div[@t-attf-class='footer o_standard_footer o_company_#{company.id}_layout']" position="replace"> 
+    <div class="footer">
+    
+      <h6 class="text-center">
+        <div style="text-align: center;">
+        <!-- <b>  Please Visit: www.hymech.org  </b> -->
+          <strong>Please Visit :</strong> <span t-field="o.company_id.website"/><br></br>
+        </div>
+      
+      </h6>
+  </div>
+  </xpath>
+
+</t>
+</t>
+</t>
+</template>
+</odoo>

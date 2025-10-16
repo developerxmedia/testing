@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<data>
+
+    <record id="product_budget_tree_view" model="ir.ui.view">
+        <field name="name">product.budget.tree</field>
+        <field name="model">product.budget</field>
+        <field name="arch" type="xml">
+            <tree string='Building Management Tree'>
+                    <field name='product_name'/> 
+                 
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_budget_forms_view_rec" model="ir.ui.view">
+        <field name="name">product.budget.form</field>
+        <field name="model">product.budget</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+
+                 </header>
+
+                <sheet>
+                    <div class='oe_left oe_title'>
+                        <h1><field name="product_name" placeholder="Product Number" class="text-left"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name='price'/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Man Power Cost" name ='man_power'>
+                            <field name="custom_liness" >
+                                <tree string="Man Power Cost" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="quantity"/>
+                                    <field name="man_day"/>
+                                    <field name="total"/>
+                                    <field name="total_man_hours"/>
+                                    <field name="rate_hour"/>
+                                    <field name="total_cost"/>
+                                    <!-- <field name="name_man_power_rec"/> -->
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="total" string="Man Power Cost : " />
+                                <field name ="sum_of_total"/>
+                            </div>
+                        </page>
+                        <page string="Fabrication Cost">
+                            <field name="fabrication_lines" >
+                                <tree string="Fabrication Cost" editable="bottom"> 
+                                    <field name="process"/>
+                                    <field name="quantity"/>
+                                    <field name="time"/>
+                                    <field name="cost"/>
+                                    <field name="amount"/>
+    
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="total" string="Fabrication Cost : " />
+                                <field name ="sum_of_total_fabrication"/>
+                            </div>
+                        </page>
+                        <page string="Material Cost">
+                            <field name="material_lines">
+                                <tree string="Material Cost" editable="bottom">
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="weight_No"/>
+                                    <field name="weight"/>
+                                    <field name="cost_no"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="total" string="Material Cost : " />
+                                <field name ="sum_of_total_material"/>
+                            </div>
+                        </page>
+                        <page string="Tools and Consumble  Cost">
+                            <field name="tools_lines"  >
+                                <tree string="Tools and Consumble  Cost" editable="bottom">
+                                    <field name="description"/>
+          
+                                    <field name="cost"/>
+    
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="total" string="Tools Cost : " />
+                                <field name ="sum_of_total_tools"/>
+                            </div>
+                        </page>
+                        <page string="Equipemt Cost">
+                            <field name="equipment_lines" >
+                                <tree string="Equipemt Cost" editable="bottom">
+                                    <field name="types_of_equipment"/>
+                                    <field name="man_day"/>
+                                    <field name="rate_man_day"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="total" string="Equipment Cost : " />
+                                <field name ="sum_of_total_equipment"/>
+                            </div>
+                        </page>
+                        <page string="Transport Cost">
+                            <field name="transport_lines" >
+                                <tree string="Transport Cost" editable="bottom">
+                                    <field name="types_of_transport"/>
+                                    <field name="man_day"/>
+                                    <field name="rate_man_day"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="total" string="Transport Cost : " />
+                                <field name ="sum_of_total_transport"/>
+                            </div>
+                        </page>
+                        <!-- </field> -->
+                    </notebook>
+
+                </sheet>
+                
+            </form>
+        </field>
+    </record>
+
+    <record id="open_product_budget" model="ir.actions.act_window">
+        <field name="name">Product</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.budget</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context"></field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"></p>
+        </field>
+    </record>
+
+    <menuitem name='Hymech' id='hymech' sequence='1'/>
+    <menuitem name='Product' action='open_product_budget' parent='hymech' id='product_budget' sequence='105'/>
+</data>
+</odoo>

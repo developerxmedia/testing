@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form view of the brand menu -->
+        <record model="ir.ui.view" id="serviceprovidertype_view">
+            <field name="name">serviceprovidertype_form</field>
+            <field name="model">service.providertype</field>
+            <field name="arch" type="xml">
+                <form string="Service Provider Type">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name">name</field>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="servicescategorys">servicescategorys</field>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="inspectors" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}">inspectors</field>
+                        </group>
+                        <!-- <group><field name="servicecategory">servicecategory</field> </group> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="serviceprovidertype_tree_view" model="ir.ui.view">
+            <field name="name">service Type</field>
+            <field name="model">service.providertype</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="complete_name"/>
+                    <!-- <field name="servicecategory"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Kanban view -->
+        <record id="view_providertype_room_kanban" model="ir.ui.view">
+            <field name="name">service.providertype.kanban</field>
+            <field name="model">service.providertype</field>
+            <field name="arch" type="xml">
+                <kanban disable_sort_column="true" disable_drag_drop_record="true">
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong><field name="complete_name"/></strong>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Search view -->
+        <record id="view_providertype_search" model="ir.ui.view">
+            <field name="name">service.providertype.search</field>
+            <field name="model">service.providertype</field>
+            <field name="arch" type="xml">
+                <search string="Search providertype">
+                    <group expand="0" string="Group By">
+                        <filter string="Service Category" name="servicescategorys" context="{'group_by': 'servicescategorys'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action for brand -->
+        <record id="serviceprovidertype_menu_action" model="ir.actions.act_window">
+            <field name="name">Service Type</field>
+            <field name="res_model">service.providertype</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_providertype_search"/>
+            <field name="context">{'search_default_servicescategorys': 1}</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create The First Service Type
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="serviceprovidertype_models_menu"
+                  parent="serviceprovider_menu"
+                  name="Service Type"
+                  action="serviceprovidertype_menu_action"
+                  sequence="30"/>
+    </data>
+</odoo>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+   <data noupdate="0">
+      
+      <record id="sequence_request_hr" model="ir.sequence">
+         <field name="name">Request sequence</field>
+         <field name="code">inspection.request.sequence</field>
+         <field name="active">TRUE</field>
+         <field name="prefix">IR</field>
+         <field name="padding">5</field>
+         <field name="number_next">1</field>
+         <field name="number_increment">1</field>
+      </record>     
+
+      <record id="sequence_plan_hr" model="ir.sequence">
+         <field name="name">plan sequence</field>
+         <field name="code">inspection.plan.sequence</field>
+         <field name="active">TRUE</field>
+         <field name="prefix">IP</field>
+         <field name="padding">5</field>
+         <field name="number_next">1</field>
+         <field name="number_increment">1</field>
+      </record> 
+
+      <record id="sequence_subreq_hr" model="ir.sequence">
+         <field name="name">Sub Req sequence</field>
+         <field name="code">inspection.check.twoline.sequence</field>
+         <field name="active">TRUE</field>
+         <field name="prefix">ST</field>
+         <field name="padding">5</field>
+         <field name="number_next">1</field>
+         <field name="number_increment">1</field>
+      </record> 
+
+      <record id="sequence_subreqequi_hr" model="ir.sequence">
+         <field name="name">Sub Req Equip sequence</field>
+         <field name="code">inspectiontwo.check.twoline.sequence</field>
+         <field name="active">TRUE</field>
+         <field name="prefix">STEQ</field>
+         <field name="padding">5</field>
+         <field name="number_next">1</field>
+         <field name="number_increment">1</field>
+      </record>
+
+    </data>
+</openerp>

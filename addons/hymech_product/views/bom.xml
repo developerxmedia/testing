@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button  name='action_project' string='Creating Project' class="oe_highlight" type='object' invisible="project_creation_new == True"/>
+            </header>
+            
+
+
+            
+            
+        <xpath expr="//field[@name='payment_term_id']" position="after">
+                        <field name="terms_conditions"/>
+                    </xpath>  
+
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="actual_price"/>
+                <field name="expected_price"/>
+                <field name="rfq_num"/>
+                <field name="project_creation_new" invisible='1'/>
+            </xpath>
+                <!-- <xpath expr="//button[@name='preview_sale_order']" position="attributes">
+                <attribute name="invisible">1</attribute>
+                </xpath> -->
+
+            <xpath expr="//button[@name='action_view_invoice']" position="after">
+                    <button name="action_boq_product" type="object" class="oe_stat_button" icon="fa-clipboard">
+                            <field name="bom_count_product" widget="statinfo"/>
+                        </button>
+                        <button name="action_boq_project" type="object" class="oe_stat_button" icon="fa-clipboard">
+                            <field name="bom_count_project" widget="statinfo"/>
+                            </button>
+
+                    <button name="action_boq_task" type="object" class="oe_stat_button" icon="fa-clipboard">
+                            <field name="bom_count_task" widget="statinfo"/>
+                        </button>
+
+                    <button name="action_attachement_sale" type="object" class="oe_stat_button" icon="fa-clipboard">
+                        <field name="sale_attachment" widget="statinfo"/>
+                    </button>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

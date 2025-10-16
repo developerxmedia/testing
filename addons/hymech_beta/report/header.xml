@@ -1,0 +1,6 @@
+<odoo>
+    <template id="external_layout_standard_inherit" inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace"> </xpath>
+        <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']" position="replace"> </xpath>
+    </template>
+</odoo>

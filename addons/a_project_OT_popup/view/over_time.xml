@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<data>
+
+    <record id="over_time_tree_view" model="ir.ui.view">
+        <field name="name">over.time.tree</field>
+        <field name="model">hr.over.time</field>
+        <field name="arch" type="xml">
+            <tree string='OT name Tree'>
+                <field name='employee'/>
+                <field name='date'/> 
+                <field name='over_time'/> 
+                <field name='status'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="over_time_forms_view_rec" model="ir.ui.view">
+        <field name="name">hr.over.time.form</field>
+        <field name="model">hr.over.time</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="button_grant" string="Grant" type="object" class="oe_highlight" />
+                    <field name="status" widget="statusbar" statusbar_visible="requested,granted" />
+                </header>
+            <sheet>
+            <div>
+                <group class = 'col-6'>
+                    <field name='employee' required='1'/>
+                    <field name='over_time' required='1'/>
+                </group>
+                <group class = 'col-6'>
+                    <field name='date' required='1'/>
+                </group>
+            </div>
+            </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="open_over_time" model="ir.actions.act_window">
+        <field name="name">OT Entry</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.over.time</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="context"></field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"></p>
+        </field>
+    </record>
+
+        <!-- <menuitem id="masters" name="Masters" parent="project.menu_main_pm" sequence="4"/> -->
+        <menuitem id="over_time_hr" name="OT Entry" action="open_over_time" sequence="198"/>
+</data>
+</odoo>

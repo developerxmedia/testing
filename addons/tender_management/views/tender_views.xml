@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tender Management Tree View -->
+    <record id="tender_management_tree_view" model="ir.ui.view">
+        <field name="name">tender.management.tree</field>
+        <field name="model">tender.management</field>
+        <field name="arch" type="xml">
+            <tree string="Tenders" decoration-success="state=='evaluated'" decoration-danger="state=='cancelled'">
+                <field name="name"/>
+                <field name="start_date" column_invisible="1"/>
+                <field name="end_date"/>
+                <!-- <field name="user_id"/> -->
+                <!-- <field name="evaluation_count"/> -->
+                <field name="state" widget="badge" decoration-success="state=='success'" decoration-warning="state=='evaluated'" decoration-info="state=='draft'" decoration-danger="state=='cancelled'"/>
+                <!-- <field name="company_id" groups="base.group_multi_company"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- Tender Management Form View -->
+    <record id="tender_management_form_view" model="ir.ui.view">
+        <field name="name">tender.management.form</field>
+        <field name="model">tender.management</field>
+        <field name="arch" type="xml">
+            <form string="Tender Management">
+                <header>
+                    <button name="action_evaluate_document" string="Evaluate Document" type="object" 
+                            class="btn-primary"  icon="fa-cog"/>
+                    <!-- <button name="button_evaluate_result" string="Evaluate Result" type="object" 
+                            class="btn-primary" icon="fa-table"/> -->
+                    <button name="action_reset_to_draft" string="Reset to Draft" type="object" 
+                            icon="fa-undo"/>
+                    <button name="action_cancel" string="Cancel" type="object" 
+                            icon="fa-times"/>
+
+                    <button name="action_open_channel"
+                            type="object"
+                            class="btn-primary"
+                            string="Open Chat"
+                            icon="fa-comments"/>
+                            
+                            <!-- The below is additional attribute of above button action_open_channel -->
+                            <!-- <invisible="channel_id == False"/> -->
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,evaluated,success,cancelled"/>
+                    <!-- <button name="action_view_evaluations" string="View Evaluations" type="object" 
+                            class="btn-secondary" attrs="{'invisible': [('evaluation_count', '=', 0)]}" icon="fa-table"/> -->
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- <button class="oe_stat_button" type="object" name="action_view_evaluations"
+                                icon="fa-table" attrs="{'invisible': [('evaluation_count', '=', 0)]}"> -->
+                            <!-- <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="evaluation_count"/>
+                                </span>
+                                <span class="o_stat_text">Evaluations</span>
+                            </div> -->
+                        <!-- </button> -->
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Enter Tender Name..."/>
+                            <field name="description" placeholder="Enter Tender Description..."/>
+                            <field name="start_date" invisible="1"/>
+                            <field name="end_date"/>
+                            <!-- <field name="user_id"/> -->
+                            <!-- <field name="company_id" groups="base.group_multi_company"/> -->
+                            <field name="attachment_ids" widget="many2many_binary" filename="name"/>
+                            <field name="document_upload" invisible="1"/>
+                            <field name="channel_id" readonly="1"/>
+                            <!-- <field name="evaluate_result"/> -->
+                            <!-- <field name="document_name" invisible="1"/> -->
+                        </group>
+                    </group>
+                    <notebook>
+                        <!-- <page string="JSON">
+                            <field name="evaluate_json" placeholder="This note is only for internal purposes."/>
+                        </page> -->
+                        <page string="TABLE">
+                             <field name="evaluate_result" widget="html"/>
+                        </page>
+                    </notebook>
+                    <!-- <notebook>
+                        <page string="Description">
+                            <field name="description" placeholder="Enter tender description..."/>
+                        </page>
+                        <page string="Evaluation Results" attrs="{'invisible': [('evaluation_count', '=', 0)]}">
+                            <field name="evaluation_ids">
+                                <tree string="Evaluation Results" decoration-success="status=='excellent'" 
+                                      decoration-info="status=='good'" decoration-warning="status=='average'" 
+                                      decoration-danger="status=='poor'">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="category"/>
+                                    <field name="criterion"/>
+                                    <field name="score"/>
+                                    <field name="max_score"/>
+                                    <field name="percentage" widget="percentage"/>
+                                    <field name="status" widget="badge"/>
+                                    <field name="comments"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook> -->
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tender Management Action -->
+    <record id="tender_management_action" model="ir.actions.act_window">
+        <field name="name">Tender Management</field>
+        <field name="res_model">tender.management</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="search_view_id" ref="tender_management_search_view"/> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first tender!
+            </p>
+            <p>
+                Upload documents and evaluate them using AI-powered analysis.
+            </p>
+        </field>
+    </record>
+</odoo>

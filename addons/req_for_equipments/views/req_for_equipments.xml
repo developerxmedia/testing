@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<odoo>
+
+<!-- pivot view -->
+    <record id='request_for_equipments_pivot_view' model='ir.ui.view'>
+        <field name='name'>request.for.equipments.pivot</field>
+        <field name='model'>request.for.equipments</field>
+        <field name='arch' type='xml'>
+            <pivot string='details'>
+                <field name='project_id' type='row'/>
+                <field name='date' type='col'/>
+            </pivot>
+
+        </field>
+    </record>
+
+<!-- surgery details calender view -->
+    <record id="request_for_equipments_view" model="ir.ui.view">
+        <field name="name">request.for.equipments.calendar</field>
+        <field name="model">request.for.equipments</field>
+        <field name="arch" type="xml">
+            <calendar string="Date" date_start="date" event_open_popup="true" mode="month" color="project_id">
+                <field name="project_id"/>
+            </calendar>
+        </field>
+    </record>
+
+<!--kanban view -->
+    <record id='request_for_equipments_kanban_view' model='ir.ui.view'>
+        <field name='name'>request.for.equipments.kanban</field>
+        <field name='model'>request.for.equipments</field>
+        <field name='arch' type='xml'>
+            <kanban>
+                <field name='id'/>
+                <field name='project_id'/>
+                <templates>
+                    <t t-name='kanban-box'>
+                        <div t-attf-class='oe_kanban_global_click'>
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('product.product', 'image_128', record.id.raw_value)" alt="Product" class="o_image_64_contain"/>
+                            </div>
+                            <div class='oe_kanban_details'>
+
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <strong>Project:<field name='project_id'/></strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </t>
+                </templates>
+                <field name='id' invisible='1'/>
+            </kanban>
+        </field>
+    </record>
+
+<!--surgery details search view -->
+    <record id='request_for_equipments_search_view' model='ir.ui.view'>
+        <field name='name'>request.for.equipments.search</field>
+        <field name='model'>request.for.equipments</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='project_id' string='Project'/>
+                
+                <group expand='0' string='Group By'>
+                    <filter string='project_id' name='Project' context="{'group_by': 'project_id'}"/>
+                </group>
+            </search>
+
+        </field>
+    </record>
+
+
+<!-- list view -->
+    <record id='request_for_equipments_tree' model='ir.ui.view'>
+        <field name='name'>request.for.equipments.tree</field>
+        <field name='model'>request.for.equipments</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='project_id' />
+                <field name='req_by'/>
+                <field name='approved_by'/>
+                <field name='state'/>        
+            </tree>
+        </field>
+    </record>
+
+<!-- form view -->
+    <record id='request_for_equipments_form' model='ir.ui.view'>
+        <field name='name'>request.for.equipments.form</field>
+        <field name='model'>request.for.equipments</field>
+        <field name='arch' type='xml'>
+            <form>
+                <header>
+                    <button name='state_approved' string='Approved' type='object' class="btn btn-primary" invisible="state in ['approved','reversed']"></button>
+                    <button name='state_unapproved' string='Unapproved' type='object' class="btn btn-primary" invisible="state in ['approved','unapproved','reversed']"  ></button>
+                    <button name='state_reversed' string='Return to Inventory' type='object' class="btn btn-primary" invisible="show == False or state in ['unapproved','reversed']" ></button>
+                    <field name="state" widget="statusbar" statusbar_visible="unapproved,approved,reversed"/>
+                    </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name='show' invisible='1'/>
+                            <field name='date' required='1'/>
+                            <field name='project_id' required='1' options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                        </group>
+                        <group>
+                            <field name='req_by' required='1'/>
+                            <field name='approved_by' groups="req_for_equipments.approval_access_for_equipments" required='1'/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string='Equipments Details'>
+                            <field name='equipment_line_ids'>
+                                <tree editable=  'bottom'>
+                                    <field name='equipments' required='1'/>
+                                    <field name='quantity'/>
+                                    <field name='units'/>
+                                    <field name='state'/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+<!-- log notes -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+<!-- Actions -->
+    <record id='req_for_equipments_action' model='ir.actions.act_window'>
+        <field name='name'>Request For Equipments</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>request.for.equipments</field>
+        <field name='view_mode'>tree,calendar,form,kanban,pivot,graph</field>
+        <field name='help' type='html'>
+            <p class='o_view_nocontent_smilling_face'>
+            create your request
+            </p>
+        </field>
+    </record>
+
+<!-- menu items -->
+    <menuitem id='req_for_equipment'
+                name='Request For Equipments'
+                sequence='195'/>
+
+    <menuitem id='req_for_equipment_details'
+                name='Request For Equipments'
+                parent='req_for_equipment'
+                action='req_for_equipments.req_for_equipments_action'
+                sequence='1'/>
+</odoo>

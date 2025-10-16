@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View for Property Floors -->
+        <record model="ir.ui.view" id="propertyfloors_view">
+            <field name="name">propertyfloors.form</field>
+            <field name="model">property.floors</field>
+            <field name="arch" type="xml">
+                <form string="Property Floor">
+                    <button name="open_createroom" type="object" class="oe_highlight" string="Create Room"/>
+
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options='{"terminology": "active"}'/>
+                            </button>
+                            <button class="oe_stat_button" name="show_rooms" type="object" icon="fa-stack-exchange">
+                                <field name="room_count" string="Unit" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" name="show_internal" type="object" icon="fa-dot-circle-o">
+                                <field name="internal_count" string="Internal Area" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" name="show_equipment" type="object" icon="fa-outdent">
+                                <field name="equipment_count" string="Equipment" widget="statinfo"/>
+                            </button>
+                        </div>
+
+                        <div class="oe_title oe_left">
+                            <h1>
+                                <field name="name" placeholder="Floor Name"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="id" string="Floor ID"/>
+                                <field name="propertys" options='{"no_open": True, "no_create": True}'/>
+                                <field name="building_id" options='{"no_open": True, "no_create": True}'/>
+                                <field name="floormanager" options='{"no_open": True, "no_create": True}'/>
+                                <field name="floorstypes" options='{"no_open": True, "no_create": True}'/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <!-- Optional groups or commented out blocks for Identification or Dimension can be added here -->
+                        </group>
+
+                        <notebook>
+                            <page string="Service List">
+                                <field name="roomslist">
+                                    <tree editable="bottom">
+                                        <field name="servicetype" options='{"no_open": True, "no_create": True}'/>
+                                        <!-- <field name="servicecategory" options='{"no_open": True, "no_create": True}'/> -->
+                                        <!-- <field name="facilityname" options='{"no_open": True, "no_create": True}'/> -->
+                                        <field name="serviceprovider" options='{"no_open": True, "no_create": True}'/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <!--
+                            <page string="General">
+                                <group>
+                                    <group>
+                                        <field name="floor_types"/>
+                                        <field name="usage"/>
+                                        <field name="floormanager"/>
+                                    </group>
+                                </group>
+                            </page>
+                            -->
+
+                            <page string="Surfaces">
+                                <div class="o_row">
+                                    <group><field name="heightfloor"/></group><span>m</span>
+                                </div>
+                                <div class="o_row">
+                                    <group><field name="widthfloor"/></group><span>m</span>
+                                </div>
+                                <div class="o_row">
+                                    <group><field name="lengthfloor"/></group><span>m</span>
+                                </div>
+                                <!--
+                                <field name="surfacedise"/>
+                                <field name="surface_cleaning_floor"/>
+                                <field name="doorclean"/>
+                                <field name="roomclean"/>
+                                -->
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View for Property Floors -->
+        <record id="view_property_floors_kanban" model="ir.ui.view">
+            <field name="name">property.floors.kanban</field>
+            <field name="model">property.floors</field>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <kanban disable_sort_column="true" disable_drag_drop_record="true">
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong><field name="name"/></strong>
+                                    <div>
+                                        <div class="text-muted">
+                                            <a>Property :</a>
+                                            <field name="propertys"/>
+                                        </div>
+                                        <div class="text-muted">
+                                            <a>Building :</a>
+                                            <field name="building_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Search View for Property Floors -->
+        <record id="view_floors_search" model="ir.ui.view">
+            <field name="name">property.floors.search</field>
+            <field name="model">property.floors</field>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <search string="Search Floors">
+                    <group expand="0" string="Group By">
+                        <filter string="Building" name="building_id" context="{'group_by': 'building_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tree View for Property Floors -->
+        <record id="view_property_floor_tree" model="ir.ui.view">
+            <field name="name">property.floors.tree</field>
+            <field name="model">property.floors</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <tree string="Floors">
+                    <field name="name"/>
+                    <field name="building_id"/>
+                    <field name="propertys"/>
+                    <field name="surface" sum="surface"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action for Property Floors -->
+        <record id="propertyfloors_menu_action" model="ir.actions.act_window">
+            <field name="name">Floors</field>
+            <field name="res_model">property.floors</field>
+            <field name="view_mode">kanban,tree,form,pivot</field>
+            <field name="search_view_id" ref="view_floors_search"/>
+            <field name="context">{'search_default_building_id': 1}</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create The First property floors</p>
+            </field>
+        </record>
+
+        <!-- Menu Item for Property Floors -->
+        <menuitem id="propertyfloors_models_menu"
+                  parent="base.menu_property_app"
+                  name="Floor"
+                  action="propertyfloors_menu_action"
+                  sequence="18"/>
+
+    </data>
+</odoo>

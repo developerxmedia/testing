@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!--form view of the brand menu-->
+    <record model="ir.ui.view" id="inspectionreq_view">
+      <field name="name">inspectionreq_form</field>
+      <field name="model">inspection.request</field>
+      <field name="arch" type="xml">
+        <form string="inspectionreq_form ">
+          <header>
+            <!-- <button name="generate_questions_from_checklist" 
+                string="Generate Questions" 
+                type="object" 
+                class="oe_highlight"
+                mofifiers="{'invisible': [('checklist_many', '=', False)]}"/> -->
+            <button name="button_cancel" string="Reschedule" class="oe_highlight" type="object" invisible="state != 'done'"/>
+            <button name="button_approve" string="Approve" class="oe_highlight" type="object" invisible="state != 'draft'"/>
+            <button name="button_done" string="Submit" class="oe_highlight" type="object" />
+            <button name="create_sequence_inspection" string="Generate Checklist " class="oe_highlight" type="object"/>
+            <button name="create_consolidated_report" string="Generate Consolidated Report" class="oe_highlight" type="object"/>
+            <field name="state" widget="statusbar" statusbar_visible="pending,approve,draft,done,cancel"/>
+            
+          </header>
+          
+          <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button class="oe_stat_button" name="show_checklist" type="object" icon="fa-list-alt" 
+                      invisible="asset_type == 'equipment'">
+                  <field string="Sub Task" name="checklist_count" widget="statinfo" 
+                        invisible="asset_type == 'equipment'"/>
+              </button>
+
+              <button class="oe_stat_button" name="show_checklistequip" type="object"
+                      icon="fa-tasks"
+                      invisible="asset_type == 'property'">
+                  <field string="Sub Task " name="checklistequip_count" 
+                        widget="statinfo"
+                        invisible="asset_type == 'property'"/>
+              </button>
+
+              <button class="oe_stat_button" type="object" name="notification_view"
+                icon="fa-bell" >
+                <field name="notification_count" string="Notifications" widget="statinfo"/>
+              </button>
+            </div>
+
+            <div class="oe_title">
+              <h1>
+                <field name="name_seq" readonly="1"/>
+              </h1>
+            </div>
+
+            <group>
+              <field name="asset_type" options="{'horizontal': true}" widget="radio"/>
+            </group>
+
+            <group>
+              <group><field name="manager_id" options="{'no_create': True, 'no_create_edit':True}"/></group>
+              <group><field name="assignto" options="{'no_create': True, 'no_create_edit': True}"/></group>
+              <group><field name="priority_new"/></group>
+              <group><field name="cron_task"/></group>
+            </group>
+
+            <group>
+                <group>
+                    <field name="document_id"/>
+                </group>
+                <group>
+                    <field name="document_name" readonly="1"/>
+                </group>
+            </group>
+          
+            <div class="oe_title">
+              <h2>
+                <group>
+                  <field name="checklistcate" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                 
+                  <field name="equipment_id" string="Asset Name" modifiers="{'invisible': [('asset_type', '=', 'property')]}"/>
+                  
+                  <field name="checklist_many"  options="{'no_create': True, 'no_create_edit':True}" 
+                          widget="many2many_tags" domain="[('equipment_id', '=', equipment_id)]"/>             
+                </group>
+              </h2>
+            </div>
+
+            <group>
+              <group><field name="names" invisible="1"/></group>
+              <group><field name="created_by"/></group>
+              <group><field name="scheduleddate"/></group>
+              <group><field name="date"/></group>
+              <group><field name="request_date"/></group>
+              <group><field name="task_type"/></group>
+              <group><field name="servicecate" options="{'no_create': True, 'no_create_edit':True}"/></group>
+              <group><field name="propertys"/></group>
+
+              <group><field name="overall_passcount"/></group>
+              <group><field name="overall_failcount"/></group>
+              <group><field name="overall_redcount"/></group>
+              <group><field name="overall_yellowcount"/></group>
+              <group><field name="overall_orangecount"/></group>
+              <group><field name="overall_score"/></group>
+            </group>
+
+            <group>
+              <group>
+              </group>
+            </group>
+
+            <!-- FIXED: SINGLE TAB WITH CONDITIONAL CONTENT - ODOO 17+ SYNTAX -->
+            <notebook>
+              <page string="Sample List">
+                <!-- Property Sample List - Visible when asset_type = 'property' -->
+                <field name="inspectioncheck_twolines" 
+                       context="{'default_propertys': propertys}" 
+                       limit="5"
+                       invisible="asset_type != 'property'">
+                  <tree string="Check List For Property" editable="bottom">
+                    <field name="building" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <field name="floor" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <field name="room" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <!-- <field name="subroom" invisible="1"/> -->
+                    <!-- <field name="pointweight" sum="Total point " invisible="1"/>  -->
+                    <field name="state" readonly="1"/>
+                  </tree>     
+                </field>
+
+                <!-- Equipment Sample List - Visible when asset_type = 'equipment' -->
+                <field name="inspcheck_twolines" 
+                       context="{'default_propertys': propertys}"
+                       invisible="asset_type != 'equipment'">
+                  <tree string="Check List For Equipment" editable="bottom">
+                   
+                    <field name="building" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <field name="floor" options="{'no_create': True}"/>
+                    <field name="room" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <!-- <field name="subroom" invisible="1"/> -->
+                    <!-- <field name="equipments" options="{'no_create': True, 'no_create_edit':True}"/> -->
+                    <field name="equipment_category_id" options="{'no_create': True, 'no_create_edit':True}"/> 
+                    <!-- <field name="pointweight" sum="Total point " invisible="1"/>  -->
+                    <field name="state" readonly="1"/>
+                  </tree>     
+                </field>
+              </page>
+            </notebook>
+
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+
+        </form>
+      </field>
+    </record>
+
+    <record id="inspectionreq_status_tree_view" model="ir.ui.view">
+      <field name="name">Inspection Request</field>
+      <field name="model">inspection.request</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name_seq"/>
+          <field name="manager_id"/>
+          <field name="assignto"/>
+          <field name="date"/>
+          <field name="asset_type"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <!--pivotview-->
+    <record id="view_inspection_pivot" model="ir.ui.view">
+      <field name="name">pivot</field>
+      <field name="model">inspection.request</field>
+      <field name="arch" type="xml">
+        <pivot string="inspection request">
+          <field name="assignto" type="row"/>
+          <field name="propertys" type="col" />
+        </pivot>
+      </field>
+    </record>
+
+    <!--graphview-->
+    <record id="view_project_inspection_graph" model="ir.ui.view">
+      <field name="name">inspection.request.graph</field>
+      <field name="model">inspection.request</field>
+      <field name="arch" type="xml">
+        <graph string="Inspection Tasks">
+          <field name="assignto"/>
+          <field name="propertys"/>
+        </graph>
+      </field>
+    </record>
+
+    <!--action for brand-->
+    <record id="inspectionreq_menu_action" model="ir.actions.act_window">
+      <field name="name">Inspection Task</field>
+      <field name="res_model">inspection.request</field>
+      <field name="view_mode">tree,form,kanban,pivot,graph</field>
+      <field name="context" eval="{'search_default_male': 1}"/>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create The First inspection request</p>
+      </field>
+    </record>
+
+    <menuitem id="checkinspection_menu"
+      name="Inspections " sequence="199"/>
+
+    <menuitem id="inspectionreq_models_menu"
+      parent="checkinspection_menu"
+      name="Inspections Task "
+      action="inspectionreq_menu_action" sequence="5"/>
+  </data>
+</odoo>

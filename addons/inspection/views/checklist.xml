@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="check_view">
+            <field name="name">check.list.form</field>
+            <field name="model">check.list</field>
+            <field name="arch" type="xml">
+                <form string="Check List">
+                <header>
+                    <!-- <button name="upload_and_process_attachments" 
+                            type="object" 
+                            class="btn-primary"
+                            string="Process Attachments"
+                            modifiers="{'invisible': [('attachment_ids', '=', [])]}"
+                            help="Upload attachments to API and auto-populate questions"/> -->
+                </header>
+                <sheet>
+                    <group>
+                    <field name ="document_id"/>
+                    <field name="templatename"/>
+                    <field name="inspectiontype" widget="radio" options="{'horizontal': true}"/>
+                    <field name="approval_date"/>
+                    <field name="tender_interval_id" />
+                    <field name="project_name" invisible="1"/>
+                    <!-- <field name="equipment_id" string= "Asset Name" options="{'no_create': True, 'no_create_edit': True}"/> -->
+                    <field name="equipment_id" string= "Asset Name"/>                    
+                    <field name="servicetype" invisible="1" options="{'no_create': True, 'no_create_edit': True}" />
+                    <field name="equipment_category_id" invisible = "1" options="{'no_create': True, 'no_create_edit': True}"/>
+
+                    <!-- <field name="attachment_ids" widget="many2many_binary" /> -->
+                    </group>
+
+                    <!-- <group string="Attachments">
+                    <field name="attachment_ids" widget="many2many_binary" nolabel="1"/>
+                    <field name="upload_status" 
+                            modifiers="{'invisible': [('upload_status', '=', False)]}"
+                            readonly="1"
+                            widget="text"/>
+                    </group> -->
+
+                    <notebook>
+                    <page string="Assessment">
+                        <field name="appointment_lines">
+                        <tree>
+                            <field name="question_no"/>
+                            <field name="name"/>
+                            <!-- <field name="expectedresult"/>
+                            <field name="scores" sum="Total"/> -->
+                        </tree>
+                        </field>
+                    </page>
+                    </notebook>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+            <!-- Tree View -->
+        <record id="check_status_tree_view" model="ir.ui.view">
+            <field name="name">check.list.tree</field>
+            <field name="model">check.list</field>
+            <field name="arch" type="xml">
+                <tree>
+                <field name ="document_id"/>
+                <field name="equipment_id" string= "Asset Name"/>   
+                <field name="tender_interval_id" readonly="1"/>
+                <field name="templatename"/>
+                <!-- <field name="servicetype"/> -->
+                <field name="approval_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="check_menu_action" model="ir.actions.act_window">
+            <field name="name">Check List Template</field>
+            <field name="res_model">check.list</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context" eval="{}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Create the first Check List.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="check_menu" name="Check Lists" sequence="204"/>
+        <menuitem id="checks_models_menu"
+                name="Templates"
+                parent="check_menu"
+                action="check_menu_action"
+                sequence="5"/>
+
+    </data>
+</odoo>

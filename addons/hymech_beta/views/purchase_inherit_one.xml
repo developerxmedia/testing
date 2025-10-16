@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="view_purchase_order_inheritss" model="ir.ui.view">
+    <field name="name">purchase.order.inherit</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form" />
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        
+        
+        <!-- <xpath expr="//field[@name='tag_ids']" position="after">
+            <br></br>
+            Terms and Condition:
+            <field name="delivery_validates" string='Valitidity:'/>
+            <field name="tax_term" string='Tax:'/>
+            <field name="delivery_in_one" string='Delivery:'/>
+            <field name="payment_one" string='Payment:'/>
+        </xpath> -->
+
+        <xpath expr="//field[@name='partner_ref']" position="after">
+            <field name="job_code"/>
+            <field name="cash_terms"/>
+            
+  <field name="cheque_no" invisible="cash_terms != 'cheque'"/>
+        </xpath>
+
+       
+        </field>
+        </record>
+
+
+
+        <record id="hide_purchase_report" model="res.groups">
+            <field name="name">Purchase Report</field>
+        </record>
+        <record model="ir.actions.report" id="purchase.action_report_purchase_order">
+            <field name="groups_id" eval="[(6,0,[ref('hide_purchase_report')])]"/>
+        </record>
+
+        <record id="hide_request_quotation_report" model="res.groups">
+            <field name="name">Quotation Report</field>
+        </record>
+        <record model="ir.actions.report" id="purchase.report_purchase_quotation">
+            <field name="groups_id" eval="[(6,0,[ref('hide_request_quotation_report')])]"/>
+        </record>
+ <record id="view_purchase_order_form_inherit_pdf_export" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit.pdf.export</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='print_quotation']" position="after">
+                    <button name="action_export_purchase_pdf" 
+                            string="Export PDF Purchase Order" 
+                            type="object" 
+                            class="btn-success"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Server action for batch export (optional) -->
+        <record id="action_purchase_order_pdf_export" model="ir.actions.server">
+            <field name="name">Export PDF Purchase Orders</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+for record in records:
+    record.action_export_purchase_pdf()
+            </field>
+        </record>
+
+        <!-- Optional: Add custom fields if they don't exist -->
+        <record id="view_purchase_order_line_inherit_custom_fields" model="ir.ui.view">
+            <field name="name">purchase.order.line.inherit.custom</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="before">
+                    <field name="s_nodd"/>
+                </xpath>
+                
+                <!-- Add job_code field if needed -->
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="job_code"/>
+                </xpath>
+            </field>
+        </record>
+    </odoo>

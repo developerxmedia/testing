@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- Form view -->
+    <record model="ir.ui.view" id="serviceprovidertype_view">
+      <field name="name">serviceprovidertype.form</field>
+      <field name="model">service.providertype</field>
+      <field name="arch" type="xml">
+        <form string="Service Provider Type">
+          <sheet>
+            <group>
+              <group>
+                <field name="name" string="Name"/>
+              </group>
+            </group>
+            <group>
+              <group>
+                <field name="servicescategorys" string="Service Categories"/>
+              </group>
+            </group>
+            <!--
+            <group>
+              <field name="servicecategory"/>
+            </group>
+            -->
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="serviceprovidertype_tree_view" model="ir.ui.view">
+      <field name="name">serviceprovidertype.tree</field>
+      <field name="model">service.providertype</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="complete_name"/>
+          <!-- <field name="servicecategory"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="serviceprovidertype_kanban_view" model="ir.ui.view">
+      <field name="name">serviceprovidertype.kanban</field>
+      <field name="model">service.providertype</field>
+      <field name="arch" type="xml">
+        <kanban disable_sort_column="true" disable_drag_drop_record="true">
+          <field name="id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong><field name="complete_name"/></strong>
+                  <div></div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="serviceprovidertype_search_view" model="ir.ui.view">
+      <field name="name">serviceprovidertype.search</field>
+      <field name="model">service.providertype</field>
+      <field name="arch" type="xml">
+        <search string="Search Service Provider Type">
+          <group expand="0" string="Group By">
+            <filter string="Service Category" name="servicescategorys"
+                    context="{'group_by': 'servicescategorys'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- Action -->
+    <record id="serviceprovidertype_menu_action" model="ir.actions.act_window">
+      <field name="name">Service Types</field>
+      <field name="res_model">service.providertype</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="search_view_id" ref="serviceprovidertype_search_view"/>
+      <field name="context">{'search_default_servicescategorys': 1}</field>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create The First Service Type</p>
+      </field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="serviceprovidertype_models_menu"
+              parent="base.menu_property_config"
+              name="Service Types"
+              action="serviceprovidertype_menu_action"
+              sequence="121"/>
+  </data>
+</odoo>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="tender_management_menu_root" name="Tender Management" sequence="205"/>
+    
+    <!-- Tenders Menu -->
+    <menuitem id="tender_management_menu_tenders" name="Tenders" 
+              parent="tender_management_menu_root" sequence="10"/>
+    
+    <menuitem id="tender_management_menu_all_tenders" name="All Tenders" 
+              parent="tender_management_menu_tenders" sequence="10"
+              action="tender_management_action"/>
+    
+    <!-- Evaluations Menu -->
+    <!-- <menuitem id="tender_management_menu_evaluations" name="Evaluations" 
+              parent="tender_management_menu_root" sequence="20"/>
+    
+    <menuitem id="tender_management_menu_all_evaluations" name="All Evaluations" 
+              parent="tender_management_menu_evaluations" sequence="10"
+              action="tender_evaluation_action"/> -->
+    
+    <!-- Configuration Menu -->
+    <!-- <menuitem id="tender_management_menu_configuration" name="Configuration" 
+              parent="tender_management_menu_root" sequence="100"
+              groups="base.group_system"/> -->
+</odoo>

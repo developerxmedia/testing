@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        <!--form view of the brand menu-->
+        <record model="ir.ui.view" id="checktype_view">
+            <field name="name">checktype_form</field>
+            <field name="model">check.type</field>
+            <field name="arch" type="xml">
+            <form string="Check List Type">
+                <sheet>
+                <!-- <group><field name="planname">ModelNo</field> </group> -->
+                <group><field name="typename">typename</field></group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <record id="checktype_status_tree_view" model="ir.ui.view">
+            <field name="name">Check list type</field>
+            <field name="model">check.type</field>
+            <field name="arch" type="xml">
+            <tree>
+                <!--<field name="name"/>-->
+                <!-- <field name="planname"/> -->
+                <field name="typename"/>
+                <!--<field name="dtimes"/>-->
+            </tree>
+            </field>
+        </record>
+
+        <!--action for brand-->
+        <record id="checktypes_menu_action" model="ir.actions.act_window">
+            <field name="name">Check List Type</field>
+            <field name="res_model">check.type</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create The First Type
+            </p>
+            </field>
+        </record>
+
+        <!-- <menuitem id="checktype_models_menu"
+                        parent="check_menu"
+                        name="Check List Type"
+                        action="checktypes_menu_action" sequence="7"/> -->
+
+	</data>
+</odoo>

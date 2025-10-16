@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="view_sale_order_inheritss" model="ir.ui.view">
+    <field name="name">sale.order.inherit</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form" />
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        
+        
+        <!-- <xpath expr="//field[@name='tag_ids']" position="after">
+            <br></br>
+            Terms and Condition:
+            <field name="delivery_validates" string='Valitidity:'/>
+            <field name="tax_term" string='Tax:'/>
+            <field name="delivery_in_one" string='Delivery:'/>
+            <field name="payment_one" string='Payment:'/>
+        </xpath> -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+        <field name="atten"/>
+        <field name="customer_rfq_numnber" invisible="1"/>
+        <field name="product_name"/>
+       </xpath>
+       <field name="payment_term_id" invisible='1'/>
+        <xpath expr="//field[@name='payment_term_id']" position="after">
+            <field name="sef_number" invisible="1"/>
+            <field name="cash_terms" invisible="1"/>
+             <field name="cash_term_paid"/>
+            
+                  <field name="cheque_no" invisible="cash_term_paid != 'cheque'"/>
+        </xpath>
+
+        <!-- <xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="after">
+            <field name="unit"/>
+        </xpath> -->
+       
+        </field>
+</record>
+
+<record id="hide_sale_quotation_report" model="res.groups">
+    <field name="name">Sale Quotation Report</field>
+  </record>
+  <record model="ir.actions.report" id="sale.action_report_saleorder">
+    <field name="groups_id" eval="[(6,0,[ref('hide_sale_quotation_report')])]"/>
+  </record>
+
+</odoo>

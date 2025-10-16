@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="action_report_delivery_order" model="ir.actions.report">
+        <field name="name">Delivery Out</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hymech_beta.delivery_pdf_reports</field>
+        <field name="report_file">hymech_beta.delivery_pdf_reports</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="hymech_beta.paperformat_dc_pdf"/>
+  </record>
+
+<template id="delivery_pdf_reports">
+<t t-call="web.basic_layout">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+
+    <style>
+
+      .footer_section{
+
+      }
+      .border{
+          border-collapse: collapse;
+      }
+
+      .border td,.border tr ,.border th{
+          border: 1px solid black;
+      }
+
+
+      td {
+          height: 30px;
+        }
+        .heading_text_cor{
+        color:#000;
+        font-weight:600;
+
+        }
+        table tr{
+        width:40%;
+        page-break-inside: avoid;
+        page-break-after: auto;
+        }
+
+        table td{
+          width:20%;
+
+        }
+
+        table th{
+          width:30%;
+        }
+        .product_table th:first-child, .product_table td:first-child{
+          width:5%;
+        }
+        .product_table th:nth-child(3), .product_table td:nth-child(3){
+          width:10%;
+        }
+        .product_table th:nth-child(4), .product_table td:nth-child(4){
+          width:12%;
+        }
+        .product_table th:nth-child(5), .product_table td:nth-child(5){
+          width:12%;
+        }
+        .product_table th:last-child, .product_table td:last-child{
+          width:12%;
+        }
+        .header_tag{
+            margin-top : 70px;
+            margin-bottom : 20px;
+        }
+        #height_auto{
+          border:1px solid black;
+          border-bottom:1px solid black;
+          height:140px;
+        }
+
+        .flex-parent {
+          display: flex;
+
+        }
+        .flex-child {
+          display: flex;
+
+        }
+
+
+        .report-table tbody tr:last-child td {
+            padding-bottom: 30px;  /* Increase space inside the last row */
+        }
+        /* Page settings */
+        @page {
+            size: A4;
+            margin: 2.5cm 1.5cm 2cm;
+        }
+        /* Add spacing for subsequent pages */
+        .page {
+            page-break-after: always;
+            position: relative;
+            padding-top: 1cm;
+            padding-bottom: 5cm;
+        }
+
+  </style>
+
+  <div class="page">
+      <header>
+        <h4 class="text-center" style="color: blue;"><b>Delivery Order /</b></h4>
+         <h4 class="text-center" style="color: blue;"><b>Job Completion Report</b></h4>
+      </header>
+    
+    <table class="table table-sm border"  id="border_none" style ="border: none; margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+      <tr >
+        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" class="float-left" alt="Logo" style="max-height: 85px;"/>
+        <th style="border-left: 1px solid white; text-align:start; border-top: 1px solid white;border-bottom: 1px solid white;height:40px;padding:5px;font-size: 15px;width:40%;" rowspan = '6' ><br></br>
+          <span t-field="o.company_id"/><br></br>     
+          <span t-field="o.company_id.street"/><br></br>     
+          <span t-field="o.company_id.street2"/>
+          <span t-field="o.company_id.city"/>
+          <span t-field="o.company_id.state_id"/>
+          <span t-field="o.company_id.country_id"/>
+          <span t-field="o.company_id.zip"/><br></br>    
+          Tel : <spant t-field="o.company_id.phone"/><br></br>     
+          Email : <span t-field="o.company_id.email"/><br></br>
+          Tax Reg No# : <span t-field="o.company_id.vat"/><br></br>                      
+        </th>
+        <td style="order: 2px solid black;height:20px;width:10%;">DO Number<br></br></td>
+        <td style="order: 2px solid black;height:20px;width:10%;"><span t-field="o.name"/><br></br></td>
+      </tr>
+      <tr style = 'height:20px'>
+        <td style="order: 2px solid black;height:20px;width:10%;">Date</td>
+        <td style="order: 2px solid black;height:20px;width:10%;"><span t-field="o.scheduled_date" t-options='{"widget": "date"}'/><br></br></td>
+      </tr>
+      <tr>
+        <td style="order: 2px solid black;height:20px;width:10%;">PO Number<br></br></td>
+        <td style="order: 2px solid black;height:20px;width:10%;"><span t-field="o.po_number"/><br></br></td>  
+      </tr>
+      <tr>
+        <td style="order: 2px solid black;height:20px;width:10%;">Quotation<br></br></td>
+        <td style="order: 2px solid black;height:20px;width:10%;"><span t-field="o.origin"/><br></br></td>  
+      </tr>
+      <tr>
+        <td style="order: 2px solid black;height:20px;width:10%;">Salesperson<br></br></td>
+        <td style="order: 2px solid black;height:20px;width:10%;"><span t-field="o.user_id"/><br></br></td>  
+      </tr>
+          <tr>
+        <td style="order: 2px solid black;height:20px;width:10%;">Job Code<br></br></td>
+        <td style="order: 2px solid black;height:20px;width:10%;"><span t-field="o.job_code"/><br></br></td>  
+      </tr>
+      </table>
+
+      <!-- <br></br> -->
+      <!-- <tr > -->
+     <table class="table table-sm border" style="border: none; width: 100%;">
+        <tr>
+        <div>
+        <th style="border-left: 1px solid white; text-align:start; border-bottom: 1px solid white;border-right: 1px solid white;border-top: 1px solid white;font-size: 15px;height:130px;" ><strong>Bill To:</strong><br></br>
+            <p style="padding-right: 20px;">
+    <span t-field="o.partner_id.name"/>
+    <br/>
+    <span t-field="o.partner_id.street"/>
+    <br/>
+    <span t-field="o.partner_id.street2"/>
+    <br/>
+    <span t-field="o.partner_id.city"/>, 
+    <span t-field="o.partner_id.state_id"/>,
+    <span t-field="o.partner_id.country_id"/>
+    <br/>
+    <span t-field="o.partner_id.zip"/>
+</p>
+
+            <br></br>
+            Attn: <span t-field="o.atten.name"/><br></br>
+            Tel : <span t-field="o.atten.phone"/><br></br>
+        <h4>   <strong><span style="color: orange;" t-esc="o.product_name.name"/></strong></h4> 
+        </th>
+        </div>
+        <!-- </tr>
+        <tr> -->
+        <div >
+        
+            <th class="text-left" style="border-left: 1px solid white; text-align:start; border-bottom: 1px solid white;border-right: 1px solid white;border-top: 1px solid white;font-size: 15px;height:130px text-align:left;" ><strong>Ship To:</strong><br> </br>
+                <p><span t-field="o.partner_id"/>
+                <br></br>
+                <span t-field="o.partner_id.street"/><br></br>     
+                <span t-field="o.partner_id.street2"/>
+                <span t-field="o.partner_id.city"/>
+                <span t-field="o.partner_id.state_id"/>
+                <span t-field="o.partner_id.country_id"/>
+                <span t-field="o.partner_id.zip"/><br></br>    
+        
+                </p>
+            </th>
+            </div>
+            </tr>
+        </table>
+<!-- </tr> -->
+        <!-- <br></br> -->
+        
+    <!-- <div style="border-bottom: 1px solid #fff;"> -->
+<table class="table table-sm border" style="border: 1px solid black; width: 100%; border-collapse: collapse; margin: 0 0 30px 0; page-break-inside: auto; font-size: 14px;">
+    <thead>
+        <tr>
+            <th style="text-align: center; width: 10%; padding: 8px; font-size: 18px; border: 1px solid black;"><b>S.No</b></th>
+            <th style="text-align: center; width: 45%; padding: 8px; font-size: 18px; border: 1px solid black;"><b>Description</b></th>
+            <th style="text-align: center; width: 10%; padding: 8px; font-size: 18px; border: 1px solid black;"><b>Qty</b></th>
+            <th style="text-align: center; width: 10%; padding: 8px; font-size: 18px; border: 1px solid black;"><b>UM</b></th>
+            <th style="text-align: center; width: 30%; padding: 8px; font-size: 18px; border: 1px solid black;"><b>Remark</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <t t-foreach="o.move_ids_without_package" t-as="line">
+            <tr style="page-break-before: always !important;">
+                <td class="text-center" style="border-bottom: 1px solid black; width: 10%; padding: 8px;">
+                    <strong><span t-field="line.s_nodd"/></strong>
+                </td>
+                <td class="text-left" style="border-bottom: 1px solid black; max-width: 45%; padding: 8px;">
+                    <span t-field="line.description_picking" style="font-weight: bold;"/>
+                </td>
+                <td class="text-center" style="border-bottom: 1px solid black; width: 10%; padding: 8px;">
+                    <!-- Quantity field can be added here if needed -->
+                </td>
+                <td class="text-center" style="border-bottom: 1px solid black; width: 10%; padding: 8px;">
+                    <strong><span t-field="line.product_uom"/></strong>
+                </td>
+                <td class="text-center" style="border-bottom: 1px solid black; width: 30%; padding: 8px;">
+                    <strong><span t-field="line.remark"/></strong>
+                </td>
+            </tr>
+        </t>
+    </tbody>
+</table>
+
+
+    <div style="border-bottom: 1px solid #fff;">
+      <table class="table table-sm border"  id="border_none" style ="margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+          <tr >
+            <th style="border: 1px solid white; text-align:start; padding:30px;font-size: 15px;width:40%;" rowspan = '1' >
+            <strong>Terms and Condition:</strong><br></br>
+              <span t-field="o.note_delivery"/>
+            </th><br></br>
+          </tr>
+          </table>
+        </div>
+  </div> 
+        <div class="footer" >
+          <div class="last-page" style="position:relative;font-size:12px;margin-top:0;">
+           <table class="table table-sm border"  id="border_none" style ="border-left: 1px solid white; border-right: 1px solid white; border-top: 1px solid white;border-bottom: 1px solid white;height:40px;padding:5px;font-size: 15px;width:100%;" >
+        <tr style='border-left: 1px solid white; border-right: 1px solid white;  border-top: 1px solid white; border-bottom: 1px solid white;'>
+          <!-- <th style='border-left: 1px solid white; border-right: 1px solid white; border-top: 1px solid white; border-bottom: 1px solid white; text-align: center;'>
+            <b>Delivery Order Issued 
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              ______________________________________<br></br>
+              For: <span t-field="o.company_id"/>
+            </b></th> -->
+          <th style='border-left: 1px solid white; border-right: 1px solid white; border-top: 1px solid white; border-bottom: 1px solid white; text-align: right;'>
+            <b>Received in Good Order and Collection </b>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            ________________________________________<br></br>
+            To: <span t-field="o.partner_id"/><br></br>
+            Please sign, stamp and date to confirm receipt
+          </th>
+        </tr>
+        
+        </table>
+      </div>
+   
+  <!-- <xpath expr="//div[@t-attf-class='footer o_standard_footer o_company_#{company.id}_layout']" position="replace"> 
+    <div class="footer"> -->
+    
+     <h6 class="text-center">
+    <div style="text-align: center;">
+    <b>This is a computer generated Delivery Order, No signature is required</b></div>
+    <br></br>
+    <!-- <b>  Please Visit: www.hymech.org  </b> -->
+      <strong>Please Visit :</strong> <span t-field="o.company_id.website"/><br></br>
+    <br></br>
+    <center style="margin-top:-5px">
+      <span>Page </span><span class="page" /> of <span class="topage" />
+    </center>
+  </h6>
+  <!-- </div>
+  </xpath> -->
+</div>
+  <!-- </xpath> -->
+
+
+</t>
+</t>
+</t>
+</template>
+</odoo>

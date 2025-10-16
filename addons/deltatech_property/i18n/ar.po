@@ -1,0 +1,2429 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* deltatech_property
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-24 06:16+0000\n"
+"PO-Revision-Date: 2021-02-24 06:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "10"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "11"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "12"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "13"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "14"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "15"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "16"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "17"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "18"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "19"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "20"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "21"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "22"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "23"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "24"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "25"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "26"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "27"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "28"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,level:0
+msgid "29"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Access ways"
+msgstr "طرق الوصول"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__date_acquisition
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__date_acquisition
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__date_acquisition
+msgid "Acquisition Date"
+msgstr "تاريخ الاستحواذ"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__doc_acquisition
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__doc_acquisition
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__doc_acquisition
+msgid "Acquisition Document"
+msgstr "وثيقة الاستحواذ"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_acquisition
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__acquisition_mode_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__acquisition_mode_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__acquisition_mode_id
+msgid "Acquisition Mode"
+msgstr "وضع الاستحواذ"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_needaction
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_needaction
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__active
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__active
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__active
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__active
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__activity_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__activity_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__activity_state
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__activity_state
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_res_partner__type
+#: model:ir.model.fields,field_description:deltatech_property.field_res_users__type
+msgid "Address Type"
+msgstr "نوع العنوان"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+msgid "Administrative Manager"
+msgstr "المدير الإداري"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Adress"
+msgstr "العنوان"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Air conditioning equipment"
+msgstr "معدات تكييف الهواء"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Archive"
+msgstr "أرشيف"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_filter
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_disinsection
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__surfacedise
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__surface_disinsection
+msgid "Area of disinsection"
+msgstr "منطقة التطهير"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__asset_number
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__asset_number
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__asset_number
+msgid "Asset Number"
+msgstr "رقم الأصل"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__assign_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__assign_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__assign_date
+msgid "Assigned Date"
+msgstr "تاريخ الإسناد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_attachment_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_attachment_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+msgid "Balcony"
+msgstr "شرفة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__base_equipment_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__base_equipment_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__base_equipment_id
+msgid "Base Equipment"
+msgstr "المعدات الأساسية"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+msgid "Bedroom"
+msgstr "غرفة نوم"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_building
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__building_id
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__building_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__building_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__building_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__building_id
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_floors_search
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_rooms_search
+#: selection:res.partner,type:0
+msgid "Building"
+msgstr "مبنى"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__name
+msgid "Building /Facility Type"
+msgstr "نوع المبنى / المنشأة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_floors_kanban
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_kanban
+msgid "Building :"
+msgstr "مبنى :"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.buildingarea_menu_action
+msgid "Building Facility Type"
+msgstr "نوع منشأة البناء"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_building_history
+msgid "Building History"
+msgstr "تاريخ البناء"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+msgid "Building Manager"
+msgstr "مدير البناء"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__name
+msgid "Building Name"
+msgstr "اسم المبنى"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_building_purpose
+msgid "Building Purpose"
+msgstr "الغرض من البناء"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_building
+#: model:ir.ui.menu,name:deltatech_property.menu_property_building
+msgid "Building/Facility"
+msgstr "بناء / مرفق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__buildingareatype
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__buildingareatype
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__buildingareatype
+#: model:ir.ui.menu,name:deltatech_property.buildingarea_models_menu
+msgid "Building/Facility Type"
+msgstr "نوع المبنى / المنشأة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Buildings"
+msgstr "البنايات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__buildings_count
+msgid "Buildings Count"
+msgstr "عدد المباني"
+
+#. module: deltatech_property
+#: selection:property.floors,floor_types:0
+msgid "Carpet"
+msgstr "السجاد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__categ_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_nomenclature__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__sercategory
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__categ
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__sercategory
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_region_search
+msgid "Category"
+msgstr "الفئة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_nomenclature__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__complete_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__complete_name
+msgid "Category Name"
+msgstr "اسم الفئة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__checkcategory
+msgid "Check List Category "
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__checktypes
+msgid "Check List Type"
+msgstr "تحقق من نوع القائمة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__city
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__city
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__city
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "City"
+msgstr "المدينة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__class_number
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__class_number
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__class_number
+msgid "Class"
+msgstr "فصل"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__class_code
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__class_code
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__class_code
+msgid "Classification code"
+msgstr "رمز التصنيف"
+
+#. module: deltatech_property
+#: code:addons/deltatech_property/models/property_room.py:82
+#, python-format
+msgid "Cleaning surface most by lower that surface area"
+msgstr "تنظيف السطح عن طريق خفض مساحة السطح"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Cloakroom"
+msgstr "حجرة إيداع"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__color
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__color
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__color
+msgid "Color Index"
+msgstr "اللون"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_common
+msgid "Common surface"
+msgstr "سطح مشترك"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__company_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__company_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__company_id
+msgid "Company"
+msgstr "المؤسسة"
+
+#. module: deltatech_property
+#: selection:property.building,type_prop:0
+#: selection:property.land,type_prop:0
+#: selection:property.property,type_prop:0
+msgid "Concession"
+msgstr "تنازل"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_res_partner
+#: selection:res.partner,type:0
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__cost
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__cost
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__cost
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__cost_center_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__cost_center_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__cost_center_id
+msgid "Cost Center"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__count
+msgid "Count"
+msgstr "عدد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__country_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__country_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__country_id
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Country"
+msgstr "دولة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Create Building"
+msgstr "إنشاء مبنى"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+msgid "Create Floor"
+msgstr "إنشاء أرضية"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+msgid "Create Room"
+msgstr "إنشاء غرفة"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.buildingarea_menu_action
+msgid "Create The First Buildingarea types"
+msgstr "إنشاء أنواع منطقة المبنى الأول"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.roomtypes_menu_action
+msgid "Create The First Room types"
+msgstr "إنشاء أنواع الغرفة الأولى"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.serviceprovidertype_menu_action
+msgid "Create The First Service Type"
+msgstr "إنشاء نوع الخدمة الأول"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.facility_menu_action
+msgid "Create The First facility"
+msgstr "إنشاء المرفق الأول"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.floortypes_menu_action
+msgid "Create The First floor types"
+msgstr "إنشاء أنواع الطابق الأول"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.propertyfloors_menu_action
+msgid "Create The First property floors"
+msgstr "إنشاء طوابق الملكية الأولى"
+
+#. module: deltatech_property
+#: model_terms:ir.actions.act_window,help:deltatech_property.propertytypes_menu_action
+msgid "Create The First property types"
+msgstr "إنشاء أنواع الخاصية الأولى"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__create_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__create_date
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__currency_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__currency_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__maintenance_open_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__maintenance_open_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__maintenance_open_count
+msgid "Current Maintenance"
+msgstr "الصيانة الحالية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__occupied_date
+msgid "Date Occupied"
+msgstr "تاريخ الاحتلال"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__effective_date
+#: model:ir.model.fields,help:deltatech_property.field_property_land__effective_date
+#: model:ir.model.fields,help:deltatech_property.field_property_property__effective_date
+msgid "Date at which the equipment became effective. This date will be used to compute the Mean Time Between Failure."
+msgstr "تاريخ تفعيل المعدات. سيُستخدم هذا التاريخ لحساب متوسط الفترة الزمنية بين مرات حدوث الفشل."
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__next_action_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__next_action_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__next_action_date
+msgid "Date of the next preventive maintenance"
+msgstr "تاريخ الصيانة الوقائية التالية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__period
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__period
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__period
+msgid "Days between each preventive maintenance"
+msgstr "أيام بين مرتي إجراء صيانة وقائية"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Deflector"
+msgstr "منحرف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Document"
+msgstr "مستند"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__effective_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__effective_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__effective_date
+msgid "Effective Date"
+msgstr "تاريخ السريان"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_form
+msgid "Equipment"
+msgstr "ادوات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__category_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__category_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__category_id
+msgid "Equipment Category"
+msgstr "فئة المعدات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__equipment_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__equipment_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__equipment_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__equipment_count
+msgid "Equipment Count"
+msgstr "عدد المعدات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__name
+msgid "Equipment Name"
+msgstr "اسم المعدات"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_form
+msgid "Equipments"
+msgstr "المعدات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaned_ext
+msgid "External surface cleaned"
+msgstr "تنظيف السطح الخارجي"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Extinguishers"
+msgstr "طفايات الحريق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__owner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__facilityname
+msgid "Facility Name"
+msgstr "إسم المنشأة"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_features
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__features_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__floors_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__categ
+msgid "Features"
+msgstr "سمات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__finished
+msgid "Finished"
+msgstr "تم الانتهاء من"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_flameproof
+msgid "Flameproof surface"
+msgstr "سطح مقاوم للحريق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__floors
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__roomlist
+#: model:ir.ui.menu,name:deltatech_property.propertyfloors_models_menu
+msgid "Floor"
+msgstr "الأرض"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_kanban
+msgid "Floor :"
+msgstr "الأرض :"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__floormanager
+msgid "Floor Manager"
+msgstr "مدير الطابق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__floors
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__name
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+msgid "Floor Name"
+msgstr "اسم الطابق"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.floortypes_menu_action
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__floor_types
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__floorstypes
+msgid "Floor Type"
+msgstr "نوع الأرضية"
+
+#. module: deltatech_property
+#: model:ir.ui.menu,name:deltatech_property.floortypes_models_menu
+msgid "Floor Types"
+msgstr "أنواع الأرضيات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__usage
+msgid "Floor usage"
+msgstr "استخدام الأرضية"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.propertyfloors_menu_action
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Floors"
+msgstr "طوابق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__floors_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__floors_count
+msgid "Floors Count"
+msgstr "عدد الطوابق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_follower_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_follower_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_channel_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_channel_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_partner_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_partner_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__from_date
+msgid "From date"
+msgstr "من التاريخ"
+
+#. module: deltatech_property
+#: selection:property.building,furniture_at_occupation:0
+msgid "Full"
+msgstr "ممتلىء"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__furniture_at_occupation
+msgid "Furniture At Occupation"
+msgstr "الأثاث في الاحتلال"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Garage"
+msgstr "كراج"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_form
+msgid "General"
+msgstr "عام"
+
+#. module: deltatech_property
+#: selection:property.room,floor_type:0
+msgid "General Service"
+msgstr "الخدمات العامة"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Grounding socket "
+msgstr "مقبس التأريض"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_floors_search
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_providertypeesss_search
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_region_search
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_rooms_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__height
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__heightfloor
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__height
+msgid "Height"
+msgstr "ارتفاع"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__heightroom
+msgid "Height "
+msgstr "ارتفاع"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__history_ids
+msgid "History"
+msgstr "تاريخ"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Hydrants"
+msgstr "صنابير"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__id
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__id
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__id
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__id
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__id
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__id
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__id
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_nomenclature__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__id
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "IT endowments (Ranks, Hall Servers)"
+msgstr ""
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Identification"
+msgstr "هوية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__message_unread
+#: model:ir.model.fields,help:deltatech_property.field_property_land__message_unread
+#: model:ir.model.fields,help:deltatech_property.field_property_property__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__message_needaction
+#: model:ir.model.fields,help:deltatech_property.field_property_land__message_needaction
+#: model:ir.model.fields,help:deltatech_property.field_property_property__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__message_has_error
+#: model:ir.model.fields,help:deltatech_property.field_property_land__message_has_error
+#: model:ir.model.fields,help:deltatech_property.field_property_property__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__image
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__image
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__image
+msgid "Image"
+msgstr "الصورة"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+msgid "Inspector"
+msgstr "مفتش"
+
+#. module: deltatech_property
+#: selection:property.building,maintenance_team_type:0
+msgid "Internal"
+msgstr "داخلي"
+
+#. module: deltatech_property
+#: selection:property.room,floor_type:0
+msgid "Internal Area"
+msgstr "المنطقة الداخلية"
+
+#. module: deltatech_property
+#: selection:res.partner,type:0
+msgid "Invoice address"
+msgstr "عنوان الفاتورة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_is_follower
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_is_follower
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_hr_employee__buildingmanager
+msgid "Job Role"
+msgstr "الدور الوظيفي"
+
+#. module: hr
+#: model:ir.ui.menu,name:hr.menu_view_hr_job
+msgid "Job Positions"
+msgstr "المناصب الوظيفية"
+
+#. module: mail
+#: model_terms:ir.ui.view,arch_db:mail.view_message_search
+msgid "Has Mentions"
+msgstr "لديه إشارات"
+
+#. module: web_responsive
+#: model:ir.model.fields,field_description:web_responsive.field_res_users__chatter_position
+msgid "Chatter Position"
+msgstr "موقف الثرثرة"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+msgid "Kitchen"
+msgstr "مطبخ"
+
+#. module: deltatech_property
+#: selection:property.room.usage,categ:0
+msgid "Kitchens"
+msgstr "مطابخ"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Laboratory"
+msgstr "معمل"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_land
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__land_id
+#: selection:res.partner,type:0
+msgid "Land"
+msgstr "الأرض"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__last_maintenance
+msgid "Last Maintenance"
+msgstr "آخر صيانة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_nomenclature____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types____last_update
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__write_uid
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_buildingarea_type__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_types_list__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__write_date
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__latitude
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__latitude
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__lengthfloor
+msgid "Length"
+msgstr "طول"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__lengthroom
+msgid "Length "
+msgstr "طول"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__level
+msgid "Level"
+msgstr "المستوى"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Lightning discharger"
+msgstr "مفرغ البرق"
+
+#. module: deltatech_property
+#: selection:property.floors,floor_types:0
+msgid "Linoleum"
+msgstr "مشمع"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+msgid "Living Room"
+msgstr "غرفة المعيشة"
+
+#. module: deltatech_property
+#: selection:property.building,type_prop:0
+#: selection:property.land,type_prop:0
+#: selection:property.property,type_prop:0
+msgid "Loan"
+msgstr "يقرض"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Lobby"
+msgstr "ردهة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__location
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__location
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__location
+msgid "Location"
+msgstr "المكان"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Logistics warehouse"
+msgstr "مستودع اللوجستيات"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_kanban
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_kanban
+msgid "Logo"
+msgstr "الشعار"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__longitude
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__longitude
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_main_attachment_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_main_attachment_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__maintenance_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__maintenance_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__maintenance_ids
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__maintenance_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__maintenance_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__maintenance_count
+msgid "Maintenance Count"
+msgstr "عدد مرات الصيانة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__maintenance_duration
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__maintenance_duration
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__maintenance_duration
+msgid "Maintenance Duration"
+msgstr "مدة الصيانة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__maintenance_duration
+#: model:ir.model.fields,help:deltatech_property.field_property_land__maintenance_duration
+#: model:ir.model.fields,help:deltatech_property.field_property_property__maintenance_duration
+msgid "Maintenance Duration in hours."
+msgstr "مدة الصيانة بالساعات."
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__maintenance_team_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__maintenance_team_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__maintenance_team_id
+msgid "Maintenance Team"
+msgstr "فريق الصيانة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__maintenance_team_type
+msgid "Maintenance Team Type"
+msgstr "نوع فريق الصيانة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__market_rent_value
+msgid "Market Rent Value"
+msgstr "قيمة إيجار السوق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__martket_similar_value
+msgid "Market value for similar property"
+msgstr "القيمة السوقية لممتلكات مماثلة"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Medical kits"
+msgstr "أطقم طبية"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Meeting room"
+msgstr "قاعة الاجتماعات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_has_error
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_has_error
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_ids
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: deltatech_property
+#: selection:property.room,technical_condition:0
+msgid "Missing"
+msgstr "مفتقد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__model
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__model
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__model
+msgid "Model"
+msgstr "الكائن"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.buildingarea_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertytypes_view
+msgid "ModelNo"
+msgstr "نموذج رقم"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__monthly_average_summer
+msgid "Monthly utilities average - summer"
+msgstr "المتوسط ​​الشهري للمرافق - الصيف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__monthly_average_winter
+msgid "Monthly utilities average - winter"
+msgstr "المتوسط ​​الشهري للمرافق - الشتاء"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_nomenclature__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__display_name
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__display_name
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+msgid "Name"
+msgstr "الاسم"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__activity_date_deadline
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__activity_date_deadline
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__activity_summary
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__activity_summary
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__activity_type_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__activity_type_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_nomenclature
+msgid "Nomenclature"
+msgstr "التسمية"
+
+#. module: deltatech_property
+#: selection:property.building,furniture_at_occupation:0
+msgid "None"
+msgstr "لا أحد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__note
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__note
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__note
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__number
+msgid "Number"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_needaction_counter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_needaction_counter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__doc_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__doc_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__doc_count
+msgid "Number of documents"
+msgstr "عدد الوثائق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_has_error_counter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_has_error_counter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الأخطاء"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__message_needaction_counter
+#: model:ir.model.fields,help:deltatech_property.field_property_land__message_needaction_counter
+#: model:ir.model.fields,help:deltatech_property.field_property_property__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__message_has_error_counter
+#: model:ir.model.fields,help:deltatech_property.field_property_land__message_has_error_counter
+#: model:ir.model.fields,help:deltatech_property.field_property_property__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__message_unread_counter
+#: model:ir.model.fields,help:deltatech_property.field_property_land__message_unread_counter
+#: model:ir.model.fields,help:deltatech_property.field_property_property__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_features__observation
+msgid "Observation"
+msgstr "ملاحظة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__occupants
+msgid "Occupants"
+msgstr "شاغلين"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+msgid "Office"
+msgstr "مكتب. مقر. مركز"
+
+#. module: deltatech_property
+#: selection:property.room,floor_type:0
+msgid "Offices"
+msgstr "مكاتب"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__order_number
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__order_number
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__order_number
+msgid "Order Number"
+msgstr "رقم الأمر"
+
+#. module: deltatech_property
+#: selection:res.partner,type:0
+msgid "Other address"
+msgstr "عنوان آخر"
+
+#. module: deltatech_property
+#: selection:property.building,activity_state:0
+#: selection:property.land,activity_state:0
+#: selection:property.property,activity_state:0
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__owner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__owner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__owner_user_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__owner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__owner_user_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__owner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__owner_user_id
+msgid "Owner"
+msgstr "المالِك"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__parent_id
+msgid "Parent"
+msgstr "الأصل"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__roomspar
+msgid "Parent Room"
+msgstr "غرفة الوالدين"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__parentequip_count
+msgid "Parentequip Count"
+msgstr "عدد معدات الوالدين"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__parking_space
+msgid "Parking Space"
+msgstr "أماكن لوقوف السيارات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__parking_space
+msgid "Parking Space Available"
+msgstr "مساحة متاحة لوقوف السيارات"
+
+#. module: deltatech_property
+#: selection:property.building,type_prop:0
+#: selection:property.land,type_prop:0
+#: selection:property.property,type_prop:0
+msgid "Patrimony"
+msgstr "التراث"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__perimeter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__perimeter
+msgid "Perimeter"
+msgstr "محيط"
+
+#. module: deltatech_property
+#: selection:property.building,activity_state:0
+#: selection:property.land,activity_state:0
+#: selection:property.property,activity_state:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__price
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__price
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__price
+msgid "Price"
+msgstr "سعر"
+
+#. module: deltatech_property
+#: selection:res.partner,type:0
+msgid "Private Address"
+msgstr "العنوان الخاص"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_land
+#: model:ir.model,name:deltatech_property.model_property_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__propertyname
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__propertys
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__propertyname
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__propertyname
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__propertys
+#: model:ir.ui.menu,name:deltatech_property.menu_property_land
+msgid "Property"
+msgstr "خاصية"
+
+#. module: deltatech_property
+#: model:ir.ui.menu,name:base.menu_property_config
+msgid "Configurations"
+msgstr "التكوينات"
+
+#. module: deltatech_property
+#: model:ir.ui.menu,name:base.menu_property_app
+msgid "Property"
+msgstr "خاصية"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_floors_kanban
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_kanban
+msgid "Property :"
+msgstr "خاصية :"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_acquisition
+msgid "Property Acquisition"
+msgstr "اقتناء العقارات"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_building_categ
+msgid "Property Building Category"
+msgstr "فئة بناء الممتلكات"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_cost_center
+msgid "Property Cost Center"
+msgstr "مركز تكلفة العقارات"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_land_categ
+msgid "Property Land Category"
+msgstr "فئة أرض العقار"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__responsible_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__responsible_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__responsible_id
+msgid "Property Manager"
+msgstr "مدير الملكية"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+msgid "Property Manager "
+msgstr "مدير الملكية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property__name
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__propertyline
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__propertynames
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__propertyline
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Property Name"
+msgstr "اسم الخاصية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_inspection_land_line__inspectiontype
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__facility
+msgid "Property Name "
+msgstr "اسم الخاصية"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+msgid "Property Owner"
+msgstr "صاحب العقار"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_region
+msgid "Property Region"
+msgstr "منطقة الملكية"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_room_usage
+msgid "Property Room Usage"
+msgstr "استخدام غرفة الملكية"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.propertytypes_menu_action
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__type_prop
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__propertytype
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__type_prop
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__type_prop
+#: model:ir.model.fields,field_description:deltatech_property.field_property_types__name
+#: model:ir.ui.menu,name:deltatech_property.propertytypes_models_menu
+msgid "Property Type"
+msgstr "نوع الملكية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__property_value_at_purchase
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__property_value_at_purchase
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__property_value_at_purchase
+msgid "Property Value At Purchase"
+msgstr "قيمة العقار عند الشراء"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_building_purpose
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__purpose_parent_id
+msgid "Purpose building"
+msgstr "بناء الغرض"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__purpose_id
+msgid "Purpose building for"
+msgstr "الغرض بناء ل"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__reevaluation_date
+msgid "Reevaluation Date"
+msgstr "تاريخ إعادة التقييم"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__reevaluation_value
+msgid "Reevaluation Value"
+msgstr "قيمة إعادة التقييم"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_region
+#: model:ir.model.fields,field_description:deltatech_property.field_property_acquisition__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__region_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_categ__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building_purpose__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_cost_center__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__region_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_categ__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_nomenclature__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__region_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_region__cod
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room_usage__cod
+#: model:ir.ui.menu,name:deltatech_property.menu_property_region
+msgid "Region"
+msgstr "خاصية"
+
+#. module: deltatech_property
+#: selection:property.building,type_prop:0
+#: selection:property.land,type_prop:0
+#: selection:property.property,type_prop:0
+msgid "Rent"
+msgstr "إيجار"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__activity_user_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__activity_user_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: deltatech_property
+#: selection:property.room,floor_type:0
+msgid "Retail"
+msgstr "بيع بالتجزئة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__roof_structure
+msgid "Roof Structure"
+msgstr "هيكل السقف"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_room
+msgid "Room"
+msgstr "غرفة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__room_count
+msgid "Room Count"
+msgstr "عدد الغرف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__roomslist
+msgid "Room List "
+msgstr "قائمة غرفة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_master_property_line__rooms
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__name
+msgid "Room No"
+msgstr "غرفة لا"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__floor_type
+msgid "Room Type"
+msgstr "نوع الغرفة"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_room_usage
+msgid "Room Usage"
+msgstr "استخدام الغرفة"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.roomtypes_menu_action
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__roomstypes
+#: model:ir.model.fields,field_description:deltatech_property.field_room_types__name
+msgid "Room Usage Type"
+msgstr "نوع استخدام الغرفة"
+
+#. module: deltatech_property
+#: model:ir.ui.menu,name:deltatech_property.roomtypes_models_menu
+msgid "Room Usage Types"
+msgstr "أنواع استخدام الغرف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__usage
+msgid "Room usage Type"
+msgstr "نوع استخدام الغرفة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__complete_name
+msgid "Room/Space"
+msgstr "غرفة / مساحة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__room_ids
+msgid "Rooms"
+msgstr "غرف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__rooms_count
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__rooms_count
+msgid "Rooms Count"
+msgstr "عدد الغرف"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_room_types
+msgid "Roomtypes"
+msgstr "أنواع الغرف"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Sanitary group"
+msgstr "مجموعة صحية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__scrap_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__scrap_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__scrap_date
+msgid "Scrap Date"
+msgstr "تاريخ التخريد"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_filter
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_filter
+msgid "Search"
+msgstr "بحث"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_floors_search
+msgid "Search Floors"
+msgstr "البحث في الطوابق"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_providertypeesss_search
+msgid "Search providertype"
+msgstr "نوع البحث"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_region_search
+msgid "Search region"
+msgstr "منطقة البحث"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_rooms_search
+msgid "Search rooms"
+msgstr "غرف البحث"
+
+#. module: deltatech_property
+#: selection:property.building,furniture_at_occupation:0
+msgid "Semi"
+msgstr "نصف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__serial_no
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__serial_no
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__serial_no
+msgid "Serial Number"
+msgstr "الرقم المسلسل"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__servicecategory
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_providertypeesss_search
+msgid "Service Category"
+msgstr "فئة الخدمة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Service List"
+msgstr "قائمة الخدمات"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__serviceprovider
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__serviceprovider
+msgid "Service Provider"
+msgstr "مقدم الخدمة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.serviceprovidertype_view
+msgid "Service Provider Type"
+msgstr "نوع مقدم الخدمة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_facility_master__name
+#: model:ir.model.fields,field_description:deltatech_property.field_floor_history__servicetype
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land_line__servicetype
+#: model:ir.model.fields,field_description:deltatech_property.field_property_rooms_list__servicetype
+#: model_terms:ir.ui.view,arch_db:deltatech_property.facility_view
+msgid "Service Type"
+msgstr "نوع الخدمة"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.facility_menu_action
+msgid "Service Type "
+msgstr "نوع الخدمة"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.serviceprovidertype_menu_action
+#: model:ir.ui.menu,name:deltatech_property.serviceprovidertype_models_menu
+msgid "Service Types"
+msgstr "أنواع الخدمة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Share a message..."
+msgstr "مشاركة رسالة ..."
+
+#. module: deltatech_property
+#: selection:res.partner,type:0
+msgid "Shipping address"
+msgstr "عنوان الشحن"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Signage"
+msgstr "لافتات"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Staircase"
+msgstr "سلم"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__state_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__state_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__state_id
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "State"
+msgstr "الحالة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__activity_state
+#: model:ir.model.fields,help:deltatech_property.field_property_land__activity_state
+#: model:ir.model.fields,help:deltatech_property.field_property_property__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__street
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__street
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "Street..."
+msgstr "الشارع..."
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__street2
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__street2
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__street2
+msgid "Street2"
+msgstr "الشارع 2"
+
+#. module: deltatech_property
+#: selection:hr.employee,buildingmanager:0
+msgid "Supervisor"
+msgstr "مشرف"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__surface
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__surface
+msgid "Surface"
+msgstr "سطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_it_endowments
+msgid "Surface IT endowments"
+msgstr "أوقاف تقنية المعلومات السطحية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_access
+msgid "Surface access"
+msgstr "الوصول إلى السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_archive
+msgid "Surface archive"
+msgstr "أرشيف السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__surface
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__surface
+msgid "Surface area"
+msgstr "مساحة السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_bedroom
+msgid "Surface bedroom"
+msgstr "غرفة نوم سطحية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_built
+msgid "Surface built"
+msgstr "بناء السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaned_adm
+msgid "Surface cleaned administratively"
+msgstr "تنظيف السطح إدارياً"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaned_ind
+msgid "Surface cleaned industrial"
+msgstr "تنظيف الأسطح الصناعية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaning_carpet
+msgid "Surface cleaning Carpet"
+msgstr "سجادة تنظيف الأسطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaning_linoleum
+msgid "Surface cleaning Linoleum"
+msgstr "مشمع تنظيف الأسطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaning_wood
+msgid "Surface cleaning Wood"
+msgstr "تنظيف الأسطح خشب"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaning_doors
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__doorclean
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__surface_cleaning_doors
+msgid "Surface cleaning doors"
+msgstr "أبواب تنظيف الأسطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__surface_cleaning_floor
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__surface_cleaning_floor
+msgid "Surface cleaning floor"
+msgstr "أرضية تنظيف السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaning_windows
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__roomclean
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__surface_cleaning_windows
+msgid "Surface cleaning window"
+msgstr "نافذة تنظيف السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cloakroom
+msgid "Surface cloakroom"
+msgstr "مرحاض سطحي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_derating_ext
+msgid "Surface derating external"
+msgstr "إزالة السطح الخارجي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_derating_int
+msgid "Surface derating internal"
+msgstr "إزالة السطح الداخلي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_garage
+msgid "Surface garage"
+msgstr "جراج سطحي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_kitchen
+msgid "Surface kitchen"
+msgstr "مطبخ سطحي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_laboratory
+msgid "Surface laboratory"
+msgstr "معمل السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_living
+msgid "Surface living"
+msgstr "المعيشة السطحية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_lobby
+msgid "Surface lobby"
+msgstr "لوبي السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_log_warehouse
+msgid "Surface logistic warehouse"
+msgstr "مستودع لوجستي سطحي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_meeting
+msgid "Surface meeting"
+msgstr "الاجتماع السطحي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_office
+msgid "Surface office"
+msgstr "مكتب السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_premises
+msgid "Surface premises"
+msgstr "المباني السطحية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_sanitary
+msgid "Surface sanitary"
+msgstr "صحية السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_staircase
+msgid "Surface staircase"
+msgstr "درج سطحي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_terraces
+msgid "Surface terraces"
+msgstr "شرفات سطحية"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_unfolded
+msgid "Surface unfolded"
+msgstr "تكشفت السطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_warehouse
+msgid "Surface warehouse"
+msgstr "المستودع السطحي"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_form
+msgid "Surfaces"
+msgstr "الأسطح"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__technical_condition
+msgid "Technical Condition"
+msgstr "الحالة الفنية"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Technical premises (thermal, air conditioning, post-transformer)"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__technician_user_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__technician_user_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__technician_user_id
+msgid "Technician"
+msgstr "الفني"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__surface_common
+msgid "The common area of the building ∑ Ssed + Shol + Scs + Sof + Sgrs + Sacc"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_floors__usage
+#: model:ir.model.fields,help:deltatech_property.field_property_room__usage
+msgid "The purpose of using the room"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__image
+#: model:ir.model.fields,help:deltatech_property.field_property_land__image
+#: model:ir.model.fields,help:deltatech_property.field_property_property__image
+msgid "This field holds the image used as image for the property, limited to 1024x1024px."
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_building_history__to_date
+msgid "To date"
+msgstr "حتى تاريخه"
+
+#. module: deltatech_property
+#: selection:property.building,activity_state:0
+#: selection:property.land,activity_state:0
+#: selection:property.property,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_cleaned_tot
+msgid "Total surface cleaned"
+msgstr "تنظيف السطح الكلي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_derating
+msgid "Total surface derating"
+msgstr "إجمالي تخفيض السطح"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+#: selection:property.room,floor_type:0
+msgid "Unit"
+msgstr "الوحدة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_form
+msgid "Unit / SpaceName"
+msgstr "الوحدة / اسم الفضاء"
+
+#. module: deltatech_property
+#: model:ir.actions.act_window,name:deltatech_property.action_property_room
+#: model:ir.ui.menu,name:deltatech_property.menu_property_room
+msgid "Unit/Space"
+msgstr "وحدة / مساحة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_unread
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_unread
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__message_unread_counter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__message_unread_counter
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: deltatech_property
+#: selection:property.room,technical_condition:0
+msgid "Unsatisfactory"
+msgstr "غير مرض"
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_res_partner__type
+#: model:ir.model.fields,help:deltatech_property.field_res_users__type
+msgid "Used by Sales and Purchase Apps to select the relevant address depending on the context."
+msgstr "يستخدم في تطبيقي المبيعات والشراء لتحديد العنوان ذي الصلة حسب السياق."
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__surface_useful
+msgid "Useful surface"
+msgstr "سطح مفيد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__partner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__partner_id
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__partner_id
+msgid "Vendor"
+msgstr "المورّد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__partner_ref
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__partner_ref
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__partner_ref
+msgid "Vendor Reference"
+msgstr "مرجع المورد"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__verification_date
+msgid "Verification Date"
+msgstr "تاريخ التحقق"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__verification_note
+msgid "Verification Note"
+msgstr "مذكرة التحقق"
+
+#. module: deltatech_property
+#: selection:property.floors,usage:0
+#: selection:property.room,usage:0
+#: selection:property.room.usage,categ:0
+msgid "Warehouse"
+msgstr "مستودع"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__warranty_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__warranty_date
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__warranty_date
+msgid "Warranty Expiration Date"
+msgstr "تاريخ انتهاء فترة الضمان"
+
+#. module: deltatech_property
+#: selection:property.features,categ:0
+msgid "Water dispensers"
+msgstr "موزعات المياه"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_floors__widthfloor
+msgid "Width"
+msgstr "عرض"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_room__widthroom
+msgid "Width "
+msgstr "عرض"
+
+#. module: deltatech_property
+#: selection:property.floors,floor_types:0
+msgid "Wood"
+msgstr "خشب"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_form
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_form
+msgid "ZIP"
+msgstr "الرمز البريدي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_building__zip
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__zip
+#: model:ir.model.fields,field_description:deltatech_property.field_property_property__zip
+msgid "Zip"
+msgstr "الرمز البريدي"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.buildingarea_view
+msgid "buildingFacility Type"
+msgstr "نوع المبنى"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_buildingarea_type
+msgid "buildingarea.type"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.building,maintenance_team_type:0
+msgid "external"
+msgstr "خارجي"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__facilityline
+msgid "facility Line"
+msgstr "خط المنشأة"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_facility_master
+msgid "facility.master"
+msgstr ""
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.floortypes_view
+msgid "floor Type"
+msgstr "نوع الكلمة"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_floor_history
+msgid "floor.history"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_floor_types_list
+msgid "floor.types.list"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,technical_condition:0
+msgid "good"
+msgstr "حسن"
+
+#. module: deltatech_property
+#: model:ir.model.fields,field_description:deltatech_property.field_property_land__inspectionline
+msgid "inspection Line"
+msgstr "خط التفتيش"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_inspection_land_line
+msgid "inspection.land.line"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_master_property
+msgid "master.property"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_master_property_line
+msgid "master.property.line"
+msgstr ""
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.facility_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.floortypes_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.roomtypes_view
+#: model_terms:ir.ui.view,arch_db:deltatech_property.serviceprovidertype_view
+msgid "name"
+msgstr "اسم"
+
+#. module: deltatech_property
+#: selection:property.room.usage,categ:0
+msgid "office"
+msgstr "مركز"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertyfloors_view
+msgid "property Floor"
+msgstr "طابق الملكية"
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_floors
+msgid "property.floors"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_land_line
+msgid "property.land.line"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_rooms_list
+msgid "property.rooms.list"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model,name:deltatech_property.model_property_types
+msgid "property.types"
+msgstr ""
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.propertytypes_view
+msgid "provider List Type"
+msgstr "نوع قائمة الموفر"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.roomtypes_view
+msgid "room Type"
+msgstr "نوع الغرفة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.facility_view
+msgid "servicecategory"
+msgstr "فئة الخدمة"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.serviceprovidertype_view
+msgid "servicescategorys"
+msgstr "الخدماتالفئات"
+
+#. module: deltatech_property
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_building_tree
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_floor_tree
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_land_tree
+#: model_terms:ir.ui.view,arch_db:deltatech_property.view_property_room_tree
+msgid "surface"
+msgstr "سطح - المظهر الخارجي"
+
+#. module: deltatech_property
+#: selection:property.building,roof_structure:0
+msgid "terrace structure, bituminous membrane cover"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.room,technical_condition:0
+msgid "very good"
+msgstr "جيد جدا"
+
+#. module: deltatech_property
+#: selection:property.building,roof_structure:0
+msgid "wood roofing structure, tile roofing"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.building,roof_structure:0
+msgid "wood structure, roofing asbestos cement"
+msgstr ""
+
+#. module: deltatech_property
+#: selection:property.building,roof_structure:0
+msgid "wood structure, sheet metal cover"
+msgstr ""
+
+#. module: deltatech_property
+#: model:ir.model.fields,help:deltatech_property.field_property_building__surface_useful
+msgid "∑ Sbir + Scc +  Slb + Sit + Sgar + Smag + Slog + Sarh + Sves + Steh "
+msgstr ""
+

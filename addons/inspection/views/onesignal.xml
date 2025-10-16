@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="view_partner_tree" model="ir.ui.view">
+            <field name="name">onesignal</field>
+            <field name="model">one.signal.master</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="signal" default_order="id desc">
+                    <field name="user_mode" />
+                    <field name="driver_id" />
+                    <field name="passenger_id" />
+                    <field name="user_id" />
+                    <field name="signal_type" />
+                    <field name="key"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">onesignal</field>
+            <field name="model">one.signal.master</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="signal">
+                    <sheet>
+                        <group>  
+                            <field name="user_mode" />
+                            <field name="driver_id" />
+                            <field name="passenger_id" />
+                            <field name="user_id" />
+                            <field name="signal_type" />
+                            <field name="key"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_view_product_onesignal_partner">
+            <field name="name">Onesignal Master</field>
+            <field name="res_model">one.signal.master</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create One Signal Master</p>
+            </field>
+        </record>
+
+        <menuitem id="menu_onesignal_partner" name="One Signal" parent="menu_notification_masters" action="action_view_product_onesignal_partner" sequence="20" />
+    </data>
+</odoo>

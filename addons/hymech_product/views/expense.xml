@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="hr_expense_inheritsz" model="ir.ui.view">
+    <field name="name">hr.expense.inherit</field>
+    <field name="model">hr.expense</field>
+    <field name="inherit_id" ref="hr_expense.hr_expense_view_form" />
+    <field name="type">form</field>
+
+    <field name="arch" type="xml">
+        
+
+        <xpath expr="//field[@name='product_id']" position="after">
+            <field name="project_id"/>
+
+
+            <field name="task_id"/>
+            <field name="payment_type" widget='radio'/>
+            <field name="cheque_no" invisible="payment_type != 'cheque'"/>
+        </xpath>
+
+
+        </field>
+        </record>
+    </odoo>

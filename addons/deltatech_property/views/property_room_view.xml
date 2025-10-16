@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+     
+        <record id="view_property_room_kanban" model="ir.ui.view">
+            <field name="name">property.room.kanban</field>
+            <field name="model">property.room</field>
+            <field name="arch" type="xml">
+                <kanban  disable_sort_column='true' disable_drag_drop_record='true'>
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                
+                                <div class="oe_kanban_details">
+                                   <strong><field name="complete_name"/></strong>
+
+                                    <div>
+                                        <div class="text-muted">
+                                            <a>Property :</a>
+                                            <field name="propertys"/>
+                                        </div>
+
+                                         <div class="text-muted">
+                                            <a>Building :</a>
+                                            <field name="building_id"/>
+                                        </div>
+                                        <div class="text-muted">
+                                            <a>Floor :</a>
+                                            <field name="floors"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_property_room_tree" model="ir.ui.view">
+            <field name="name">Rooms</field>
+            <field name="model">property.room</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="propertys"/>
+                    <field name="building_id"/>
+                    <field name="floors"/>
+                    <field name="complete_name"/>
+                    <field name="surface" sum="surface"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_property_room_form" model="ir.ui.view">
+            <field name="name">Room/Space</field>
+            <field name="model">property.room</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive"/>
+                        <button name="show_subroom" type="object" class="oe_stat_button" icon="fa-stack-exchange"
+                                modifiers="{'invisible': [('is_floor_l', '=', True)]}">
+                            <field name="subroom_count" string="Internal Area" widget="statinfo"/>
+                        </button>
+                        <button name="show_equipment" type="object" class="oe_stat_button" icon="fa-stack-exchange"
+                                modifiers="{'invisible': [('is_floor_c', '=', False)]}">
+                            <field name="equipment_count" string="Projects" widget="statinfo"/>
+                        </button>
+                        <button name="show_parentequip" type="object" class="oe_stat_button" icon="fa-stack-exchange"
+                                modifiers="{'invisible': [('is_floor_c', '=', True)]}">
+                            <field name="parentequip_count" string="Projects" widget="statinfo"/>
+                        </button>
+                    </header>
+                    
+                    <sheet>
+                        <div class="oe_title oe_left">
+                            <h1>
+                                <field name="name" placeholder="Unit / Space Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="id" string="Unit/Space ID"/>
+                                <field name="propertys" options='{"no_create": True}'/>
+                                <field name="building_id" options='{"no_create": True}'/>
+                                <field name="floors" options='{"no_create": True}'/>
+                                <field name="floor_type" widget="radio" options="{'horizontal': true}"/>
+                                <field name="roomspar" modifiers="{'invisible': [('floor_type', '!=', 'l')]}"/>
+                            </group>
+                        </group>
+                        <group string="Supervisor QR">
+                            <group>
+                                <field name="supervisor" options='{"no_create": True}'/>
+                                <field name="qr_code_image" widget="image" class="oe_avatar"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="General">
+                                <group>
+                                    <group>
+                                        <field name="roomstypes" options='{"no_open": True, "no_create": True}'/>
+                                        <!-- <field name="rented_room"/> -->
+                                    </group>
+                                    <!--
+                                    <group>
+                                        <field name="tenant_id" attrs="{'invisible': [('rented_room', '=', True)]}"/>
+                                    </group>
+                                    -->
+                                </group>
+                            </page>
+                            <page string="Surfaces">
+                                <!--
+                                <field name="surface_disinsection"/>
+                                <field name="surface_cleaning_floor"/>
+                                <field name="surface_cleaning_doors"/>
+                                <field name="surface_cleaning_windows"/>
+                                -->
+                                <div class="o_row">
+                                    <group><field name="heightroom"/></group><span>m</span>
+                                </div>
+                                <div class="o_row">
+                                    <group><field name="widthroom"/></group><span>m</span>
+                                </div>
+                                <div class="o_row">
+                                    <group><field name="lengthroom"/></group><span>m</span>
+                                </div>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+
+        <!--searchview-->
+        <record id="view_rooms_search" model="ir.ui.view">                                
+            <field name="name">property.room.search</field>                                
+            <field name="model">property.room</field>                                
+            <field name="arch" type="xml">                                    
+                <search string="Search rooms">                                        
+                                                    
+                <group expand="0" string="Group By">                                            
+                    <filter string="Building" name="building_id" context="{'group_by': 'building_id'}"></filter>                                            
+                                                        
+                </group>                                    
+                </search>                                
+            </field>                            
+        </record>
+
+        <record id="action_property_room" model="ir.actions.act_window">
+            <field name="name">SBG / Clusters</field>
+            <field name="res_model">property.room</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">kanban,tree,form,pivot</field>
+            <field name="search_view_id" ref="view_rooms_search"></field>
+            <field name="context">{'search_default_building_id': 1}</field>   
+
+        </record>
+
+        <menuitem name="SBG / Clusters" id="menu_property_room"
+                  action="action_property_room" parent="base.menu_property_app"  sequence="19"/>
+    </data>
+</odoo>

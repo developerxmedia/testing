@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!--form view of the brand menu-->
+        <record model="ir.ui.view" id="inspectiontwos_view">
+            <field name="name">inspectiontwochecks_form</field>
+            <field name="model">inspectiontwo.check.twoline</field>
+            <field name="arch" type="xml">
+                <form string="inspectiontwos List">
+                    <header>
+                        <button name="action_send_mail" string=" Send Email" type="object" class="oe_highlight"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name_seq" readonly="1"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group><field name="asset_types">asset_types</field></group> 
+                            <group><field name="assignedto">assignedto</field></group> 
+                            <group><field name="propertys">propertys</field></group>
+                            <group><field name="building">building</field></group>
+                            <group><field name="floor">floor</field></group>
+                            <group><field name="room">room</field></group>
+                            <!-- <group><field name="subroom" >subroom</field></group> -->
+                            <group><field name="equipments">equipments</field></group>
+                            <group><field name="overall_count" invisible="1">Over All Count</field></group>
+                        </group>
+
+                        <group><field name="checklist">checklist</field></group>
+                        
+                       
+                        <group><field name="checkcateg">checkcateg</field></group>
+                        <group><field name="passcount">passcount</field></group>
+                        <group><field name="failcount">failcount</field></group>
+                        <group><field name="redcount">redcount</field></group>
+                        <group><field name="yellowcount">yellowcount</field></group>
+                        <group><field name="orangecount">orangecount</field></group>
+                        <group><field name="greencount">greencount</field></group>
+                        <group><field name="score">score</field></group>
+
+                        <notebook>
+                            <page string="Assessment">
+                                <field name="categrylines">
+                                    <tree string="List" editable="bottom">
+                                        <field name="question_no" invisible="1"/> 
+                                        <field name="question_no_new"/> 
+                                        <field name="names"/> 
+                                        <field name="domainchecklistquestion"/> 
+                                        <field name="finding"/> 
+                                        <field name="findingvalue"/> 
+                                        <!-- <field name="findingvalue_1" invisible="1"/>  -->
+                                        <field name="result_colour"/> 
+                                        <field name="result"/>
+                                        <!-- <field name="result_colour" invisible="1"/> -->
+                                        <field name="score" sum="Total"/>
+                                        <field name="comments"/> 
+                                        <field name="identity_card" widget="many2many_binary"/>
+                                    </tree>     
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="inspectiontwochecks_status_tree_view" model="ir.ui.view">
+            <field name="name">Equipment list</field>
+            <field name="model">inspectiontwo.check.twoline</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="assignedto"/>
+                    <!-- <field name="propertys"/> -->
+                    <field name="building"/>
+                    <field name="floor"/>
+                    <field name="room"/>
+                    <field name="equipments"/>
+                    <field name="checklist"/>
+                    <field name="passcount"/>
+                    <field name="failcount"/>
+                    <field name="score"/>
+                    <!-- <field name="identity_card"/>
+                    <field name="pointweight"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_pivot" model="ir.ui.view">
+            <field name="name">pivot</field>
+            <field name="model">inspectiontwo.check.twoline</field>
+            <field name="arch" type="xml">
+                <pivot string="inspection Equipment">
+                    <field name="checktwoline_insp" type="row"/>
+                    <field name="pointweight"/>
+                    <field name="assignedto"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!--action for brand-->
+        <record id="twolines_menu_action" model="ir.actions.act_window">
+            <field name="name">Inspection Result For Equipment</field>
+            <field name="res_model">inspectiontwo.check.twoline</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create The First Model</p>
+            </field>
+        </record>
+
+        <menuitem id="twolinesinsp_models_menu"
+                  parent="inspectioncheck_models_menu"
+                  name="Inspection Results For Equipment"
+                  action="twolines_menu_action"
+                  sequence="61"/>
+
+    </data>
+</odoo>

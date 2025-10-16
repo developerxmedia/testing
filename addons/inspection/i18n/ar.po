@@ -1,0 +1,1857 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* inspection
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-24 05:31+0000\n"
+"PO-Revision-Date: 2021-02-24 05:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__categryline
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__categrylines
+msgid " Category"
+msgstr "فئة"
+
+#. module: inspection
+#: model:ir.module.category,description:inspection.module_category_inspection
+msgid " Category For inspection "
+msgstr "فئة للمعاينة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__checklist
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__checklist
+msgid " Check List Description "
+msgstr "تحقق من وصف القائمة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__checklist
+msgid " Check List Description For Equipment"
+msgstr "تحقق من وصف القائمة للمعدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__checklist
+msgid " Check List Description For property"
+msgstr "تحقق من وصف القائمة للممتلكات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__checkcateg
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__checkcateg
+msgid " Check List Name"
+msgstr "تحقق من اسم القائمة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__names
+msgid " Questions"
+msgstr "أسئلة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__checklist
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__checklist
+msgid " Service Category"
+msgstr "فئة الخدمة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b> Building /Area :</b>"
+msgstr "<b> المبنى / المنطقة: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b> Room Name :</b>"
+msgstr "<b> اسم الغرفة: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b>Floor Name :</b>"
+msgstr "<b> اسم الطابق: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b>Inspection Date :</b>"
+msgstr "<b> تاريخ الفحص: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b>Property Name :</b>"
+msgstr "<b> اسم الخاصية: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b>Total Fail :</b>"
+msgstr "<b> إجمالي الفشل: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b>Total Pass :</b>"
+msgstr "<b> إجمالي ممر: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<b>Total Score :</b>"
+msgstr "<b> مجموع النقاط: </ b>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<strong>Assigned To :</strong>"
+msgstr "<strong> معين إلى: </ strong>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<strong>Comments</strong>"
+msgstr "<strong> التعليقات </ strong>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<strong>Questions</strong>"
+msgstr "<strong> أسئلة </ strong>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<strong>Result</strong>"
+msgstr "<strong> النتيجة </ strong>"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "<strong>Score</strong>"
+msgstr "<strong> النتيجة </ strong>"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.contacts_form_view
+msgid "Agreement"
+msgstr "اتفاق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__assignto
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__assignto
+msgid "Assign To"
+msgstr "يسند إلى"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__assignedto
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__assignedto
+msgid "Assigned To"
+msgstr "مخصص ل"
+
+#. module: inspection
+#: selection:inspection.request,state:0
+msgid "Assinged"
+msgstr "مكلف"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__identity_card
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__identity_card
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__identity_card
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__identity_card
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__identity_card
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__identity_card
+msgid "Attachment"
+msgstr "المرفق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__building
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__building
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__building
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__building
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__building
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__building
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__building
+msgid "Building /Area"
+msgstr "منطقة بناء"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "Celsius (°C)"
+msgstr "مئوية (درجة مئوية)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__checkitem
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__checkitemequip
+msgid "Check Category"
+msgstr "تحقق من الفئة"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.CheckLineList_menu_action
+msgid "Check Line List "
+msgstr "تحقق من قائمة الخطوط"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.check_view
+msgid "Check List"
+msgstr "قائمة تدقيق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__name
+#: model:ir.model.fields,field_description:inspection.field_check_list__checkcategory
+msgid "Check List Category"
+msgstr "تحقق من فئة القائمة"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.category_menu_action
+msgid "Check List Category "
+msgstr "تحقق من فئة القائمة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "Check List For Equipment"
+msgstr "تحقق من قائمة المعدات"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "Check List For Property"
+msgstr "قائمة التحقق من الممتلكات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__checklistitem
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__checklistitem
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__checklistitem
+msgid "Check List Item"
+msgstr "قائمة مرجعية"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__name
+#: model:ir.model.fields,field_description:inspection.field_check_list__templatename
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__checklistitem
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__checklistcate
+msgid "Check List Name"
+msgstr "تحقق من اسم القائمة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__checklistitems
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__checklistitems
+msgid "Check List Result"
+msgstr "تحقق من نتيجة القائمة"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.check_menu_action
+msgid "Check List Template"
+msgstr "تحقق من قالب القائمة"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.checktypes_menu_action
+#: model:ir.model.fields,field_description:inspection.field_check_type__typename
+#: model_terms:ir.ui.view,arch_db:inspection.checktype_view
+msgid "Check List Type"
+msgstr "تحقق من نوع القائمة"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.check_menu
+msgid "Check Lists"
+msgstr "تحقق من القوائم"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__checklist_count
+msgid "Checklist Count"
+msgstr "عدد قائمة التحقق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__checklistcat
+msgid "Checklist Name"
+msgstr "اسم قائمة التحقق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__checklistequip_count
+msgid "Checklistequip Count"
+msgstr "قائمة التحقق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__comments
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__comments
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__comments
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__comments
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__comments
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__comments
+msgid "Comments"
+msgstr "التعليقات"
+
+#. module: inspection
+#: selection:inspection.check.twoline,state:0
+#: selection:inspectiontwo.check.twoline,state:0
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "Completed Time"
+msgstr "وقت الانتهاء"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__conditions
+msgid "Condition"
+msgstr "الشرط"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__count
+#: model:ir.model.fields,field_description:inspection.field_res_partner__count
+#: model:ir.model.fields,field_description:inspection.field_res_users__count
+msgid "Count"
+msgstr "عدد"
+
+#. module: inspection
+#: model_terms:ir.actions.act_window,help:inspection.check_menu_action
+msgid "Create The First Check List"
+msgstr "قم بإنشاء قائمة التحقق الأولى"
+
+#. module: inspection
+#: model_terms:ir.actions.act_window,help:inspection.CheckLineList_menu_action
+msgid "Create The First CheckLineList"
+msgstr "قم بإنشاء قائمة التحقق الأولى"
+
+#. module: inspection
+#: model_terms:ir.actions.act_window,help:inspection.category_menu_action
+#: model_terms:ir.actions.act_window,help:inspection.inspectioncheck_menu_action
+#: model_terms:ir.actions.act_window,help:inspection.twolines_menu_action
+msgid "Create The First Model"
+msgstr "إنشاء النموذج الأول"
+
+#. module: inspection
+#: model_terms:ir.actions.act_window,help:inspection.checktypes_menu_action
+msgid "Create The First Type"
+msgstr "قم بإنشاء النوع الأول"
+
+#. module: inspection
+#: model_terms:ir.actions.act_window,help:inspection.inspectionplan_menu_action
+msgid "Create The First inspection Plan"
+msgstr "قم بإنشاء خطة التفتيش الأولى"
+
+#. module: inspection
+#: model_terms:ir.actions.act_window,help:inspection.inspectionreq_menu_action
+#: model_terms:ir.actions.act_window,help:inspection.inspector_menu_action
+msgid "Create The First inspection request"
+msgstr "إنشاء طلب الفحص الأول"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__created_by
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__created_by
+msgid "Created By"
+msgstr "انشأ من قبل"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__create_uid
+#: model:ir.model.fields,field_description:inspection.field_check_list__create_uid
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__create_uid
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__create_uid
+#: model:ir.model.fields,field_description:inspection.field_check_type__create_uid
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__create_uid
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__create_uid
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__date
+msgid "Created date"
+msgstr "تاريخ الإنشاء"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__create_date
+#: model:ir.model.fields,field_description:inspection.field_check_list__create_date
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__create_date
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__create_date
+#: model:ir.model.fields,field_description:inspection.field_check_type__create_date
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__create_date
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__create_date
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_plan__start_inspection_date
+msgid "Date from which the maintenance will we active"
+msgstr "التاريخ الذي تبدأ فيه الصيانة"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__request_date
+msgid "Date requested for the maintenance to happen"
+msgstr "تاريخ إجراء الصيانة المطلوب"
+
+#. module: inspection
+#: selection:inspection.plan,interval_step:0
+#: selection:inspection.plan,planning_step:0
+msgid "Day(s)"
+msgstr "أيام)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__display_name
+#: model:ir.model.fields,field_description:inspection.field_check_list__display_name
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__display_name
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__display_name
+#: model:ir.model.fields,field_description:inspection.field_check_type__display_name
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__display_name
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__display_name
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: inspection
+#: selection:inspection.plan,asset_type:0
+msgid "Document/Report"
+msgstr "وثيقة / تقرير"
+
+#. module: inspection
+#: selection:check.list,inspectiontype:0
+msgid "Document/Reports"
+msgstr "وثيقة / تقارير"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__duration
+msgid "Duration (hours)"
+msgstr "المدة (ساعات)"
+
+#. module: inspection
+#: selection:check.list.line,conditions:0
+msgid "Equal to"
+msgstr "يساوي"
+
+#. module: inspection
+#: selection:check.list,inspectiontype:0
+#: selection:inspection.plan,asset_type:0
+#: selection:inspection.request,asset_type:0
+msgid "Equipment"
+msgstr "ادوات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__equipments
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__equipments
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__equipments
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__equipments
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__equipments
+msgid "Equipment Name"
+msgstr "اسم المعدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__expectedresult
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__valuess
+msgid "Expected Result"
+msgstr "نتيجة متوقعة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__valueofnumber
+msgid "Expected Result Range (From"
+msgstr "نطاق النتيجة المتوقعة (من"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "Fahrenheit (°F)"
+msgstr "فهرنهايت (درجة فهرنهايت)"
+
+#. module: inspection
+#: selection:check.list.item,result:0
+#: selection:check.list.line,finalresult:0
+#: selection:equip.list.item,result:0
+#: selection:inspection.check.twoline,finalresult:0
+#: selection:inspectiontwo.check.twoline,finalresult:0
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__failcount
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__failcount
+msgid "Fail"
+msgstr "يفشل"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__findingvalue
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__findingvalue
+msgid "Feed value"
+msgstr "قيمة العلف"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__floor
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__floor
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__floor
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__floor
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__floor
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__floor
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__floor
+msgid "Floor Name"
+msgstr "اسم الطابق"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__interval
+msgid "Frequency"
+msgstr "تكرر"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "Grams"
+msgstr "جرامات"
+
+#. module: inspection
+#: selection:check.list.line,conditions:0
+msgid "Greater Than"
+msgstr "أكثر من"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__guideline
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__guidelines
+msgid "Guidelines"
+msgstr "الإرشادات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__id
+#: model:ir.model.fields,field_description:inspection.field_check_list__id
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__id
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__id
+#: model:ir.model.fields,field_description:inspection.field_check_type__id
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__id
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__id
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__id
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__id
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__id
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: inspection
+#: selection:check.list.line,conditions:0
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__valueofnumberto
+msgid "In Between"
+msgstr "ما بين أثنين"
+
+#. module: inspection
+#: selection:inspection.check.twoline,state:0
+#: selection:inspectiontwo.check.twoline,state:0
+msgid "InComplete"
+msgstr "غير مكتمل"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__testline_inspectionplan
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__testtwoline_inspectionplan
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__testline_inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__testtwoline_inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "Inspection"
+msgstr "تفتيش"
+
+#. module: inspection
+#: model:res.groups,name:inspection.group_inspection_admin
+msgid "Inspection Admin"
+msgstr "إدارة التفتيش"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__checktwoline_inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__checktwoline_inspection
+msgid "Inspection Check"
+msgstr "فحص التفتيش"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__checktwoline_insp
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__checktwoline_insp
+msgid "Inspection Check for Equipment"
+msgstr "فحص فحص المعدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspectionend
+msgid "Inspection End Time"
+msgstr "وقت انتهاء الفحص"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__inspectionfinding
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__inspectionfinding
+msgid "Inspection Findings"
+msgstr "نتائج التفتيش"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "Inspection For Equipment"
+msgstr "التفتيش على المعدات"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "Inspection For Property"
+msgstr "التفتيش على الممتلكات"
+
+#. module: inspection
+#: model:ir.module.category,name:inspection.module_category_inspection
+msgid "Inspection Management"
+msgstr "إدارة التفتيش"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+msgid "Inspection Name"
+msgstr "اسم التفتيش"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__names
+msgid "Inspection Name "
+msgstr "اسم التفتيش"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.inspectionplan_menu_action
+#: model:ir.ui.menu,name:inspection.inspectionplan_models_menu
+msgid "Inspection Plan"
+msgstr "خطة التفتيش"
+
+#. module: inspection
+#: model:ir.actions.report,name:inspection.print_report_pdf'
+msgid "Inspection Report"
+msgstr "تقرير التفتيش"
+
+#. module: inspection
+#: model:ir.actions.report,name:inspection.printequip_report_pdf'
+msgid "Inspection Reports"
+msgstr "تقارير التفتيش"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__inpectionresult
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__inpectionresult
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__inpectionresult
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__inpectionresult
+msgid "Inspection Result"
+msgstr "تفتيش النتيجة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "Inspection Result For Equipment"
+msgstr "نتيجة التفتيش على المعدات"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.twolines_menu_action
+msgid "Inspection Result For Equipment "
+msgstr "نتيجة التفتيش على المعدات"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.inspectioncheck_models_menu
+msgid "Inspection Results"
+msgstr "نتائج التفتيش"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.twolinesinsp_models_menu
+msgid "Inspection Results For Equipment"
+msgstr "نتائج التفتيش على المعدات"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.inspectionchecks_models_menu
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+msgid "Inspection Results For Property"
+msgstr "نتائج التفتيش على الممتلكات"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.inspectioncheck_menu_action
+msgid "Inspection Results For Property "
+msgstr "نتائج التفتيش على الممتلكات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspectionstart
+msgid "Inspection Start Time"
+msgstr "وقت بدء الفحص"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.inspectionreq_menu_action
+msgid "Inspection Task"
+msgstr "مهمة التفتيش"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__inspectiontype
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__asset_types
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__asset_type
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__asset_type
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__asset_types
+msgid "Inspection Type"
+msgstr "نوع الفحص"
+
+#. module: inspection
+#: model:res.groups,name:inspection.group_inspection_user
+msgid "Inspection User"
+msgstr "مستخدم الفحص"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__inspectionplancheck_twolines
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspectioncheck_twolines
+msgid "Inspection of Check "
+msgstr "فحص الشيك"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__inspcheck_twolines
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspcheck_twolines
+msgid "Inspection of Check equipment "
+msgstr "فحص فحص المعدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__inspectionplan_twolines
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspection_twolines
+msgid "Inspection of Equipment "
+msgstr "فحص المعدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__inspectionplan_lines
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspection_lines
+msgid "Inspection of Property"
+msgstr "لتفتيش على الممتلكات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__inspection_plan_id
+msgid "Inspection plan"
+msgstr "خطة التفتيش"
+
+#. module: inspection
+#: model:ir.actions.server,name:inspection.ir_cron_inspection_demo_action_ir_actions_server
+#: model:ir.cron,cron_name:inspection.ir_cron_inspection_demo_action
+#: model:ir.cron,name:inspection.ir_cron_inspection_demo_action
+msgid "Inspections"
+msgstr "التفتيش"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.checkinspection_menu
+msgid "Inspections "
+msgstr "التفتيش"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.inspectionreq_models_menu
+msgid "Inspections Task "
+msgstr "مهمة التفتيش"
+
+#. module: inspection
+#: model:ir.actions.act_window,name:inspection.inspector_menu_action
+msgid "Inspector Task"
+msgstr "مهمة المفتش"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_plan__interval
+msgid "Interval between each maintenance"
+msgstr "الفاصل الزمني بين كل صيانة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_res_partner__serviceprovider
+#: model:ir.model.fields,field_description:inspection.field_res_users__serviceprovider
+msgid "Is a Service Provider "
+msgstr "مقدم خدمة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category____last_update
+#: model:ir.model.fields,field_description:inspection.field_check_list____last_update
+#: model:ir.model.fields,field_description:inspection.field_check_list_item____last_update
+#: model:ir.model.fields,field_description:inspection.field_check_list_line____last_update
+#: model:ir.model.fields,field_description:inspection.field_check_type____last_update
+#: model:ir.model.fields,field_description:inspection.field_check_type_line____last_update
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_request____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline____last_update
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__write_uid
+#: model:ir.model.fields,field_description:inspection.field_check_list__write_uid
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__write_uid
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__write_uid
+#: model:ir.model.fields,field_description:inspection.field_check_type__write_uid
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__write_uid
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__write_uid
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__write_date
+#: model:ir.model.fields,field_description:inspection.field_check_list__write_date
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__write_date
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__write_date
+#: model:ir.model.fields,field_description:inspection.field_check_type__write_date
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__write_date
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_twoline__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__write_date
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: inspection
+#: selection:check.list.line,conditions:0
+msgid "Less Than"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_plan__planning_step
+msgid "Let the event automatically repeat at that interval"
+msgstr "تكرار الحدث تلقائيًا عند مرور هذه الفترة"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_plan__interval_step
+msgid "Let the event automatically repeat at that interval step"
+msgstr "دع الحدث يتكرر تلقائيًا في تلك الخطوة الفاصلة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "List"
+msgstr "قائمة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "List Line"
+msgstr "سطر القائمة"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "Liter(s)"
+msgstr "لتر (ق)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_plan__duration
+msgid "Maintenance duration in hours"
+msgstr "مدة الصيانة بالساعات"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_plan__inspection_plan_horizon
+msgid "Maintenance planning horizon. Only the maintenance requests inside the horizon will be created."
+msgstr "أفق تخطيط الصيانة. سيتم إنشاء طلبات الصيانة فقط داخل الأفق."
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: inspection
+#: selection:inspection.plan,interval_step:0
+#: selection:inspection.plan,planning_step:0
+msgid "Month(s)"
+msgstr "شهور)"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "NOs "
+msgstr "لا"
+
+#. module: inspection
+#: selection:check.list.line,descriptions:0
+msgid "NUMBER VALUE"
+msgstr "عدد القيمة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__test_line_appointment
+msgid "Name of List"
+msgstr "سم القائمة"
+
+#. module: inspection
+#: code:addons/inspection/models/inspectionplan.py:40
+#: code:addons/inspection/models/inspectionplan.py:254
+#: code:addons/inspection/models/inspectionplan.py:255
+#: code:addons/inspection/models/inspectionrequest.py:26
+#: code:addons/inspection/models/inspectionrequest.py:149
+#: code:addons/inspection/models/inspectionrequest.py:150
+#: code:addons/inspection/models/inspectionrequest.py:249
+#: code:addons/inspection/models/inspectionrequest.py:285
+#: code:addons/inspection/models/inspectionrequest.py:286
+#: code:addons/inspection/models/inspectionrequest.py:356
+#: code:addons/inspection/models/inspectionrequest.py:402
+#: code:addons/inspection/models/inspectionrequest.py:403
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__next_inspection_date
+msgid "Next Inspection date"
+msgstr "تاريخ الفحص القادم"
+
+#. module: inspection
+#: selection:check.list.item,finding:0
+#: selection:check.list.line,valuess:0
+#: selection:equip.list.item,finding:0
+msgid "No"
+msgstr "لا"
+
+#. module: inspection
+#: selection:check.list.line,valuess:0
+msgid "Not Applicable"
+msgstr "لا ينطبق"
+
+#. module: inspection
+#: selection:check.list.line,conditions:0
+msgid "Not Equal to"
+msgstr "لا يساوي"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الأخطاء"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: inspection
+#: selection:inspection.request,activity_state:0
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: inspection
+#: selection:check.list.line,descriptions:0
+msgid "PERCENTAGE VALUE"
+msgstr "قيمة النسبة المئوية"
+
+#. module: inspection
+#: selection:check.list.item,result:0
+#: selection:check.list.line,finalresult:0
+#: selection:equip.list.item,result:0
+#: selection:inspection.check.twoline,finalresult:0
+#: selection:inspectiontwo.check.twoline,finalresult:0
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__passcount
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__passcount
+msgid "Pass"
+msgstr "يمر"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__name_seq
+msgid "Plan No"
+msgstr "رقم الخطة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__planweightage
+msgid "Plan Weightage"
+msgstr "وزن الخطة"
+
+#. module: inspection
+#: selection:inspection.request,activity_state:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__inspection_plan_horizon
+msgid "Planning Horizon period"
+msgstr "فترة أفق التخطيط"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__planning_step
+msgid "Planning Horizon step"
+msgstr "أفق التخطيط خطوة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_twoline__pointweight
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__pointweight
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__pointweight
+msgid "Point Weightage "
+msgstr "وزن النقطة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__pointweight
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__pointweight
+msgid "Point weightage "
+msgstr "وزن النقطة"
+
+#. module: inspection
+#: selection:check.list,inspectiontype:0
+#: selection:inspection.plan,asset_type:0
+#: selection:inspection.request,asset_type:0
+msgid "Property"
+msgstr "خاصية"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__propertys
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__propertys
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__propertys
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__propertys
+msgid "Property Name"
+msgstr "اسم الخاصية"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__propertys
+msgid "Property Name "
+msgstr "اسم الخاصية"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__appointment_lines
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__name
+msgid "Question "
+msgstr "سؤال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__checklistquestion
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__inspectionfinding
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__inspectionfinding
+msgid "Question Type"
+msgstr "نوع السؤال"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.check_view
+#: model_terms:ir.ui.view,arch_db:inspection.sample_report_cards
+#: model_terms:ir.ui.view,arch_db:inspection.sampleequip_report_cards
+msgid "Questionnaire"
+msgstr "استبيان"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__names
+msgid "Questions"
+msgstr "أسئلة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__interval_step
+msgid "Recurrence"
+msgstr "تكرار"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__relfinding
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__relfinding
+msgid "Related Finding"
+msgstr "النتائج ذات الصلة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__name_seq
+msgid "Req No"
+msgstr "مطلوب لا"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__name_seq
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__name_seq
+msgid "ReqSub No"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: inspection
+#: selection:inspection.request,state:0
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "Reschedule"
+msgstr "إعادة الجدولة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__result
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__finalresult
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__result
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__finalresult
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__finalresult
+msgid "Result"
+msgstr "نتيجة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__room
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan_line__room
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__room
+#: model:ir.model.fields,field_description:inspection.field_inspection_request_line__room
+#: model:ir.model.fields,field_description:inspection.field_inspectionplan_check_twoline__room
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__room
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwoplan_check_twoline__room
+msgid "Room Name"
+msgstr "اسم الغرفة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__scheduleddate
+msgid "Scheduled Date"
+msgstr "التاريخ المجدول"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__score
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__score
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__score
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__score
+msgid "Score"
+msgstr "نتيجة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__scoreweightage
+msgid "Score Weightage"
+msgstr "وزن النتيجة"
+
+#. module: inspection
+#: selection:check.list.line,checklistquestion:0
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "Selection"
+msgstr "اختيار"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__finding
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__finding
+msgid "Selection (Yes or NO)"
+msgstr "التحديد (نعم أو لا)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__servicetype
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__servicecate
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__servicecate
+msgid "Service Category"
+msgstr "فئة الخدمة"
+
+#. module: inspection
+#: model:res.groups,name:inspection.group_inspection_menu
+msgid "Show  inspection Task"
+msgstr "إظهار مهمة التفتيش"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_plan__start_inspection_date
+msgid "Start Inspection date"
+msgstr "تاريخ بدء الفحص"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__descriptions
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__selections
+msgid "Statement Type"
+msgstr "نوع البيان"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__status
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__status
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__state
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: inspection
+#: model:ir.model.fields,help:inspection.field_inspection_request__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__types
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__subcategory
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__types
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__types
+#: model_terms:ir.ui.view,arch_db:inspection.category_view
+msgid "Sub Category"
+msgstr "تصنيف فرعي"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "Sub Task"
+msgstr "مهمة فرعية"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__name
+msgid "Sub category Type"
+msgstr "نوع الفئة الفرعية"
+
+#. module: inspection
+#: selection:inspection.request,state:0
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "Submit"
+msgstr "يقدم"
+
+#. module: inspection
+#: selection:inspection.request,task_type:0
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+msgid "Task"
+msgstr "مهمة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__task_type
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__task_type
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__task_type
+msgid "Task Type"
+msgstr "نوع المهمة"
+
+#. module: inspection
+#: model:ir.ui.menu,name:inspection.checks_models_menu
+msgid "Templates"
+msgstr "قوالب"
+
+#. module: inspection
+#: selection:inspection.request,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.check_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "Total"
+msgstr "مجموع"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list__totalpoint
+msgid "Total Score"
+msgstr "مجموع النقاط"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "Total point"
+msgstr "مجموع النقاط"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_type_line__category
+msgid "Types"
+msgstr "أنواع"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "Unit(s) "
+msgstr "وحدة (ق)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__units
+msgid "Units"
+msgstr "الوحدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: inspection
+#: selection:check.list.line,checklistquestion:0
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__conditionvalue
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "Value"
+msgstr "القيمة"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "Volt(V)"
+msgstr "فولت (ت)"
+
+#. module: inspection
+#: selection:inspection.plan,interval_step:0
+#: selection:inspection.plan,planning_step:0
+msgid "Week(s)"
+msgstr "أسبوع (أسابيع)"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__scores
+msgid "Weightage"
+msgstr "الوزن"
+
+#. module: inspection
+#: selection:check.list.line,selections:0
+msgid "YES(or)NO"
+msgstr "نعم أو لا"
+
+#. module: inspection
+#: selection:inspection.plan,interval_step:0
+#: selection:inspection.plan,planning_step:0
+msgid "Year(s)"
+msgstr "سنين)"
+
+#. module: inspection
+#: selection:check.list.item,finding:0
+#: selection:check.list.line,valuess:0
+#: selection:equip.list.item,finding:0
+msgid "Yes"
+msgstr "نعم"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "__last_update"
+msgstr "__اخر تحديث"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "asset_type"
+msgstr "نوع الأصول"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "asset_types"
+msgstr "أنواع الأصول"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "assignedto"
+msgstr "مخصص ل"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "assignto"
+msgstr "يسند إلى"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "building"
+msgstr "بناء"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.category_view
+msgid "category List"
+msgstr "قائمة الفئات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_line__checkcategory
+msgid "check category "
+msgstr "تحقق من الفئة"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_category__checklisttypes
+msgid "check list line"
+msgstr "تحقق من سطر القائمة"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_check_category
+msgid "check.category"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_check_list
+msgid "check.list"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_check_list_item
+msgid "check.list.item"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_check_list_line
+msgid "check.list.line"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_check_type
+msgid "check.type"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_check_type_line
+msgid "check.type.line"
+msgstr ""
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "checkcateg"
+msgstr "checkcateg"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "checklist"
+msgstr "قائمة تدقيق"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "checklistquestion"
+msgstr "قائمة التحقق"
+
+#. module: inspection
+#: selection:inspection.request,task_type:0
+msgid "complaint"
+msgstr "شكوى"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "created_by"
+msgstr "انشأ من قبل"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "date"
+msgstr "تاريخ"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainbetween
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainbetween
+msgid "domainbetween "
+msgstr "المجال بين"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainbuilding
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainbuilding
+msgid "domainbuilding"
+msgstr "بناء المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domaincheck
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domaincheck
+msgid "domaincheck"
+msgstr "domaincheck"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainchecklistquestion
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainchecklistquestion
+msgid "domainchecklistquestion"
+msgstr "سؤال التحقق من المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domaincondition
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domaincondition
+msgid "domaincondition "
+msgstr "المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainfloor
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainfloor
+msgid "domainfloor"
+msgstr "المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainguidline
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainguidline
+msgid "domainguidline "
+msgstr "إرشادات المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainproperty
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainproperty
+msgid "domainproperty"
+msgstr "ملكية المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainroom
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainroom
+msgid "domainroom"
+msgstr "المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainscore
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainscore
+msgid "domainscore "
+msgstr "درجة المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domaintype
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domaintype
+msgid "domaintype "
+msgstr "نوع المجال"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__domainvalue
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__domainvalue
+msgid "domainvalue "
+msgstr "قيمة المجال"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_equip_list_item
+msgid "equip.list.item"
+msgstr ""
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "equipments"
+msgstr "المعدات"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_inspection_check_twoline__expertedresult
+#: model:ir.model.fields,field_description:inspection.field_inspectiontwo_check_twoline__expertedresult
+msgid "experted result"
+msgstr "نتيجة خبير"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "failcount"
+msgstr "فشل"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "floor"
+msgstr "الأرض"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "guidelines"
+msgstr "القواعد الارشادية"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.view_pivot
+msgid "inspection Equipment"
+msgstr "معدات التفتيش"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+msgid "inspection List"
+msgstr "قائمة التفتيش"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_plan
+msgid "inspection Plan"
+msgstr "خطة التفتيش"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_check_twoline
+msgid "inspection.check.twoline"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_plan_line
+msgid "inspection.plan.line"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_plan_twoline
+msgid "inspection.plan.twoline"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_request
+msgid "inspection.request"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_request_line
+msgid "inspection.request.line"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspection_request_twoline
+msgid "inspection.request.twoline"
+msgstr ""
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "inspectionend"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspectionplan_check_twoline
+msgid "inspectionplan.check.twoline"
+msgstr ""
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+msgid "inspectionplan_form"
+msgstr "نموذج خطة التفتيش"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspectionplanline_inspectionplanline
+msgid "inspectionplanline.inspectionplanline"
+msgstr ""
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "inspectionreq_form"
+msgstr "نموذج طلب التفتيش"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "inspectionstart"
+msgstr "التفتيش"
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspectiontwo_check_twoline
+msgid "inspectiontwo.check.twoline"
+msgstr ""
+
+#. module: inspection
+#: model:ir.model,name:inspection.model_inspectiontwoplan_check_twoline
+msgid "inspectiontwoplan.check.twoline"
+msgstr ""
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "inspectiontwos List"
+msgstr "قائمة التفتيش"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.check_view
+msgid "inspectiontype"
+msgstr "نوع التفتيش"
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "kilogram "
+msgstr "كيلوغرام"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.category_view
+#: model_terms:ir.ui.view,arch_db:inspection.listline_view
+msgid "name"
+msgstr "اسم"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "names"
+msgstr "الأسماء"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+msgid "next_inspection_date"
+msgstr "تاريخ_الفحص التالي "
+
+#. module: inspection
+#: selection:check.list.line,units:0
+msgid "ohm (Ω)"
+msgstr "أوم (Ω)"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "passcount"
+msgstr "المرور"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "propertys"
+msgstr "ملكيات"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "questionnaire"
+msgstr "استبيان"
+
+#. module: inspection
+#: model:ir.model.fields,field_description:inspection.field_check_list_item__requestdomain
+#: model:ir.model.fields,field_description:inspection.field_equip_list_item__requestdomain
+msgid "request domain"
+msgstr "طلب المجال"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "request_date"
+msgstr "تاريخ الطلب"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "room"
+msgstr "مجال"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspector_view
+msgid "scheduleddate"
+msgstr "جدولة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectioncheck_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectiontwos_view
+msgid "score"
+msgstr "نتيجة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "servicecate"
+msgstr "خدمة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.check_view
+msgid "servicetype"
+msgstr "نوع الخدمة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionplan_view
+msgid "start_inspection_date"
+msgstr "تاريخ_الفحص_البدء"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.inspectionreq_view
+msgid "task_type"
+msgstr "نوع المهمة"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.check_view
+msgid "templatename"
+msgstr "اسم القالب"
+
+#. module: inspection
+#: model_terms:ir.ui.view,arch_db:inspection.checktype_view
+msgid "typename"
+msgstr "أكتب اسم"
+

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_equipment_assets,equipment.assets,model_equipment_assets,base.group_user,1,1,1,1
+access_equipment_category,equipment.category,model_equipment_category,base.group_user,1,1,1,1
+access_equipment_categorytypes,equipment.categorytypes,model_equipment_categorytypes,base.group_user,1,1,1,1
+access_equipment_classification,equipment.classification,model_equipment_classification,base.group_user,1,1,1,1
+access_model_equipment_assets_public,equipment.assets,newassets.model_equipment_assets,,1,0,0,0

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        <!--form view of the brand menu-->
+        <record model="ir.ui.view" id="inspector_view">
+            <field name="name">inspectionreq_form</field>
+            <field name="model">inspection.request</field>
+            <field name="arch" type="xml">
+            <form string="inspectionreq_form ">
+                <header>
+                <button name="button_done" string="Submit" class="oe_highlight" type="object"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                <div class="oe_title">
+                    <h1>
+                    <field name="name_seq" readonly="1"/>
+                    </h1>
+                </div>
+
+                <group>
+                    <group><field name="names">names</field></group>
+                    <group><field name="created_by">created_by</field></group>
+                    <group><field name="scheduleddate">scheduleddate</field></group>
+                    <group><field name="date">date</field></group>
+                    <group><field name="assignto">assignto</field></group>
+                    <!--
+                    <group><field name="total_weightage">total_weightage</field></group>
+                    <group><field name="number_of_updates">number_of_updates</field></group>
+                    -->
+                    <group><field name="request_date">request_date</field></group>
+                    <group><field name="inspectionstart">inspectionstart</field></group>
+                    <group><field name="inspectionend">inspectionend</field></group>
+                    <group><field name="asset_type" options="{'horizontal': true}" widget="radio">asset_type</field></group>
+                </group>
+
+                <notebook>
+                    <page string="Check List For Property" invisible="asset_type == 'equipment'">
+
+                    <field name="inspection_lines">
+                        <tree string="Inspection" editable="bottom">
+                        <field name="building"/>
+                        <field name="floor"/>
+                        <field name="room"/>
+                        </tree>  
+                    </field>
+                    </page>
+
+                    <page string="Inspection For Equipment" invisible="asset_type == 'building'">
+                    <field name="inspection_twolines">
+                        <tree string="Inspection" editable="bottom">
+                        <field name="equipments"/>
+                        </tree>     
+                    </field>
+                    </page>
+
+                    <page string="Check List For Property" invisible = "asset_type == 'equipment' ">
+                    <field name="inspectioncheck_twolines">
+                        <tree string="Check List For Property" editable="bottom">
+                        <field name="checklist"/>
+                        <field name="checklistitem"/>
+                        <field name="inspectionfinding"/>
+                        <field name="inpectionresult"/>
+                        <field name="comments"/>
+                        <field name="identity_card" widget="many2many_binary"/>
+                        <field name="pointweight"/>
+                        </tree>     
+                    </field>
+                    </page>
+
+                    <page string="Check List For Equipment" invisible="asset_type == 'building'">
+
+                    <field name="inspcheck_twolines">
+                        <tree string="Check List For Equipment" editable="bottom">
+                        <field name="checklist"/>
+                        <field name="checklistitem"/>
+                        <field name="inspectionfinding"/>
+                        <field name="inpectionresult"/>
+                        <field name="comments"/>
+                        <field name="identity_card" widget="many2many_binary"/>
+                        <field name="pointweight"/>
+                        </tree>     
+                    </field>
+                    </page>
+                </notebook>
+
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <record id="inspectionreq_status_tree_view" model="ir.ui.view">
+            <field name="name">Inspection Request</field>
+            <field name="model">inspection.request</field>
+            <field name="arch" type="xml">
+            <tree>
+                <!--<field name="name"/>-->
+                <field name="name_seq"/>
+                <!-- <field name="names"/> -->
+                <field name="assignto"/>
+                <field name="date"/>
+                <field name="asset_type"/>
+                <field name="state"/>
+                <!--<field name="dtimes"/>-->
+            </tree>
+            </field>
+        </record>
+
+        <!--action for brand-->
+        <record id="inspector_menu_action" model="ir.actions.act_window">
+            <field name="name">Inspector Task</field>
+            <field name="res_model">inspection.request</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create The First inspection request</p>
+            </field>
+        </record>
+
+        <!--
+        <menuitem id="inspector_models_menu"
+                    parent="checkinspection_menu"
+                    name="Inspector Task"
+                    action="inspector_menu_action" sequence="1"/>
+        -->
+
+	</data>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form view for Service Provider -->
+        <record model="ir.ui.view" id="serviceprovider_view">
+            <field name="name">serviceprovider_form</field>
+            <field name="model">service.provider</field>
+            <field name="arch" type="xml">
+                <form string="Service Provider">
+                    <sheet>
+                        <group><field name="names"/></group>
+                        <group><field name="active_available"/></group>
+                        <group><field name="Servicetype"/></group>
+                        <group><field name="contracttypes"/></group>
+                        <group><field name="mob_no"/></group>
+                        <group><field name="address"/></group>
+                        <group><field name="state_id"/></group>
+                        <group><field name="country_id"/></group>
+                    </sheet>
+
+                    <!-- Uncomment below for chatter features -->
+                    <!--
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                    -->
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view for Service Provider -->
+        <record id="serviceprovider_tree_view" model="ir.ui.view">
+            <field name="name">service provider</field>
+            <field name="model">service.provider</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="names"/>
+                    <field name="Servicetype"/>
+                    <field name="contracttypes"/>
+                    <field name="mob_no"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action for Service Provider -->
+        <record id="serviceprovider_menu_action" model="ir.actions.act_window">
+            <field name="name">Service Provider</field>
+            <field name="res_model">service.provider</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create The First Service Provider</p>
+            </field>
+        </record>
+
+        <!-- Main menu item -->
+        <menuitem id="serviceprovider_menu"
+                  name="Service Provider"
+                  sequence="201"/>
+
+        <!-- Uncomment if submenu is needed -->
+        <!--
+        <menuitem id="serviceprovider_models_menu"
+                  parent="serviceprovider_menu"
+                  name="Service Providers"
+                  action="serviceprovider_menu_action"/>
+        -->
+
+    </data>
+</odoo>
+

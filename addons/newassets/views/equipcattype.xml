@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- form view of the brand menu -->
+    <record model="ir.ui.view" id="categorytypesequipment_view">
+      <field name="name">equipmentcategorytypes_form</field>
+      <field name="model">equipment.categorytypes</field>
+      <field name="arch" type="xml">
+        <form string="Equipmentcategorytypes List">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="categorytypes"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="equipmentcategorytypes_status_tree_view" model="ir.ui.view">
+      <field name="name">Equipment categorytypes</field>
+      <field name="model">equipment.categorytypes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="categorytypes"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- action for brand -->
+    <record id="equipmentcategorytypes_menu_action" model="ir.actions.act_window">
+      <field name="name">Assets Type </field>
+      <field name="res_model">equipment.categorytypes</field>
+      <field name="view_mode">tree,form,pivot</field>
+      <field name="context" eval="{'search_default_male': 1}"/>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create The Equipment categorytypes</p>
+      </field>
+    </record>
+
+    <menuitem id="equipmentcategorytypes_models_menu"
+              parent="equipmentcat_models_menu"
+              name="Assets Type"
+              action="equipmentcategorytypes_menu_action"
+              sequence="22"/>
+  </data>
+</odoo>
+

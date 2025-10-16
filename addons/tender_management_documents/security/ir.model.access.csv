@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tender_management_document,tender.management.document,model_tender_management_document,,1,1,1,1
+access_tender_equipment,tender.equipment,model_tender_equipment,,1,1,1,1
+access_tender_subtask,tender.subtask,model_tender_subtask,,1,1,1,1
+access_tender_interval,tender.interval,model_tender_interval,,1,1,1,1
+access_tender_task,tender.task,model_tender_task,,1,1,1,1

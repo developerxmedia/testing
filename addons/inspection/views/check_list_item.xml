@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <record id="check_list_item_tree_view" model="ir.ui.view">
+            <field name="name">Check List Item</field>
+            <field name="model">check.list.item</field>
+            <field name="arch" type="xml">
+                <tree>
+                   <field name="names"/>
+                    <field name="finding"/>
+                    <field name="status"/>
+                    <field name="identity_card"/>
+                    <field name="score"/>
+                    <field name="relfinding"/>
+                    <field name="domainchecklistquestion"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="check_list_item_form_view" model="ir.ui.view">
+            <field name="name">check list Item</field>
+            <field name="model">check.list.item</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Check List">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="names"/>
+                                <field name="finding"/>
+                                <field name="status"/>
+                                <field name="identity_card" widget="many2many_binary"/>
+                                <field name="score"/>
+                                <field name="question_no"/>
+
+                                
+                                <field name="domainscore"/>
+                                <field name="domainbetween"/>
+                                <field name="domainvalue"/>
+                                <field name="domaincondition"/>
+                                <field name="domainguidline"/>
+                            </group>
+                            <group>
+                                <field name="relfinding"/>
+                                <field name="domainchecklistquestion"/>
+                                <field name="requestdomain"/>
+                                <field name="domainproperty"/>                               
+                                <field name="domainbuilding"/>  
+                                <field name="domainfloor"/>                               
+                                <field name="domainroom"/>                               
+                                <field name="domainsubroom"/>  
+                                <field name="domaintype"/>   
+                                <field name="domaincheck"/>            
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" string="mail"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" string= "Mail"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="check_list_item_action_view">            
+            <field name="name">Check List Item Action</field>         
+                <field name="res_model">check.list.item</field>           
+                <field name="view_mode">tree,form</field>
+                <field name="domain">[]</field>            
+                <field name="help" type="html">                
+                    <p class="oe_view_nocontent_create">Check List Item</p>             
+                </field>        
+        </record>
+
+        <!-- <menuitem id = 'menu_check_list_item' name = 'Check List Item'  sequence="8" /> -->
+        <menuitem id = 'sub_menu_check_list_item' name = 'Check List Item'  parent= "check_menu" action="check_list_item_action_view" sequence="10" />
+    </data>
+</odoo>

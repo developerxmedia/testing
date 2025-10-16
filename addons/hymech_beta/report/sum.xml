@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  
+
+
+    <template inherit_id="web.external_layout_standard" id="external_layout_boxed_inherit">
+    
+    <!-- <xpath position="replace" expr="//div[@class='header']"> </xpath> -->
+    <!-- <xpath expr="//div[@class='header']" position="replace">
+ 
+      <div class="header">
+ 
+      </div>
+  </xpath> -->
+    
+    </template>
+    
+    <!-- <template id = "external_layout_boxed_inherits" inherit_id = "web.external_layout_standard"><xpath expr="//div[@class='header']" position="replace"></xpath> </template> -->
+    
+    
+    
+
+  <template id="hymech_beta.sum" name="Tax Invoice">
+  <t t-call="web.external_layout">
+  <t t-call="web.html_container">
+  <t t-foreach="docs" t-as="o">
+
+   
+    
+    <style>
+
+      .footer_section{
+
+      }
+      .border{
+          border-collapse: collapse;
+      }
+
+      .border td,.border tr ,.border th{
+          border: 1px solid black;
+      }
+      td {
+          height: 30px;
+        }
+        .heading_text_cor{
+        color:#000;
+        font-weight:600;
+
+        }
+        table tr{
+        width:40%;
+        }
+
+        table td{
+          width:20%;
+
+        }
+
+        table th{
+          width:30%;
+        }
+        .product_table th:first-child, .product_table td:first-child{
+          width:5%;
+        }
+        .product_table th:nth-child(3), .product_table td:nth-child(3){
+          width:10%;
+        }
+        .product_table th:nth-child(4), .product_table td:nth-child(4){
+          width:12%;
+        }
+        .product_table th:nth-child(5), .product_table td:nth-child(5){
+          width:12%;
+        }
+        .product_table th:last-child, .product_table td:last-child{
+          width:12%;
+        }
+        .header_tag{
+            margin-top : 70px;
+            margin-bottom : 20px;
+        }
+        #height_auto{
+          border:1px solid black;
+          border-bottom:1px solid black;
+          height:140px;
+        }
+
+        .flex-parent {
+          display: flex;
+
+        }
+        .flex-child {
+          display: flex;
+
+        }
+  </style>
+      <div>
+        <br></br>
+        <h4 class="text-center"><b>Delivery Order</b></h4>
+        </div>
+    
+    <table class="table table-sm border"  id="border_none" style ="margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+      <tr >
+        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" class="float-left" alt="Logo" style="max-height: 90px;"/>
+        <th style="border-left: 1px solid white;border-top: 1px solid white;border-bottom: 1px solid white;height:40px;padding:5px;font-size: 15px;width:40%;" rowspan = '7' ><br></br>
+          <span t-field="o.company_id"/><br></br>     
+          <span t-field="o.company_id.street"/><br></br>     
+          <span t-field="o.company_id.street2"/>
+          <span t-field="o.company_id.city"/>
+          <span t-field="o.company_id.state_id"/>
+          <span t-field="o.company_id.country_id"/>
+          <span t-field="o.company_id.zip"/><br></br>    
+          Tel : <spant t-field="o.company_id.phone"/><br></br>     
+          Email : <span t-field="o.company_id.email"/><br></br>
+          Tax Reg No# : <span t-field="o.company_id.vat"/><br></br>     
+          <!-- <span>Tax Reg No# : 201703575N</span><br></br>      -->
+              
+                    
+        </th>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">DO Number<br></br></td>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.name"/><br></br></td>
+      </tr>
+      <tr>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Date</td>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.scheduled_date"/><br></br></td>
+      </tr>
+      <tr>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">PO Number<br></br></td>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.purchase_id.name"/><br></br></td> 
+      </tr>
+      <tr>
+        <!-- <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Quotation #<br></br></td>
+        <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">SEF-ACEUWRP-0002-23<br></br></td>   -->
+      </tr>
+      <tr>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Quotation<br></br></td>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.sale_id.name"/><br></br></td>  
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Salesperson<br></br></td>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;"><span t-field="o.user_id"/><br></br></td>  
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">Job Code<br></br></td>
+          <td style="border: 2px solid black;height:20px;padding:5px;font-size: 15px;">JBE-0042-23<br></br></td>  
+        </tr>
+      <tr >
+    <div class='col-2'>
+    <div>
+    <th style="border-left: 1px solid white;border-bottom: 1px solid white;border-right: 1px solid white;font-size: 15px;height:130px;" ><strong>Bill To:</strong><br> </br>
+        <p><span t-field="o.partner_id"/>
+          <br></br>
+          <span t-field="o.partner_id.street"/><br></br>     
+          <span t-field="o.partner_id.street2"/>
+          <span t-field="o.partner_id.city"/>
+          <span t-field="o.partner_id.state_id"/>
+          <span t-field="o.partner_id.country_id"/>
+          <span t-field="o.partner_id.zip"/><br></br>    
+
+         </p>
+    </th>
+    </div>
+    <div >
+        <th class="text-left" style="border-left: 1px solid white;border-bottom: 1px solid white;border-right: 1px solid white;font-size: 15px;height:130px text-align:left;" ><strong>Ship To:</strong><br> </br>
+            <p><span t-field="o.partner_id"/>
+              <br></br>
+              <span t-field="o.partner_id.street"/><br></br>     
+              <span t-field="o.partner_id.street2"/>
+              <span t-field="o.partner_id.city"/>
+              <span t-field="o.partner_id.state_id"/>
+              <span t-field="o.partner_id.country_id"/>
+              <span t-field="o.partner_id.zip"/><br></br>    
+    
+             </p>
+        </th>
+        </div>
+    </div>
+</tr>
+        <br></br>
+   <tr>
+    <th style="border-left: 1px solid white;border-bottom: 1px solid white;border-right: 1px solid white;font-size: 15px;height:130px;" ><br> </br>
+
+      Attn: <span t-field="o.partner_id.name"/><br></br>
+      Tel :
+    </th>
+
+
+   
+    </tr>
+    <tr></tr>
+      </table>
+<!-- new table -->
+      Supply of SS316 Drive Shaft &amp; Gear
+      <div>
+    <table class="table table-sm border product_table"  style="border: 1px solid black; width:100%; height:100%; margin-bottom: 0px; overflow:hidden">
+      
+            <thead>
+                <tr style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;">
+
+                  <th class="text-center Dest"   ><b>S.No</b></th>
+                  <th class="text-center Dest" ><b>Product ID</b></th>
+                  <!-- <th class="text-center Dest"><b>Description</b></th> -->
+                  
+                  <th class="text-center Dest"><b>Qty</b></th> 
+                  <th class="text-center Dest"><b>Qty</b></th>
+                  <!-- <th class="text-center Dest"  ><b>Unit Price In SGD</b></th> -->
+                  <th class="text-center Dest"><b>Remark</b></th>
+                  <!-- <th class="text-center Dest" ><b>Amount IN SGD</b></th> -->
+                </tr>
+            </thead>
+          <div>
+            <tbody >
+              <t t-foreach="o.move_ids_without_package" t-as="line"  >   
+                  <tr>
+                  <!-- <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.s_no"/></strong></td> -->
+                  <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong></strong></td>
+                  <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.product_id"/></strong></td>
+                  <!-- <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.name"/></strong></td> -->
+                  <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.product_uom_qty"/></strong></td>
+                  <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong>Ea</strong></td>
+                  <!-- <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.price_unit"/></strong></td>
+                  <td  class="text-center" style =  "border-bottom: 1px solid white;border-left:1px solid white;border-right:1px solid white;font-size: 15px;"><strong><span t-field="line.price_subtotal"/></strong></td> -->
+                </tr>
+              </t>
+            </tbody>
+          </div>        
+    </table>
+
+      </div>
+
+      <div style="border-bottom: 1px solid #fff;">
+          
+      <hr  style = "width: 100%;
+      height: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #b7d0e2;"/>
+
+      <table class="table table-sm border"  id="border_none" style ="margin-bottom: 0px;border-bottom: 0px; width:100%;" >
+          <tr >
+            <th style="border: 1px solid white;padding:30px;font-size: 15px;width:40%;" rowspan = '1' ><br></br>
+              <br></br>
+
+              <span>TERMS &amp; CONDITIONS:</span> <br></br>     
+              <span>1. Please make cheque payments payable to :</span><br></br>     
+              <span> HyMech Engineering and Trading Pte Ltd.</span><br></br>     
+              <span>OR</span><br></br>     
+              <span>2.Account Number : 0029067301</span><br></br>     
+              <span>Payee : Hymech Engineering and Trading Pte Ltd
+              </span><br></br>     
+              <span>Bank : DBS </span><br></br>     
+              <span>Bank - Branch Code : 7171-002</span><br></br>     
+                  
+                        
+            </th>
+            <!-- <td style="border: 2px solid white;height:10px;padding-left:50px;text-align: right;font-size: 15px;">Sub Total<br></br>Gst<br></br>Total</td>
+            <td style="border: 2px solid white;height:10px;padding-left:50px;text-align: right;font-size: 15px;">INE-0029-23<br></br>12<br></br>35</td> -->
+          </tr>
+          <!-- <tr>
+            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">Gst</td>
+            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">18/03/2023<br></br></td>
+          </tr>
+          <tr>
+            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">Total<br></br></td>
+            <td style="border: 2px solid white;height:10px;padding:50px;font-size: 15px;">08040376<br></br></td> 
+          
+        
+        
+        </tr> -->
+        <tr></tr>
+
+        
+          </table>
+        </div>
+        <!-- <div class = 'row-'>
+            <div class ='col-6'>  
+                        Delivery Order Issued By
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                ___________________________________________<br></br>
+                For HYMECH ENGINEERING AND TRADING PTE LTD
+            </div>
+            <div>
+                    Received In Good Order and Condition
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                ______________________________________________<br></br>
+                      For: <span t-field="o.partner_id"/><br></br>
+                Please sign, stamp and date to confirm receipt
+                          
+            </div>
+        </div> -->
+          <br></br><br></br>
+                         
+
+  
+</t>
+</t>
+</t>
+</template>
+</data>
+</odoo>

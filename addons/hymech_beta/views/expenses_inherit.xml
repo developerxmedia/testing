@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="hr_expense_inheritsz" model="ir.ui.view">
+    <field name="name">hr.expense.inherit</field>
+    <field name="model">hr.expense</field>
+    <field name="inherit_id" ref="hr_expense.hr_expense_view_form" />
+    <field name="type">form</field>
+
+    <field name="arch" type="xml">
+        
+        <xpath expr="//field[@name='product_id']" position="before">
+            <field name="name_partner"/>
+
+        </xpath>
+       
+
+
+        </field>
+        </record>
+    </odoo>

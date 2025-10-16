@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View for Room Types -->
+        <record model="ir.ui.view" id="roomtypes_view">
+            <field name="name">room.types.form</field>
+            <field name="model">room.types</field>
+            <field name="arch" type="xml">
+                <form string="Room Type">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Optional: Tree View for Room Types -->
+        <record model="ir.ui.view" id="roomtypes_tree_view">
+            <field name="name">room.types.tree</field>
+            <field name="model">room.types</field>
+            <field name="arch" type="xml">
+                <tree string="Room Types">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Optional: Kanban View for Room Types -->
+        <record model="ir.ui.view" id="roomtypes_kanban_view">
+            <field name="name">room.types.kanban</field>
+            <field name="model">room.types</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="roomtypes_menu_action" model="ir.actions.act_window">
+            <field name="name">Room Usage Types</field>
+            <field name="res_model">room.types</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first room types</p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="roomtypes_models_menu"
+                  parent="base.menu_property_config"
+                  name="Room Usage Types"
+                  action="roomtypes_menu_action"
+                  sequence="105"/>
+
+    </data>
+</odoo>
+

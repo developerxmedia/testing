@@ -1,0 +1,346 @@
+<odoo>
+    
+    <record id="customer_invoices_paperformat" model="report.paperformat">
+        <field name="name">invoice</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">42</field>
+        <field name="margin_bottom">9</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">40</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <template id="customer_invoices_pdf_document">
+        
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+            <t t-set="total_due" t-value="0"/>           
+                                                        
+            <t t-foreach="docs" t-as="o">
+                <t t-set="total_due" t-value="total_due+o.amount_residual"/>
+
+                <style>
+                    table.custom-table {
+                        border-collapse: collapse;
+                        border: 2px solid #000;
+                        width:100%;
+                        height:100%;
+                        padding:3%;
+                    }
+                    table.custom-table th, table.custom-table td {
+                        border: 1px solid #000;
+                        width:25%;
+                        height:25%;
+                        padding:3%;
+                    }
+                    table.custom-tables {
+                        border-collapse: collapse;
+                        border: 2px solid #000;
+                        width:100%;
+                        height:100%;
+                        padding:3%;
+                    }
+                    table.custom-tables th, table.custom-tables td {
+                        border: 1px solid #000;
+                        width:25%;
+                        height:25%;
+                        padding:3%;
+                    }
+                    @font-face {
+                        font-family: 'Gupter';
+                        src: url('/invoice_report/static/src/fonts/Gupter-Regular.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+
+                    @font-face {
+                        font-family: 'Tinos';
+                        src: url('/invoice_report/static/src/fonts/Tinos-Regular.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+                    
+                   
+                </style>
+
+                <div class="header" style="display: flex;" t-options="{'keepTogether': True}">
+
+                    <div class="float-left" style="width:57%;">
+                        <table style="width:100%;margin-bottom:30px;border-top:none;font-family: 'Tinos';">
+                            <tr>
+                                <td style="text-align:left;border-right:1px solid white;vertical-align: middle;">
+                                <img t-att-src="image_data_uri(res_company.logo)" style="width:70%;height:80%; !important;margin-top:10px;"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="float-left" style="width:43%;">
+                        <table>
+                            <tr>
+                                <td style="vertical-align: middle;background-color: white;white-space: nowrap;">
+                                        <div style="text-align:left;margin-left:5%;margin-top:10px;margin-right:100px;">
+                                            <span style="font-weight: 900;font-size:18px;" t-field="res_company.name"/>
+                                            ,
+                                            <br/>
+                                            <div  t-if="res_company.street">
+                                            <sapn t-field="res_company.street"/>
+                                            </div>
+                                            <div  t-if="res_company.street2">
+                                            <span t-field="res_company.street2"/>
+                                            </div>
+                                            <div >
+                                                <t t-if="res_company.city">
+                                                <span t-field="res_company.city"/>
+                                                </t>
+                                                -
+                                                <t t-if="res_company.zip">
+                                                <span t-field="res_company.zip"/>
+                                                </t>
+                                            </div>
+                                            <div >
+                                                <span>State Name :</span>
+                                                <t t-if="res_company.state_id.name">
+                                                <span t-field="res_company.state_id.name" style="margin-left:2px;"/>
+                                                </t>
+                                                <span style="margin-left:5px;">Code :</span>
+                                                <t t-if="res_company.state_id.code">
+                                                <span t-field="res_company.state_id.code" style="margin-left:2px;"/>
+                                                </t>
+                                            </div>
+                                            <div >
+                                                <span>GSTIN/UIN :</span>
+                                                <t t-if="res_company.vat">
+                                                <span t-field="res_company.vat" style="margin-left:2px;"/>
+                                                </t>
+                                            </div>
+                                            <div style="margin-top:-3px;white-space: nowrap;">
+                                                <span>E-Mail :</span>
+                                                <t t-if="res_company.email">
+                                                <span t-field="res_company.email" style="margin-left:2px;"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <t t-if="o_first">
+                 <div style="border:none;font-size:25px;color:black;margin-top:-30px;text-align:center;font-weight:600;">Customer Invoice</div>
+                 
+                    <div class="float-left" style="width:68%;">
+                        
+                            <table class="table table-sm table-bordered" style="width:100%;font-family: 'Tinos';">
+
+                                    <tr >
+                                        <td style="border:1px solid white;text-align:left;vertical-align: middle;width:60%;color:black;font-size:16px;">
+                                        
+                                                <div   t-if="o.partner_id.name">
+                                                    <span style="font-weight: 900;" t-field="o.partner_id.name"/>
+                                                </div>
+
+                                                <div  t-if="o.partner_id.street">
+                                                    <sapn t-field="o.partner_id.street"/>
+                                                </div>
+
+                                                <div  t-if="o.partner_id.street2">
+                                                    <span t-field="o.partner_id.street2" />
+                                                </div>
+
+                                                <div>
+                                                    <t t-if="o.partner_id.city">
+                                                        <span t-field="o.partner_id.city"/>
+                                                    </t> - 
+                                                    <t t-if="o.partner_id.zip">
+                                                        <span t-field="o.partner_id.zip"/>
+                                                    </t>
+                                                </div>
+
+                                                <div>
+                                                    <span style="font-size:16px;">State Name :</span>
+                                                    <t t-if="o.partner_id.state_id.name">
+                                                    <span t-field="o.partner_id.state_id.name" style="font-size:16px;margin-left:2px;"/>
+                                                    </t>
+                                                    <span style="font-size:16px;margin-left:5px;">Code :</span>
+                                                    <t t-if="o.partner_id.state_id.code">
+                                                    <span t-field="o.partner_id.state_id.code" style="font-size:16px;margin-left:2px;"/>
+                                                    </t>
+                                                </div>
+                                                
+                                                <div>
+                                                    <span style="font-size:16px;">GSTIN/UIN :</span>
+                                                    <t t-if="o.partner_id.vat">
+                                                        <span t-field="o.partner_id.vat" style="font-size:16px;margin-left:2px;"/>
+                                                    </t>
+                                                </div>
+
+
+                                            
+                                        </td>
+
+                    
+                                    </tr>
+                                
+
+                                
+                                </table>
+
+                        </div>
+
+
+                        <div class="float-right" style="width:32%;">
+                            <table border="0" class="table table-sm table-bordered" style="border: 0px;">
+                                <tr style="color:black;">
+                                    <td colspan="3" style="border:1px solid white;vertical-align: middle;white-space: nowrap;font-size:19px;font-weight: 900;">Statement of Account</td>
+                                </tr>
+                            
+                                <tr style="color:black;">
+                                    <td colspan="1" style="border:1px solid white;vertical-align: middle;white-space: nowrap;font-size:16px;font-weight: 900;">Statement Date</td>
+                                    <td colspan="1" style="border:1px solid white;vertical-align: middle;font-size:16px;font-weight: 900;">:</td>
+                                    <td colspan="1" style="border:1px solid white;vertical-align: middle;font-size:16px;white-space: nowrap;">
+                                        <span t-esc="datetime.datetime.now().strftime('%d-%m-%Y')"></span>
+                                    </td>
+                                </tr>
+                            
+                            </table>
+                        </div>
+
+                </t>
+
+
+          
+                 <table class="table table-sm border">
+
+                    <thead style="border:none;">
+
+                        <tr>
+                            <t t-if="o_first">
+                                
+                                    <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:left;font-weight: 900;width:14%;">Date</th>
+                                    <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:left;font-weight: 900;width:20%;">Doc. Ref#</th>
+                                    <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:right;font-weight: 900;width:20%;" >Doc. Total</th>
+                                    <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:right;font-weight: 900;width:23%;">Amount Paid</th> 
+                                    <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:right;font-weight: 900;width:23%;">Balance Due</th>
+                                
+                            </t> 
+                        </tr>
+                            
+                    </thead>
+                    <br></br>
+
+                    <tbody>
+
+                        <t t-if="o_first">
+
+                            <tr >
+                                <td style ="border:1px solid white;border-top:2px solid black;font-size:16px;color:black;vertical-align: middle;text-align:left;width:14%;"><span t-field="o.invoice_date"/></td>
+                                <td style ="border:1px solid white;border-top:2px solid black;font-size:16px;color:black;vertical-align: middle;text-align:left;width:20%;"><span t-field="o.name"/></td>
+                                <td style ="border:1px solid white;border-top:2px solid black;font-size:16px;color:black;vertical-align: middle;text-align:right;width:20%;"><span style="margin-left:15px;">S$</span><span t-field="o.amount_total" t-options='{"widget": "float", "precision": 2}'/></td>
+                                <td style="border:1px solid white;border-top:2px solid black;font-size:16px; color:black; vertical-align: middle;text-align:right;width:23%;">
+                                    <span style="margin-left:15px;">S$</span><span t-esc="o.amount_total - o.amount_residual" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                                <td style ="border:1px solid white;border-top:2px solid black;font-size:16px;color:black;padding:5px;vertical-align: middle;text-align:right;width:23%;"><span style="margin-left:15px;">S$</span><span t-field="o.amount_residual" t-options='{"widget": "float", "precision": 2}'/></td>
+                            </tr>
+                        </t>
+
+                        <t t-else="">
+                            
+                                <tr>
+                                    <div style="margin-top:-50px;">
+                                        <td style ="border:1px solid white;padding-top:-20px;font-size:16px;color:black;vertical-align: middle;text-align:left;width:14%;"><span t-field="o.invoice_date"/></td>
+                                        <td style ="border:1px solid white;padding-top:-20px;font-size:16px;color:black;vertical-align: middle;text-align:left;width:20%;"><span t-field="o.name"/></td>
+                                        <td style ="border:1px solid white;padding-top:-20px;font-size:16px;color:black;vertical-align: middle;text-align:right;width:20%;"><span style="margin-left:15px;">S$</span><span t-field="o.amount_total" t-options='{"widget": "float", "precision": 2}'/></td>
+                                    
+                                        <td style="border:1px solid white;padding-top:-20px;font-size:16px; color:black; vertical-align: middle; text-align:right;width:23%;">
+                                            <span style="margin-left:15px;">S$</span><span t-esc="o.amount_total - o.amount_residual" t-options='{"widget": "float", "precision": 2}'/>
+                                        </td>
+                                        <td style ="border:1px solid white;padding-top:-20px;font-size:16px;color:black;padding:5px;vertical-align: middle;text-align:right;width:23%;"><span style="margin-left:15px;">S$</span><span t-field="o.amount_residual" t-options='{"widget": "float", "precision": 2}'/></td>
+                                    </div>
+                                
+                                </tr>
+                            
+                         </t> 
+
+                        <t t-if="o_last">
+                            <tr>
+                               
+                                <th colspan="4" style="border:1px solid white;border-top:2px solid black;font-size: 20px;color:#bb0a1e;vertical-align: middle;text-align:right;font-weight: 900;width:75%">Total Amount Due</th>
+                                <td colspan="1" style="border:1px solid white;border-top:2px solid black;font-size: 20px;color:#bb0a1e;vertical-align: middle;text-align:right;font-weight: 900;background-color: white;width:25%">
+                                    <span>:</span>
+                                    <span style="margin-left:15px;">S$</span><span t-esc="total_due" style="margin-left:5px;" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                                
+                            </tr>
+                        </t>
+                        
+                    </tbody> 
+                 </table> 
+                <table class="table table-sm border">
+
+                    <thead style="border:none;font-family: 'Tinos';">
+
+                        <tr>
+
+                            <t t-if="o_last">
+                                
+                                    <td style="border: 2px solid white;font-size:17px;background-color: white;color:black;vertical-align: middle;text-align:left;width:14%;">Current</td>
+                                    <td style="border: 2px solid white;font-size:17px;background-color: white;color:black;vertical-align: middle;text-align:left;width:20%;">1-30 Days Overdue</td>
+                                    <td style="border: 2px solid white;font-size:17px;background-color: white;color:black;vertical-align: middle;text-align:right;width:20%;" >31-60 Days Overdue</td>
+                                    <td style="border: 2px solid white;font-size:17px;background-color: white;color:black;vertical-align: middle;text-align:right;width:23%;">61-90 Days Overdue</td> 
+                                    <td style="border: 2px solid white;font-size:17px;background-color: white;color:black;vertical-align: middle;text-align:right;width:23%;"> >90 Days Overdue</td>
+                                
+                            </t> 
+
+                        </tr>
+                            
+                    </thead>
+                   
+
+                    <tbody>
+                        <tr>
+                            <t t-if="o_last">
+
+
+                            <t t-set="amount" t-value="outstanding_amounts"/>
+                                <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:left;width:14%;">
+                                   <span>S$</span><span style="margin-left:5px;" t-esc="amount['current']"/>
+                                </th>
+                                <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:left;width:14%;">
+                                    <span>S$</span><span style="margin-left:5px;" t-esc="amount['1_30_days']"/>
+                                </th>
+                                <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:center;width:20%;">
+                                    <span>S$</span><span style="margin-left:5px;" t-esc="amount['31_60_days']"/>
+                                </th>
+                                <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:center;width:20%;" >
+                                    <span>S$</span><span style="margin-left:5px;" t-esc="amount['61_90_days']"/>
+                                </th>
+                                <th style="border: 2px solid white;font-size:16px;background-color: white;color:black;vertical-align: middle;text-align:center;width:23%;">
+                                    <span>S$</span><span style="margin-left:5px;" t-esc="amount['more_90_days']"/>
+                                </th> 
+
+                            </t> 
+
+                        </tr>
+                            
+
+                    </tbody> 
+
+                </table>  
+           
+
+
+                </t> 
+           </t>
+       </t>
+    </template>
+</odoo>

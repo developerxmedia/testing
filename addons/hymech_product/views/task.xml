@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <record id="inherit_tasks" model="ir.ui.view" >
+            <field name="name">inherit task</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <header>
+                    <button  name='action_purchase' string='Creating Purchase' class="oe_highlight" type='object'/>
+                </header>
+
+            <!-- <xpath expr="//button[@name='action_subtask']" position="after"> -->
+
+                <!-- <button name="action_purchase" type="object" class="oe_stat_button" icon="fa-clipboard">
+                    <field name="bom_count_purchase" widget="statinfo"/>
+                </button> -->
+            <!-- </xpath> -->
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="sale_order_task"/>
+                    <field name="product_name"/>
+                    <field name="sum_of_total_expense"/>
+
+                </xpath>
+
+                <xpath expr="//page[@name='extra_info']" position='after'>
+                <page name="man_cost" string="Man Cost" >
+                        <field name="actual_man_cost">
+                                <tree string="Man Power Cost" editable="bottom" >
+                                    <field name="process_man"/> 
+                                    <field name="name1"/>   
+                                    <field name="quantity"/>
+                                    <field name="man_day"/>
+                                    <field name="total"/>
+                                    <field name="total_man_hours"/>
+                                    <field name="rate_hour"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total" string="Man Power Cost : " />
+                                <field name ="sum_of_total"/>
+                            </div>
+                    </page>
+                    <page string="Fabrication Cost" invisible="1">
+                            <field name="fabrication_lines" >
+                                <tree string="Fabrication Cost" editable="bottom"> 
+                                    <field name="process_fab"/> 
+                                    <field name="process"/>
+                                    <field name="quantity"/>
+                                    <field name="time"/>
+                                    <field name="cost"/>
+                                    <field name="amount"/>
+    
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_fabrication" string="Fabrication Cost : " />
+                                <field name ="sum_of_total_fabrication"/>
+                            </div>
+                        </page>
+                        <page string="Material Cost"  invisible="1">
+                            <field name="material_lines">
+                                <tree string="Material Cost" editable="bottom">
+                                    <field name="process_mat"/> 
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="weight_No"/>
+                                    <field name="weight"/>
+                                    <field name="cost_no"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_material" string="Material Cost : " />
+                                <field name ="sum_of_total_material"/>
+                            </div>
+                        </page>
+                        <page string="Tools and Consumble  Cost"  invisible="1">
+                            <field name="tools_lines"  >
+                                <tree string="Tools and Consumble  Cost" editable="bottom">
+                                    <field name="process_tool"/> 
+                                    <field name="description"/>
+                                    <field name="cost"/>
+    
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_tools" string="Tools Cost : " />
+                                <field name ="sum_of_total_tools"/>
+                            </div>
+                        </page>
+                        <page string="Equipemt Cost"  invisible="1">
+                            <field name="equipment_lines" >
+                                <tree string="Equipemt Cost" editable="bottom">
+                                    <field name="process_equ"/> 
+                                    <field name="types_of_equipment"/>
+                                    <field name="man_day"/>
+                                    <field name="rate_man_day"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_equipment" string="Equipment Cost : " />
+                                <field name ="sum_of_total_equipment"/>
+                            </div>
+                        </page>
+                        <page string="Transport Cost"  invisible="1">
+                            <field name="transport_lines" >
+                                <tree string="Transport Cost" editable="bottom">
+                                    <field name="process_trans"/> 
+                                    <field name="types_of_transport"/>
+                                    <field name="man_day"/>
+                                    <field name="rate_man_day"/>
+                                    <field name="total_cost"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="sum_of_total_transport" string="Transport Cost : " />
+                                <field name ="sum_of_total_transport"/>
+                            </div>
+                        </page>
+                         <page string="Expense">
+                            <field name="expenses_lines" >
+                                <tree string="Expense" editable="bottom"> 
+                                    <field name="name"/> 
+                                    <field name="product_id"/>
+                                    <field name="description"/>
+                                    <field name="unit_price"/>
+                                    <field name="quantity"/>
+                                    <field name="bill_reference"/>
+                                    <field name="total"/>
+    
+                                </tree>
+                            </field>
+                           
+                        </page>
+
+                </xpath>
+                
+                 <!-- <xpath expr="//div[@class='oe_title pr-0']" position="before">
+            <group>
+                <group>
+                <field name="process"/>
+                </group>
+            </group>
+            </xpath> -->
+                
+
+            </field>
+        </record>
+    </data>
+</odoo>

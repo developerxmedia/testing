@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <record id="view_employee_form_employee_children_inherit" model="ir.ui.view" >
+            <field name="name">hr.employee.employee_children.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <!-- <field name="type">tree</field> -->
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//button[@id='hr_presence_button']" position="after">
+                    <button name="action_employee_documents" string =' Employee' type="object" class="oe_stat_button" icon="fa-clipboard"> -->
+                            <!-- <field name="bom_count_product" widget="statinfo"/> -->
+                        <!-- </button>
+                </xpath> -->
+
+                <field name="passport_id" position="after">
+                    <field name="received_dates"/>
+                </field>
+
+                <xpath expr="//page[@name='personal_information']" position="after">
+                <page string="Employee Document" >
+
+                <field name='children_ids' widget='one2many'>
+                    <tree string="tree" editable="bottom">
+                        <field name="emp_id"/>
+                        <field name="operator"/>
+                        <field name="num"/>
+                        <field name="attachment" widget='many2many_binary' filename="file_name"/>
+                        <!-- <field name="received_date"/> -->
+                        <field name="expiry_date"/>
+                    </tree>
+                </field>
+
+                </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- form view of the brand menu -->
+    <record model="ir.ui.view" id="categoryequipment_view">
+      <field name="name">equipmentcategory_form</field>
+      <field name="model">equipment.category</field>
+      <field name="arch" type="xml">
+        <form string="Equipmentcategory List">
+          <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button class="oe_stat_button" type="object" name="tickets_view" icon="fa-list-alt">
+                <field name="tickets_count" string="Tickets" widget="statinfo"/>
+              </button>
+            </div>
+            <group>
+              <field name="name"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="equipmentcategory_status_tree_view" model="ir.ui.view">
+      <field name="name">Equipment category</field>
+      <field name="model">equipment.category</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- action for brand -->
+    <record id="equipmentcategory_menu_action" model="ir.actions.act_window">
+      <field name="name">Assets Category</field>
+      <field name="res_model">equipment.category</field>
+      <field name="view_mode">tree,form,pivot</field>
+      <field name="context" eval="{'search_default_male': 1}"/>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create The Equipment Model</p>
+      </field>
+    </record>
+
+    <menuitem id="equipmentcat_models_menu"
+              parent="equipment_menu"
+              name="Configuration"
+              sequence="60"/>
+
+    <menuitem id="equipmentcategory_models_menu"
+              parent="equipmentcat_models_menu"
+              name="Assets Category"
+              action="equipmentcategory_menu_action"
+              sequence="20"/>
+  </data>
+</odoo>

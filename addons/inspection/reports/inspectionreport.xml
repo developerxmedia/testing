@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report id="print_report_pdf'"
+        string="Inspection Report"
+        model="inspection.check.twoline"
+        report_type="qweb-pdf"
+        name="inspection.sample_report_cards"
+        file="inspection.sample_reports"/>
+		
+
+    <report id="printequip_report_pdf'"
+        string="Inspection Equipment Reports"
+        model="inspectiontwo.check.twoline"
+        report_type="qweb-pdf"
+        name="inspection.sampleequip_report_cards"
+        file="inspection.sample_reportss"/>			
+
+</odoo>

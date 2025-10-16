@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="contacts_form_view">
+            <field name="name">contact.service</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                 
+                <!-- <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_vehicles"
+                            icon="fa-sitemap"
+                            invisible="not serviceprovider">
+                         <field string="Vehicle" name="vehicle_count" widget="statinfo"/> 
+                        <field string="Agreement" name="count" widget="statinfo"/>
+                    </button>
+                </div> -->
+                
+                <xpath expr="//group/field[@name='name']" position="after">
+                    <field name="serviceprovider"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

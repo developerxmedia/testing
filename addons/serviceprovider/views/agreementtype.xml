@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form view of Agreement Type -->
+        <record model="ir.ui.view" id="agreementtype_view">
+            <field name="name">agreement_form</field>
+            <field name="model">agreement.type</field>
+            <field name="arch" type="xml">
+                <form string="Agreement Type">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view of Agreement Type -->
+        <record id="agreementtype_tree_view" model="ir.ui.view">
+            <field name="name">Agreement Type</field>
+            <field name="model">agreement.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action for Agreement Type -->
+        <record id="agreementtype_menu_action" model="ir.actions.act_window">
+            <field name="name">Agreement Type</field>
+            <field name="res_model">agreement.type</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create The First Service Type
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu item for Agreement Type -->
+        <menuitem id="agreementtype_models_menu"
+                  parent="serviceprovider_menu"
+                  name="Agreement Type"
+                  action="agreementtype_menu_action"
+                  sequence="2"/>
+                  
+    </data>
+</odoo>

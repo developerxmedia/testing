@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="delivery_move_inheritsz" model="ir.ui.view">
+    <field name="name">stock.picking.inherit</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form" />
+    <field name="type">form</field>
+
+    <field name="arch" type="xml">
+        
+        <xpath expr="//field[@name='partner_id']" position="after">
+            <field name="atten"/>
+            <field name="po_number"/>
+            <field name="sef_number" invisible="1"/>
+            <field name="job_code"/>
+            <field name="terms_conditions"/>
+            
+            <field name="product_name"/>
+        </xpath>
+       
+        <xpath expr="//field[@name='move_ids_without_package']" position="after">
+            <field name="note_delivery" placeholder='Terms and Condition...'/>
+        </xpath>
+
+        <!-- <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='quantity_done']" position="after">
+            <field name="unit" invisible="1"/>
+            <field name="remark"/>
+        </xpath> -->
+
+        </field>
+        </record>
+
+        <record id="hide_picking_opearations_report" model="res.groups">
+            <field name="name">Picking Operations Report</field>
+        </record>
+        <record model="ir.actions.report" id="stock.action_report_picking">
+            <field name="groups_id" eval="[(6,0,[ref('hide_picking_opearations_report')])]"/>
+        </record>
+        
+        
+        <record id="hide_delivery_slip_report" model="res.groups">
+            <field name="name">Delivery Slip Report</field>
+        </record>
+        <record model="ir.actions.report" id="stock.action_report_delivery">
+            <field name="groups_id" eval="[(6,0,[ref('hide_delivery_slip_report')])]"/>
+        </record>
+        
+        
+        
+        <record id="hide_barcode_pdf_report" model="res.groups">
+            <field name="name">Stock Barcode Pdf</field>
+            <!-- <field name="category_id" ref="base.module_category_inventory"/>  -->
+            <!-- optional: place under Inventory category -->
+        </record>
+        <!-- <record model="ir.actions.report" id="stock.action_label_transfer_template_pdf">
+            <field name="groups_id" eval="[(6,0,[ref('hide_barcode_pdf_report')])]"/>
+        </record> -->
+        
+        
+        
+        <record id="hide_barcode_zpl_report" model="res.groups">
+            <field name="name">Stock barcode Pdf</field>
+        </record>
+        <!-- <record model="ir.actions.report" id="stock.action_label_transfer_template_zpl">
+            <field name="groups_id" eval="[(6,0,[ref('hide_barcode_zpl_report')])]"/>
+        </record> -->
+
+ <record model="ir.ui.view" id="project_stock_picking_sequence">
+        <field name="name">search.stock.picking</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="name" string="Reference Number"/>
+            </xpath>
+        </field>
+    </record>
+
+    </odoo>

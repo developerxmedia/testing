@@ -1,0 +1,15 @@
+<odoo>
+
+    <record id="workshop_vehicle_crm_opportunity_form_view_inherit" model="ir.ui.view">
+        <field name="name">workshop.vehicle.crm.opportunity.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+    
+    
+            <field name="email_from" position="after">
+                <field name="product_id_one"/>
+            </field>
+        </field>
+    </record>
+    </odoo>

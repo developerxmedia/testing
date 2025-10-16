@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View for Property Types -->
+        <record model="ir.ui.view" id="propertytypes_view">
+            <field name="name">property.types.form</field>
+            <field name="model">property.types</field>
+            <field name="arch" type="xml">
+                <form string="Property Type">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Model No"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Property Types (optional but recommended) -->
+        <record model="ir.ui.view" id="propertytypes_tree_view">
+            <field name="name">property.types.tree</field>
+            <field name="model">property.types</field>
+            <field name="arch" type="xml">
+                <tree string="Property Types">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Kanban View for Property Types (optional) -->
+        <record model="ir.ui.view" id="propertytypes_kanban_view">
+            <field name="name">property.types.kanban</field>
+            <field name="model">property.types</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Action for Property Types -->
+        <record id="propertytypes_menu_action" model="ir.actions.act_window">
+            <field name="name">Property Types</field>
+            <field name="res_model">property.types</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first property types</p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="propertytypes_models_menu"
+                  parent="base.menu_property_config"
+                  name="Property Type"
+                  action="propertytypes_menu_action"
+                  sequence="102"/>
+
+    </data>
+</odoo>

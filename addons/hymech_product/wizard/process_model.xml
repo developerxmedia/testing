@@ -1,0 +1,192 @@
+<odoo>
+    <data>
+         <record id="view_hr_process_tree" model="ir.ui.view">
+            <field name="name">Process Tree</field>
+            <field name="model">process.model</field>
+            <field name="arch" type="xml">
+                <tree string='Process Details'>
+                        <field name='process_name'/>
+                        <field name='cost_total'/>
+                        <field name='cost_total_fabrication'/>
+                        <field name='cost_total_material'/>
+                        <field name='cost_total_tools'/>
+                        <field name='cost_total_equipment'/>
+                        <field name='cost_total_transport'/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_hr_process" model="ir.ui.view">
+            <field name="name">Process Form</field>
+            <field name="model">process.model</field>
+            <field name="arch" type="xml">
+            <form string="generation fichier">
+                <group>
+                    <field name="process_name" />
+                    <field name="budget_ids" invisible="1"/>
+                </group>
+                    <notebook>
+                        <page string="Man Power Cost" name ='man_power'>
+                            <field name="custom_list">
+                                <tree string="Man Power Cost" editable="bottom" >
+                                    <field name="process_man_1" options="{'no_open': True}"/> 
+                                    <field name="name_1"/>   
+                                    <field name="quantity_1"/>
+                                    <field name="man_day_1"/>
+                                    <field name="total_1"/>
+                                    <field name="working_hours_per_day"/>
+                                    <field name="total_man_hours_1"/>
+                                    <field name="rate_hour_1"/>
+                                    <field name="total_cost_1"/>
+                                    <field name="total_cost_without_per_1" invisible='1'/>
+                                    <field name="margin_amount_1"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total" string="Man Power Cost : " />
+                                <field name ="cost_total"/>
+                            </div>
+                        </page>
+                    <!-- </notebook>
+                    <notebook> -->
+                        <page string="Fabrication Cost">
+                                <field name="fabrication_list" >
+                                    <tree string="Fabrication Cost" editable="bottom"> 
+                                        <field name="process_fab_1" options="{'no_open': True}"/> 
+                                        <field name="process_1"/>
+                                        <field name="quantity_1"/>
+                                        <field name="time_1"/>
+                                        <field name="cost_1"/>
+                                        <field name="amount_1"/>
+                                        <field name="amount_without_per_1" invisible='1'/>
+                                        <field name="margin_amount_1"/>
+                                    </tree>
+                                </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total_fabrication" string="Fabrication Cost : " />
+                                <field name ="cost_total_fabrication"/>
+                            </div>
+                            </page>
+                    <!-- </notebook>
+                    <notebook> -->
+                        <page string="Material Cost">
+                            <field name="material_list">
+                                <tree string="Material Cost" editable="bottom">
+                                    <field name="process_mat_1" options="{'no_open': True}"/> 
+                                    <field name="description_1"/>
+                                    <field name="quantity_1"/>
+                                    <field name="weight_No_1"/>
+                                    <field name="weight_1"/>
+                                    <field name="cost_no_1"/>
+                                    <field name="amount_1"/>
+                                    <field name="amount_without_per_1" invisible='1'/>
+                                    <field name="margin_amount_1"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total_material" string="Material Cost : " />
+                                <field name ="cost_total_material"/>
+                            </div>
+                        </page>
+                    <!-- </notebook>
+                    <notebook> -->
+                        <page string="Tools and Consumble  Cost">
+                            <field name="tools_list"  >
+                                <tree string="Tools and Consumble  Cost" editable="bottom">
+                                    <field name="process_tool_1" options="{'no_open': True}"/> 
+                                    <field name="description_1"/>
+                                    <field name="cost_without_per_1" invisible='1'/>
+                                    <field name="rate"/>
+                                    <field name="quantity_new" invisible='1'/>
+                                    <field name="cost_1"/>
+                                    <field name="margin_amount_1"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total_tools" string="Tools Cost : " />
+                                <field name ="cost_total_tools"/>
+                            </div>
+                        </page>
+                    <!-- </notebook>
+                    <notebook> -->
+                        <page string="Equipemt Cost">
+                            <field name="equipment_list" >
+                                <tree string="Equipemt Cost" editable="bottom">
+                                    <field name="process_equ_1" options="{'no_open': True}"/> 
+                                    <field name="types_of_equipment_1"/>
+                                    <field name="man_day_1"/>
+                                    <field name="rate_man_day_1"/>
+                                    <field name="total_cost_without_per_1" invisible='1'/>
+                                    <field name="total_cost_1"/>
+                                    <field name="margin_amount_1"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total_equipment" string="Equipment Cost : " />
+                                <field name ="cost_total_equipment"/>
+                            </div>
+                        </page>
+                    <!-- </notebook>
+                    <notebook> -->
+                        <page string="Transport Cost">
+                            <field name="transport_list" >
+                                <tree string="Transport Cost" editable="bottom">
+                                    <field name="process_trans_1" options="{'no_open': True}"/> 
+                                    <field name="types_of_transport_1"/>
+                                    <field name="man_day_1"/>
+                                    <field name="rate_man_day_1"/>
+                                    <field name="total_cost_without_per_1" invisible='1'/>
+                                    <field name="total_cost_1"/>
+                                    <field name="margin_amount_1"/>
+                                </tree>
+                                    
+
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total_transport" string="Transport Cost : " />
+                                <field name ="cost_total_transport"/>
+                                
+                            </div>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_all" string="Cost All: " />
+                                <field name ="cost_all" invisible='1'/>
+                                
+                            </div>
+                        </page> 
+                        <page string="Third Cost">
+                            <field name="third_party_list" >
+                                <tree string="Third Cost" editable="bottom">
+                                    <field name="process_third_party" options="{'no_open': True}"/> 
+                                    <field name="category_third"/>
+                                    <field name="quantity_third"/>
+                                    <field name="cost_day_third"/>
+                                    <field name="total_third"/>
+                                </tree>
+                            </field>
+                            <div class ="col-md-4" style="display: flex; align-items: flex-start; justify-content: center;">
+                                <label for="cost_total_third" string="Third Party Cost : " />
+                                <field name ="cost_total_third"/>
+                            </div>
+                        </page>
+                    </notebook>
+                <footer>
+                    <button name="action_save_new_button" string="Save and New" class="btn btn-secondary" type="object"/>
+                    <button name="action_save_close_button" string="Save and Close" class="btn btn-primary" type="object"/>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+            <record id="open_process_model" model="ir.actions.act_window">
+                <field name="name">process</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">process.model</field>
+                <!-- <field name="view_type">form</field> -->
+                <field name="view_mode">tree,form</field>
+                <field name="context"></field>
+                <field name="help" type="html">
+                    <p class="oe_view_nocontent_create"></p>
+                </field>
+            </record>
+    <menuitem name='Process Wizard' action='open_process_model' parent='hymech' id='process_name' sequence='112'/>
+    </data>
+</odoo>

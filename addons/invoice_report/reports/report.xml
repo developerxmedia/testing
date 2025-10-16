@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+       
+        <report
+
+            id="customer_invoices_pdf"
+            string="Customer Outstanding"
+            model="account.move"
+            report_type="qweb-pdf"
+            name="invoice_report.customer_invoices_pdf_document"
+            file="invoice_report.customer_invoices_pdf_document"
+            paperformat ="invoice_report.customer_invoices_paperformat"
+        /> 
+
+    </data>
+</odoo>

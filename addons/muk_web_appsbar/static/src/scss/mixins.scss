@@ -1,0 +1,22 @@
+@mixin mk-disable-scrollbar {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+    &::-webkit-scrollbar {
+	  display: none;
+	}
+}
+
+
+// 09-09-2025 logo size 
+.mk_apps_sidebar_logo {
+    width: auto !important;
+    height: auto !important;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 5px !important;
+}
+.mk_apps_sidebar_panel .mk_apps_sidebar .mk_apps_sidebar_menu {
+    padding: 0;
+    margin-top: 0% !important;
+}

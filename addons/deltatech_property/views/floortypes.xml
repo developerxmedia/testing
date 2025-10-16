@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Floor Types Form View -->
+        <record model="ir.ui.view" id="floortypes_form_view">
+            <field name="name">floor.types.list.form</field>
+            <field name="model">floor.types.list</field>
+            <field name="arch" type="xml">
+                <form string="Floor Type">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View (optional but recommended) -->
+        <record model="ir.ui.view" id="floortypes_tree_view">
+            <field name="name">floor.types.list.tree</field>
+            <field name="model">floor.types.list</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open the view -->
+        <record id="floortypes_menu_action" model="ir.actions.act_window">
+            <field name="name">Floor Types</field>
+            <field name="res_model">floor.types.list</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first Floor Type</p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="floortypes_models_menu"
+                  parent="base.menu_property_config"
+                  name="Floor Types"
+                  action="floortypes_menu_action"
+                  sequence="105"/>
+                  
+    </data>
+</odoo>
+

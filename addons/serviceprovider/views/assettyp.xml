@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form view of the Asset model -->
+        <record model="ir.ui.view" id="assettype_view">
+            <field name="name">assettype_form</field>
+            <field name="model">asset.asset</field>
+            <field name="arch" type="xml">
+                <form string="Agreement Type">
+                    <sheet>
+                        <group>
+                            <field name="equipmenttype"/>
+                            <field name="assettypes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

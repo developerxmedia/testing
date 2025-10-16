@@ -1,0 +1,892 @@
+<odoo>
+    <template id="product_budget_form_pdf">
+    <t t-call="web.basic_layout">
+    <t t-call="web.html_container">
+    <t t-foreach="docs" t-as="o">
+        
+    
+        <div class="header"></div>
+    
+    <div>
+    <h4 class="text-center"><b>Product Budget</b></h4>
+    </div><br></br>
+     <table class="table-sm border" style="width:100%;border: 2px solid white  overflow:hidden">
+        <tr style="border:2px solid white;">
+        <th class="text-left" style="border:2px solid white;width:50%">Product Name: <span t-field="o.product_new_id.name"/>   </th> 
+        <th style="border:2px solid white;width:50%;margin-right:50px;">Price: 	S$<span t-field="o.price"/></th>
+        </tr>
+        <tr style="border:2px solid white;">
+        <th class="text-left" style="border:2px solid white;width:50%"> Total Price: S$<span t-field="o.sub_total"/>   </th> 
+        <th style="border:2px solid white;width:50%;margin-right:50px;"></th>
+        </tr>
+     </table>
+
+     <table class="table-sm border" style="width:100%;border: 2px solid white  overflow:hidden">
+        <thead>
+        <tr style="border:2px solid white;">
+        <th class="text-right" style="border-left:2px solid white;font-size: 22px;border-right:2px solid white;padding-left:150px;width:50%;"> </th>
+        <th style = 'width:50%;'/>
+        </tr>
+        <br></br>
+        <tr style = 'width:50%'>
+        <th class="text-left" style="border:2px solid black;width:50%">Man Sub Total: S$<span t-field="o.sum_of_total"/> </th> 
+        <th style="border:2px solid black;width:50%;margin-right:50px;"> Equipment Sub Total:  S$<span t-field="o.sum_of_total_equipment"/></th>
+        </tr>
+        <tr style="border-bottom:2px solid black;">
+        <th class="text-left" style="border:2px solid black;width:50%">Fabrication Sub Total:  S$<span t-field="o.sum_of_total_fabrication"/></th>
+        <th style="border:2px solid black;width:50%;margin-right:50px;">Transport Sub Total: S$<span t-field="o.sum_of_total_transport"/></th>
+    
+        </tr>
+        <tr>
+        <th class="text-left" style="border:2px solid black;width:50%">Material Sub Total: S$<span t-field="o.sum_of_total_tools"/></th>
+        <th style="border:2px solid black;width:50%">Third Party Sub Total:  S$<span t-field="o.sum_of_total_third_party"/></th>
+    
+        </tr>
+        <tr>
+        <th class="text-left" style="border:2px solid black;width:50%;border-top:2px solid black;border-bottom:2px solid black"> Tools Sub Total:  S$<span t-field="o.sum_of_total_material"/></th>
+        <th style="border:2px solid black;width:50%;border-top:2px solid black;border-bottom:2px solid black">Total Margin Percentage: <span t-field="o.total_margin_percentage"/>%</th>
+    
+    </tr>
+     <tr style="border-bottom:2px solid white;">
+        <th class="text-left" style="border-top:2px solid black;border-bottom:2px solid white;border-left:2px solid white;width:50%;!important"> </th>
+        <th class="text-left" style="border-top:2px solid black;border-bottom:2px solid white;border-left:2px solid white;width:50%;!important"> </th>
+    </tr>
+    <tr style="border-bottom:2px solid black; ! important">
+        
+        </tr>
+        </thead>
+        </table>
+        <br></br>
+       
+       <div class='text-center' style = 'font-size:20px;'>
+            <strong>Process</strong>
+       </div>
+       <br></br>
+    <!--  new table id="height_auto" -->
+    <div  >
+    <table  style="width:100%; height:100%; margin-bottom: 0px; ">
+    <thead>
+    
+    <tr style="border: 1px solid black;">
+    <!-- <th class="text-center Dest" style="border: 1px solid black;width:5%;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th> -->
+    <th class="text-center Dest" style="border: 1px solid black;width:10%;margin-top:100px !important;" >
+    <b>Process</b>
+    </th>
+    
+    <th class="text-center Dest"  style="border: 1px solid black;width:13%;margin-top:100px !important;">
+    <b>Man Power Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Fabrication Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Material Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Tools Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Equipment Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Transport Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Third Party Cost</b>
+    </th>
+    <!-- <th class="text-center Dest"  style="border: 1px solid black;width:12%;margin-top:100px !important;">
+    <b>Total Cost</b>
+    </th> -->
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                <tr t-foreach="o.target_ids" t-as="obj" style="border: 1px solid black;">
+                       <!-- <td class="text-center" style="border: 1px solid black;">
+                        <span t-esc="line_index + 1"/>
+                    </td>    -->
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-esc="obj.process_name.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-esc="round(obj.cost_total)"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-esc="obj.cost_total_fabrication"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-esc="obj.cost_total_material"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-esc="obj.cost_total_tools"/>
+                    </strong>
+                    </td>
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-esc="obj.cost_total_equipment"/>
+                    </strong>
+                    </td>
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-esc="obj.cost_total_transport"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-esc="obj.cost_total_third"/>
+                    </strong>
+                    </td>
+                    <!-- <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-esc="obj.cost_total_transport"/>
+                    </strong>
+                    </td> -->
+            </tr>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <br></br>
+    
+    <!-- 2nd table -->
+     <div class='text-center' style = 'font-size:20px;'>
+            <strong>Man Power Cost</strong>
+       </div>
+    
+       <br></br>
+    <!--  new table id="height_auto" -->
+    <div >
+    <table  style="width:100%; height:100%; margin: 0px;">
+    <thead>
+    
+    <tr align="center" style="border: 1px solid black;">
+    <th class="text-center Dest" style="border: 1px solid black;width:7%;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center Dest" style="border: 1px solid black;width:10%;margin-top:100px !important;" >
+    <b>Process</b>
+    </th>
+    
+    <th class="text-center Dest"  style="border: 1px solid black;width:20%;margin-top:100px !important;">
+    <b>Category</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:8%;margin-top:100px !important;">
+    <b>Quantity</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Man Day</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Total</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:15%;margin-top:100px !important;">
+    <b>Total Man Hour</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Rate/hour</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Total Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Margin Percentage</b>
+    </th>
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.custom_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+    
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-esc="line.process_man_1.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-esc="line.name_1.man_power_category"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.quantity_1"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.man_day_1"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.total_1"/>
+                    </strong>
+                    </td>
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.total_man_hours_1"/>
+                    </strong>
+                    </td>
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-field="line.rate_hour_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.total_cost_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.margin_amount_1"/>
+                    </strong>
+                    </td>
+                  
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <div> <strong>Man Power Cost: S$<span t-field="o.sum_of_total"/> </strong></div>
+    
+    <br></br>
+    
+    <div class='text-center' style = 'font-size:20px;'>
+            <strong>Fabrication Cost</strong>
+       </div>
+    
+       <br></br>
+    <!--  new table id="height_auto" -->
+    <div  >
+    <table style="width:100%; height:100%; margin-bottom: 0px;">
+    <thead>
+    
+    <tr align="center" style="border: 1px solid black;">
+    <th class="text-center Dest" style="border: 1px solid black;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center Dest" style="border: 1px solid black;margin-top:100px !important;" >
+    <b>Process</b>
+    </th>
+    
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Fabrication Process</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Quantity</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Time</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Amount</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Margin Percentage</b>
+    </th>
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.fabrication_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+                   
+                       
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_fab_1.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_1.fabrication_category"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.quantity_1"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.time_1"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-field="line.cost_1"/>
+                    </strong>
+                    </td>
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-field="line.amount_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.margin_amount_1"/>
+                    </strong>
+                    </td>                 
+                  
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    
+    <div> <strong> Fabrication Cost: S$<span t-field="o.sum_of_total_fabrication"/> </strong></div>
+    <br></br>
+    <!-- <div style="page-break-after: always;"/> -->
+    
+    
+    <div class='text-center' style = 'font-size:20px;'>
+            <strong>Material Cost</strong>
+       </div>
+    
+       <br></br>
+    <!--  new table  id="height_auto"-->
+    <div  >
+    <table  style="width:100%; height:100%; margin-bottom: 0px;">
+    <thead>
+    
+    <tr align="center" style="border: 1px solid black;">
+    <th class="text-center Dest" style="border: 1px solid black;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center Dest" style="border: 1px solid black;margin-top:100px !important;" >
+    <b>Process</b>
+    </th>
+    
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Description</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Quantity</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Weight/No</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Weight</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Cost/No</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;margin-top:100px !important;">
+    <b>Amount</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Margin Percentage</b>
+    </th>
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.material_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+                   
+                       
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_mat_1.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.description_1.material_description"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.quantity_1"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.weight_No_1"/>
+                    </strong>
+                    </td>
+    
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.weight_1"/>
+                    </strong>
+                    </td>
+                     <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.cost_no_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.amount_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.margin_amount_1"/>
+                    </strong>
+                    </td>                 
+                  
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <br></br>
+    <div><strong>Material Cost: S$<span t-field="o.sum_of_total_material"/></strong></div>
+    
+    <br></br>
+    
+    
+    
+    
+    <div class='text-center' style = 'font-size:20px;'>
+            <strong>Tools and Consumable Cost</strong>
+       </div>
+    
+       <br></br>
+    <!--  new table id="height_auto" -->
+    <div   >
+    <table  style="width:100%; height:100%; margin-bottom: 0px; overflow:hidden">
+    <thead>
+    
+    <tr align="center" style="border: 1px solid black;">
+    <th class="text-center Dest" style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:30%;margin-top:100px !important;">
+    <b>Process </b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:30%;margin-top:100px !important;">
+    <b>Description</b>
+    </th>
+    
+    <th class="text-center Dest"  style="border: 1px solid black;width:30%;margin-top:100px !important;">
+    <b>Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Margin Percentage</b>
+    </th>
+    
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.tools_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+                   
+                       
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_tool_1.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.description_1"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-field="line.cost_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.margin_amount_1"/>
+                    </strong>
+                    </td>
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <br></br>
+    <div> <strong> Tools Cost: S$<span t-field="o.sum_of_total_tools"/></strong></div>
+    <br></br>
+    
+    
+    
+    
+    <div class='text-center' style = 'font-size:20px;'>
+            <strong>Equipment Cost</strong>
+       </div>
+    
+       <br></br>
+    <!--  new table id="height_auto" -->
+    <div   >
+    <table style=" width:100%; height:100%; margin-bottom: 0px;">
+    <thead>
+    
+    <tr align="center" style="border: 1px solid black;">
+    <th class="text-center Dest" style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:20%;margin-top:100px !important;">
+    <b>Process </b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:20%;margin-top:100px !important;">
+    <b>Types Of Equipment</b>
+    </th>
+    
+    <th class="text-center Dest"  style="border: 1px solid black;width:20%;margin-top:100px !important;">
+    <b>Man Day</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:20%;margin-top:100px !important;">
+    <b>Rate/Man Day</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Total Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Margin Percentage</b>
+    </th>
+    
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.equipment_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+                   
+                       
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_equ_1.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.types_of_equipment_1.types_of_equipment"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         <span t-field="line.man_day_1"/>
+                    </strong>
+                    </td>
+    
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.rate_man_day_1"/>
+                    </strong>
+                    </td>
+                <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                         S$<span t-field="line.total_cost_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.margin_amount_1"/>
+                    </strong>
+                    </td>              
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <br></br>
+    <div> <strong> Equipment Cost: S$<span t-field="o.sum_of_total_equipment"/></strong></div>
+    <br></br>
+    
+    
+    <div class='text-center' style = 'font-size:20px;'>
+            <strong>Transport Cost</strong>
+       </div>
+    
+       <br></br>
+    <!--  new table id="height_auto" -->
+    <div  >
+    <table  style="width:100%;height:100%; margin-bottom: 0px;">
+    <thead>
+    
+    <tr style="border: 1px solid black;">
+    <th class="text-center" style="border: 1px solid black;width:7%;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:25%;margin-top:100px !important;">
+    <b>Process </b>
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:30%;margin-top:100px !important;">
+    <b>Types Of Transport</b>
+    </th>
+    
+    <th class="text-center"  style="border: 1px solid black;width:8%;margin-top:100px !important;">
+    <b>Man Day</b>
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:15%;margin-top:100px !important;">
+    <b>Rate/Man Day</b>
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:15%;margin-top:100px !important;">
+    <b>Total Cost</b>
+    </th>
+    <th class="text-center Dest"  style="border: 1px solid black;width:10%;margin-top:100px !important;">
+    <b>Margin Percentage</b>
+    </th>
+    
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.transport_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+                   
+                       
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_trans_1.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.types_of_transport_1.types_of_transport"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.man_day_1"/>
+                    </strong>
+                    </td>
+    
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$<span t-field="line.rate_man_day_1"/>
+                    </strong>
+                    </td>
+                <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$<span t-field="line.total_cost_1"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$ <span t-field="line.margin_amount_1"/>
+                    </strong>
+                    </td>              
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <br></br>
+    <div> <strong> Transport Cost: S$<span t-field="o.sum_of_total_transport"/></strong></div>
+    <br></br>
+    
+    <div class='text-center' style = 'font-size:20px;'>
+            <strong>Third Party Cost</strong>
+       </div>
+    
+       <br></br>
+    <div  >
+    <table  style="width:100%;height:100%; margin-bottom: 0px;">
+    <thead>
+    
+    <tr style="border: 1px solid black;">
+    <th class="text-center" style="border: 1px solid black;width:7%;margin-top:100px !important;">
+    <b>Sno:</b>
+    
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:25%;margin-top:100px !important;">
+    <b>Process </b>
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:30%;margin-top:100px !important;">
+    <b>Category</b>
+    </th>
+    
+    <th class="text-center"  style="border: 1px solid black;width:8%;margin-top:100px !important;">
+    <b>Quantity</b>
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:15%;margin-top:100px !important;">
+    <b>Cost Per Day</b>
+    </th>
+    <th class="text-center"  style="border: 1px solid black;width:15%;margin-top:100px !important;">
+    <b>Total</b>
+    </th>
+    
+    
+    
+    </tr>
+    </thead>
+     <!-- <tbody >  -->
+          
+                    <t t-foreach="o.target_ids" t-as="obj">
+                        <tr t-foreach="obj.third_party_list" t-as="line" >
+                       <td class="text-center" style="border: 1px solid black;">
+                   
+                       
+                        <span t-esc="line_index + 1"/>
+    
+                    </td>   
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.process_third_party.process_product"/>
+                    </strong>
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.category_third"/>
+                    </strong>
+                    
+                    </td>
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        <span t-field="line.quantity_third"/>
+                    </strong>
+                    </td>
+    
+                    <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$<span t-field="line.cost_day_third"/>
+                    </strong>
+                    </td>
+                <td class="text-center" style="border: 1px solid black;">
+                    <strong>
+                        S$<span t-field="line.total_third"/>
+                    </strong>
+                    </td>
+                 
+            </tr>
+            </t>
+            
+     <!-- </tbody>  -->
+    <tr>
+    <th/>
+    <th/>
+    <th/>
+    
+    </tr>
+    </table>
+    </div>
+    <br></br>
+    <br></br>
+    <div> <strong> Third Party Cost: S$<span t-field="o.sum_of_total_third_party"/></strong></div>
+    <br></br>
+    </t>
+    </t>
+    </t>
+    </template>
+    </odoo>

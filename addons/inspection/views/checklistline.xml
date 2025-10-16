@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- form view of the brand menu -->
+        <record model="ir.ui.view" id="listline_view">
+            <field name="name">listline_form</field>
+            <field name="model">check.list.line</field>
+            <field name="arch" type="xml">
+                <form string="List Line">
+                    <sheet>
+                        <group>
+                            <field name="question_no"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="guidelines"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="checklistquestion" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                        <group>
+                            <field name="attachment_req"/>
+                        </group>
+                        
+
+                        <notebook>
+                            <!-- Selection Tab - Show when checklistquestion != 'value' -->
+                            <page string="Selection" invisible="checklistquestion == 'value'">
+                                <group>
+                                    <field name="valuess" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="finalresult" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="result_colour" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="expectedresult" invisible="1"/>
+                                    <field name="scores" sum="Total"/>
+                                </group>
+                            </page>
+
+                            <!-- Value Tab - Show when checklistquestion != 'checkbox' -->
+                            <page string="Value" invisible="checklistquestion == 'checkbox'">
+                                <group>
+                                    <group>
+                                        <field name="descriptions" widget="radio" options="{'horizontal': true}"/>                         
+                                        <field name="conditions"/>
+                                        <field name="conditionvalue"/>
+                                        <field name="valueofnumberto" invisible="conditions != 'Inbetween'"/>
+                                        <field name="units"/>
+                                        <field name="expectedresult" invisible="1"/>
+                                        <field name="finalresult" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="result_colour" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="scores" sum="Total"/>
+                                    </group>
+                                    <group>
+                                        <field name="dangerous_if"/>
+                                        <field name="value_1"/>
+                                        <field name="value_2"/>
+                                        <field name="value_3"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="CheckLineListstatus_tree_view" model="ir.ui.view">
+            <field name="name">Check Line List</field>
+            <field name="model">check.list.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for brand -->
+        <record id="CheckLineList_menu_action" model="ir.actions.act_window">
+            <field name="name">Check Line List</field>
+            <field name="res_model">check.list.line</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context" eval="{'search_default_male': 1}"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create The First CheckLineList</p>
+            </field>
+        </record>
+
+        <!-- 
+        <menuitem id="CheckLineList_models_menu"
+                  parent="check_menu"
+                  name="CheckLineList"
+                  action="CheckLineList_menu_action" sequence="22"/>
+        -->
+
+    </data>
+</odoo>

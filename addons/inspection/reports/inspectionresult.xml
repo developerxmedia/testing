@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="sample_report_cards">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+
+                    <div class="page" style="">
+                        <div>
+
+                            <table border="0" class="table table-sm table-bordered" style="width:100%;border: 0px;margin-top: 25px;border-top: 1px solid black;">
+                                <td style="width:50%;border-left: 1px solid black;border-bottom: 1px solid black;">
+                                    <p style="color:black;"><b> Audit No :</b> <span style="color:black;" t-field="o.name_seq"/></p>
+                                    <p style="color:black;"><b> Audit Type :</b> <span style="color:black;" t-field="o.checklist"/></p>
+                                    <p style="color:black;"><b>Property Name :</b> <span style="color:black;" t-field="o.propertys"/></p>
+                                    <p style="color:black;"><b> Building /Area :</b> <span style="color:black;" t-field="o.building"/></p>                        
+                                </td>
+                                <td style="width:50%;border-bottom: 1px solid black;">
+                                    <p style="color:black;"><b>Floor Name :</b> <span style="color:black;" t-field="o.floor"/></p>
+                                    <p style="color:black;"><b> Room Name :</b> <span style="color:black;" t-field="o.room"/></p>
+                                    <p style="color:black;"><strong>Assigned To :</strong> <span style="color:black;" t-field="o.assignedto"/></p>
+                                    <p style="color:black;"><b>Inspection Date :</b> <span style="color:black;" t-field="o.__last_update"/></p>
+                                    <p style="color:black;"><b>Inspection No :</b> <span style="color:black;" t-field="o.checktwoline_inspection"/></p>
+                                </td>
+                            </table>
+
+                        </div>
+
+                        <h4 style="color:black;text-align:center;margin-top: 15px;">Questionnaire</h4>
+
+                        <table class="table table-bordered" style="border: 1px solid black;margin-top: 10px; border-collapse: collapse;">                
+                            <thead style="border: 1px solid black;border-collapse: collapse;">
+                                <tr style="border: 1px solid black;border-collapse: collapse;">
+                                    <th style="width: 4%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>S No</strong></th>
+                                    <th style="width: 50%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Questions</strong></th>
+                                    <th style="width: 10%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Selection</strong></th>
+                                    <th style="width: 10%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Feed Value</strong></th>
+                                    <th style="width: 10%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Value</strong></th>
+                                    <th style="width: 30%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Comments</strong></th>
+                                    <th style="width: 30%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Attachments</strong></th>
+                                    <th colspan="2" style="width: 15%;text-align:center;vertical-align: middle;background-color:#003f72;color:white;"><strong>Result</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.categryline" t-as="line">
+                                    <tr align="left">
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;border-left: 1px solid black;"><span t-field="line.question_no"/></td>
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;border-left: 1px solid black;"><span t-field="line.names"/></td>
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;"><span t-esc="line.finding"/></td>
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;"><span t-esc="line.findingvalue"/></td>
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;">
+                                            <div class="row">
+                                                <div style="width:43.3%;">
+                                                    <span t-esc="line.finding" style="margin-left:8px; white-space: nowrap;"/>
+                                                </div>
+                                                <div style="width:23.3%;">
+                                                    <span style="color:black;margin-left:-13px;">-</span>
+                                                </div>
+                                                <div style="width:33.3%;">
+                                                    <span t-esc="line.findingvalue" style="text-align:left;margin-left:-13px;"/>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;"><span t-esc="line.comments"/></td>
+                                        <td style="border-bottom:1px solid black;text-align:center;color:black;">
+                                            <img t-foreach="line.identity_card" t-as="l"
+                                                 t-attf-src="data:image/*;base64,{{l.datas}}"
+                                                 t-att-alt="l.datas" width="140" border="1" height="100"
+                                                 style="margin-bottom:5px;margin-right:auto;text-align:center;color:black;"/>
+                                        </td>
+
+                                        <t t-if="line.result == 'fail'">
+                                            <td style="background-color:white;color:black;border-bottom:1px solid black;text-align:center;">
+                                                <div class="row">
+                                                    <div style="width:43.3%;">
+                                                        <t t-if="line.result_colour == 'yellow'">
+                                                            <span t-esc="line.result" style="background-color:yellow;padding:5px;border-radius:5px;margin-left:10px; white-space: nowrap;"/>
+                                                        </t>
+                                                        <t t-if="line.result_colour == 'red'">
+                                                            <span t-esc="line.result" style="background-color:red;padding:5px;border-radius:5px;margin-left:10px; white-space: nowrap;"/>
+                                                        </t>
+                                                        <t t-if="line.result_colour == 'orange'">
+                                                            <span t-esc="line.result" style="background-color:green;padding:5px;border-radius:5px;margin-left:10px; white-space: nowrap;"/>
+                                                        </t>
+                                                    </div>
+                                                    <div style="width:23.3%;">
+                                                        <span style="color:black;margin-left:-2px;">/</span>
+                                                    </div>
+                                                    <div style="width:33.3%;">
+                                                        <span t-esc="line.score" style="text-align:left;margin-left:-5px;"/>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="background-color:white;color:black;border-bottom:1px solid black;">
+                                                <div class="row">
+                                                    <div style="width:43.3%;">
+                                                        <span t-esc="line.result" style="margin-left:10px; white-space: nowrap;"/>
+                                                    </div>
+                                                    <div style="width:23.3%;">
+                                                        <span style="color:black;margin-left:6px;">/</span>
+                                                    </div>
+                                                    <div style="width:33.3%;">
+                                                        <span t-esc="line.score" style="text-align:left;margin-left:-5px;"/>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <table border="0" class="table table-sm table-bordered" style="border: 0px;">
+                            <tr>
+                                <td style="border: 0px;color:black;"><p><b>Total Score :</b></p></td>
+                                <td style="border: 0px;color:black;">
+                                    <span t-field="o.score" style="background-color:#F0F0F0;padding:5px;border-radius:5px;"/>
+                                </td>
+                                <td style="border: 0px;color:black;"><p><b>Total Pass :</b></p></td>
+                                <td style="border: 0px;color:black;">
+                                    <span t-field="o.passcount" style="background-color:#F0F0F0;padding:5px;border-radius:5px;"/>
+                                </td>
+                                <td style="border: 0px;color:black;"><p><b>Total Fail :</b></p></td>
+                                <td style="border: 0px;color:black;background-color:white;">
+                                    <span t-field="o.failcount" style="background-color:#F0F0F0;padding:5px;border-radius:5px;"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border: 0px;color:black;"><p><b>High :</b></p></td>
+                                <td style="border: 0px;"><p><span t-field="o.redcount" style="background-color:red;color:black;border-radius:5px;padding:5px;"/></p></td>
+                                <td style="border: 0px;color:black;"><p><b>Medium :</b></p></td>
+                                <td style="border: 0px;"><p><span t-field="o.yellowcount" style="background-color:yellow;border-radius:5px;color:black;padding:5px;"/></p></td>
+                                <td style="border: 0px;color:black;"><p><b>Low :</b></p></td>
+                                <td style="border: 0px;background-color:white;"><p><span t-field="o.orangecount" style="background-color:green;border-radius:5px;color:black;padding:5px;"/></p></td>
+                            </tr>
+                        </table>
+
+                        <br/>
+
+                        <table border="0" class="table table-sm table-bordered" style="border: 0px;">
+                            <tr>
+                                <td style="border: 0px;color:black;white-space: nowrap;"><p><b>Overall Total Score:</b></p></td>
+                                <td style="border: 0px;color:black;">
+                                    <span t-field="o.checktwoline_insp.overall_score" style="background-color:#F0F0F0;padding:5px;border-radius:5px;"/>
+                                </td>
+                                <td style="border: 0px;color:black;"><p><b>Overall Total Pass :</b></p></td>
+                                <td style="border: 0px;color:black;">
+                                    <span t-field="o.checktwoline_insp.overall_passcount" style="background-color:#F0F0F0;padding:5px;border-radius:5px;"/>
+                                </td>
+                                <td style="border: 0px;color:black;"><p><b>Overall Total Fail :</b></p></td>
+                                <td style="border: 0px;color:black;background-color:white;">
+                                    <span t-field="o.checktwoline_insp.overall_failcount" style="background-color:#F0F0F0;padding:5px;border-radius:5px;"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border: 0px;color:black;"><p><b>Overall High :</b></p></td>
+                                <td style="border: 0px;"><p><span t-field="o.checktwoline_insp.overall_redcount" style="background-color:red;color:black;border-radius:5px;padding:5px;"/></p></td>
+                                <td style="border: 0px;color:black;"><p><b>Overall Medium :</b></p></td>
+                                <td style="border: 0px;"><p><span t-field="o.checktwoline_insp.overall_yellowcount" style="background-color:yellow;border-radius:5px;color:black;padding:5px;"/></p></td>
+                                <td style="border: 0px;color:black;"><p><b>Overall Low :</b></p></td>
+                                <td style="border: 0px;background-color:white;"><p><span t-field="o.checktwoline_insp.overall_orangecount" style="background-color:green;border-radius:5px;color:black;padding:5px;"/></p></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,14 @@
+<odoo>
+    <!-- <record id="view_users_form_inherit_employee" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.employee</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+        
+            Use XPath to insert employee_id after partner_id
+            <xpath expr="//field[@name='type_users']" position="after">
+                <field name="employee_id"/>
+            </xpath>
+        </field>
+    </record> -->
+</odoo>

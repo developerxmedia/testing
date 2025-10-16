@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<record id="paperformat_qr_code" model="report.paperformat">
+        <field name="name">QR format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+</record>
+
+    <report 
+        id="action_report_print_label"
+        model="equipment.assets"
+        report_type="qweb-pdf"
+        string="QR Code"
+        name="newassets.report_label"
+        file="newassets.report_label"
+        print_report_name="'QR Code - %s' % (object.names)"
+        paperformat="newassets.paperformat_qr_code"
+    />
+
+    <template id="report_label">
+        <t t-call="web.basic_layout">
+            <div class="page" style="page-break-before: always;">
+                <t t-foreach="docs" t-as="o" style="page-break-before: always;">
+                    <div class="col-xs-6" style="width: 25%;  float:left; padding:15px; page-break-before: always;">
+                        <table style="width:100%; border-collapse:separate; padding:5pt; border-radius:5pt; border: 1px solid black;page-break-after:always;border:0; margin:0;">
+                            <tr>
+                                <td style="width: 2.63in;page-break-after:always;" colspan="2" class="col-xs-8 danger"  align="center" >
+                                    <table style="page-break-before: always;">
+                                        <tr>
+                                            <td>
+                                                <p style="margin-bottom:3px;font-weight:700"  align="center" >
+                                                    <b style="font-size:12px;" ></b> 
+                                                    <span style="font-size:12px;"  t-field="o.names"/>
+                                                </p>
+                                                <p style="margin-bottom:3px;font-weight:500"  align="center" >
+                                                    <b style="font-size:12px;" ></b> 
+                                                    <span style="font-size:12px;"  t-field="o.asset_number"/>
+                                                </p>
+                                                <p style="margin-bottom:3px;font-weight:500"  align="center" >
+                                                    <b style="font-size:12px;" ></b> 
+                                                    <span style="font-size:12px;"  t-field="o.rooms"/>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img t-if="o.qr_code_image" t-att-src="'data:image/png;base64,%s' % to_text(o.qr_code_image)"
+                                                    style="max-width:120px;
+                                                           max-height:120px;
+                                                           margin-left:8%;
+                                                           display: block;" />      
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+</data>
+</odoo>
