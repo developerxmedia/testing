@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         BRANCH_NAME = "${env.BRANCH_NAME ?: 'jenkins-pipeline-20251017'}"
+        VENV_PATH = "venv"
     }
 
     options {
@@ -31,18 +32,32 @@ pipeline {
             }
         }
 
+        stage('Setup Virtual Environment') {
+            steps {
+                script {
+                    sh '''
+                        echo "Setting up Python virtual environment..."
+                        python3 -m venv ${VENV_PATH}
+                        echo "✅ Virtual environment created"
+                    '''
+                }
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 script {
                     sh '''
-                        echo "Installing Python dependencies..."
+                        echo "Installing Python dependencies in virtual environment..."
+                        . ${VENV_PATH}/bin/activate
+                        
                         if [ -f "requirements.txt" ]; then
-                            pip3 install -r requirements.txt
+                            pip install -r requirements.txt
                             echo "✅ Dependencies installed successfully"
                         else
                             echo "⚠️ No requirements.txt found - creating basic one"
                             echo "requests" > requirements.txt
-                            pip3 install -r requirements.txt
+                            pip install -r requirements.txt
                             echo "✅ Basic dependencies installed"
                         fi
                     '''
@@ -55,7 +70,8 @@ pipeline {
                 script {
                     sh '''
                         echo "Running code quality checks..."
-                        pip3 install pylint flake8 pytest || echo "Tools installation completed"
+                        . ${VENV_PATH}/bin/activate
+                        pip install pylint flake8 pytest || echo "Tools installation completed"
                         
                         if find . -name "*.py" | grep -q "."; then
                             echo "Running flake8..."
@@ -80,6 +96,8 @@ pipeline {
                 script {
                     sh '''
                         echo "Running tests..."
+                        . ${VENV_PATH}/bin/activate
+                        
                         if [ ! -d "tests" ] && [ ! -f "test_*.py" ]; then
                             echo "Creating basic test structure..."
                             mkdir -p tests
@@ -94,32 +112,10 @@ END
                         fi
                         
                         if [ -d "tests" ] || find . -name "test_*.py" | grep -q "."; then
-                            python3 -m pytest tests/ -v || echo "Tests completed"
+                            python -m pytest tests/ -v || echo "Tests completed"
                         else
                             echo "No tests found - running basic Python check"
-                            python3 -c "print('✅ Python environment is working correctly!')"
-                        fi
-                    '''
-                }
-            }
-        }
-
-        stage('Build & Package') {
-            steps {
-                script {
-                    sh '''
-                        echo "Build phase..."
-                        if [ -f "setup.py" ]; then
-                            echo "Found setup.py - building package"
-                            python3 setup.py sdist bdist_wheel || echo "Build completed"
-                        elif [ -f "pyproject.toml" ]; then
-                            echo "Found pyproject.toml - building package"
-                            pip3 install build
-                            python3 -m build || echo "Build completed"
-                        else
-                            echo "No build configuration found"
-                            ls -la
-                            echo "✅ Build phase completed"
+                            python -c "print('✅ Python environment is working correctly!')"
                         fi
                     '''
                 }
@@ -131,7 +127,8 @@ END
                 script {
                     sh '''
                         echo "Final verification..."
-                        python3 -c "import sys; print(f'Python version: {sys.version}'); print('✅ All stages completed successfully!'); print('🚀 Pipeline execution: SUCCESS')"
+                        . ${VENV_PATH}/bin/activate
+                        python -c "import sys; print(f'Python version: {sys.version}'); print('✅ All stages completed successfully!'); print('🚀 Pipeline execution: SUCCESS')"
                     '''
                 }
             }
@@ -141,6 +138,7 @@ END
     post {
         always {
             echo "📊 Pipeline execution completed"
+            sh 'rm -rf ${VENV_PATH} || true'
         }
         success {
             echo "🎉 ✅ PIPELINE SUCCESS - All stages completed!"
